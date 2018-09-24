@@ -1,0 +1,47 @@
+// app global css
+@import './a-overwrite'
+@import './a-layout'
+@import './a-common'
+
+html, body, #q-app, .q-layout, .q-layout-page-container,
+.q-layout-page, .q-infinite-scroll-content, .q-infinite-scroll,
+.main-container
+  width 100%
+.content-container
+  margin-top: 50px
+  width: 100%
+  height calc(100% - 50px)
+  overflow: auto
+
+.q-infinite-scroll-content
+  width 100%
+.full-width
+  width: 100%
+.inner-toolbar
+  border-bottom: 1px solid $blue-grey-2
+  position: absolute
+
+.q-table
+  width: 100%
+  height 100%
+  overflow auto
+
+.input-group, .form-group
+  .q-input, .q-select, .input-group-item, .q-toggle
+    margin-top: 1rem
+
+.c-modal-container
+  .title
+    font-size: 1.4rem
+    font-weight: 700
+  .btn-container
+    margin-top: 1rem
+
+.a-title-md
+  font-size: 20px
+
+.a-title-lg
+  font-size: 24px
+
+.a-title-xg
+  font-size: 30px
