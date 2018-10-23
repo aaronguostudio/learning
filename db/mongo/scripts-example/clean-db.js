@@ -1,0 +1,11 @@
+db.tenant.remove({});
+db.user.remove({});
+db.filter.remove({});
+db.comparisonOperator.remove({});
+db.documentField.remove({});
+db.coderAssignment.remove({});
+db.approverMap.remove({});
+db.document.remove({});
+db.transaction.remove({});
+db.costObject.remove({});
+db.vendor.remove({});

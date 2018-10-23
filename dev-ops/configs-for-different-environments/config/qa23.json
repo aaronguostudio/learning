@@ -1,0 +1,42 @@
+{
+  "host": {
+    "port"          : 10010,
+    "request-limit" : "25MB"
+  },
+  "db": {
+    "host"      : "yycqsvr-wfdb01",
+    "database"  : "wf",
+    "port"      : "27017",
+    "user"      : "wfuser",
+    "password"  : "password"
+  },
+  "bunyan": {
+    "name": "ap-workflow-persistence",
+    "streams": [
+      {
+        "level": "info",
+        "type": "rotating-file",
+        "path": "/var/log/wf/persistence-info.log",
+        "period": "1d",
+        "count": 10
+      },
+      {
+        "level": "debug",
+        "type": "rotating-file",
+        "path": "/var/log/wf/persistence-debug.log",
+        "period": "1d",
+        "count": 3
+      },
+      {
+        "level": "error",
+        "type": "rotating-file",
+        "path": "/var/log/wf/persistence-error.log",
+        "period": "1d",
+        "count": 3
+      }
+    ]
+  },
+  "resources":{
+    "loggingUrl" : "http://yycqsvr-wflog01:10010/api"
+  }
+}

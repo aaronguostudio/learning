@@ -1,0 +1,36 @@
+{
+  "service-name": "ap-workflow-persistence",
+  "host": {
+    "port"          : 10010,
+    "request-limit" : "25MB"
+  },
+  "db": {
+    "host"      : "127.0.0.1",
+    "database"  : "wf",
+    "port"      : "27017",
+    "user"      : "user",
+    "password"  : "password"
+  },
+  "bunyan": {
+    "name": "ap-workflow-persistence",
+    "streams": [
+      {
+        "level": "info",
+        "stream": "stdout"
+      },
+      {
+        "level": "debug",
+        "stream": "stdout"
+      },
+      {
+        "level": "error",
+        "stream": "stdout"
+      }
+    ]
+  },
+  "secret": "akbjv9823ibf4g23",
+  "tokenExpiresIn": 86400,
+  "resources":{
+    "loggingUrl" : "http://localhost:10016/api"
+  }
+}

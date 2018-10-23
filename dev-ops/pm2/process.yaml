@@ -1,0 +1,13 @@
+apps:
+  - script: app.js
+    name: wf-persistence
+    env:
+      NODE_ENV: demo
+    env_wfdemo:
+      NODE_ENV: wfdemo
+    env_qa23:
+      NODE_ENV: qa23
+    env_uat22:
+      NODE_ENV: uat22
+    env_production:
+      NODE_ENV: production

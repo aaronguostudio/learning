@@ -1,0 +1,312 @@
+pipeline {
+  agent {
+    label 'ssh && npm'
+  }
+
+  environment {
+    base_dir = '/opt/apps/wf-persistence'
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+    disableConcurrentBuilds()
+  }
+
+  stages {
+
+    // [ACP] Remove this stage when enabling the following stage
+    stage ('npm install') {
+      steps {
+        sh """
+          npm install
+        """
+      }
+    }
+
+    // [ACP] Disabled until we build on a linux slave
+    // stage ('Unit Test') {
+    //   steps {
+    //     sh """
+    //       npm install
+    //       npm test
+    //     """
+    //   }
+    // }
+
+    stage ('Package') {
+      when {
+        branch 'master'
+      }
+
+      steps {
+        zip zipFile: 'wf-persistence-package.zip'
+      }
+    }
+
+    stage ('Deploy to QA23') {
+      when {
+        branch 'master'
+      }
+
+      steps {
+        script {
+          def env = 'qa23'
+          def ssh_host = "installer@qa23-wfsvc"
+          def db_host = 'installer@qa23-workflow'
+
+          def db = readJSON(file: "config/${env}.json")['db']
+          def db_conn = "${db['host']}:${db['port']}/${db['database']}"
+
+          sshagent([ env ]) {
+            // TODO do not deploy qa-test dir
+
+            // install service
+            sh """
+              ssh ${ssh_host} 'bash -s' < scripts/uninstall.sh ${base_dir}
+              scp -r * ${ssh_host}:${base_dir}
+              ssh ${ssh_host} 'bash -s' < scripts/install.sh ${base_dir} ${env}
+            """
+
+            // init mongo
+            sh """
+              scp -r scripts/*_mongo.js ${db_host}:./
+              ssh ${db_host} mongo ${db_conn} clean_mongo.js
+              ssh ${db_host} mongo ${db_conn} setup_mongo.js
+            """
+          }
+        }
+      }
+    }
+
+    stage ('Deploy global config on QA23') {
+
+      when {
+        branch 'master'
+      }
+
+      steps {
+        script {
+          def env = 'qa23'
+
+          dir('test-data-loader') {
+            git(
+              credentialsId: 'gitlab-jenkins-user-credentials',
+              url: 'https://git.cortex.net/cortex/ap-workflow/test-data-loader.git'
+            )
+
+            sh """
+              export NODE_ENV=${env}
+              npm install
+              npm run load_global_config
+            """
+          }
+        }
+      }
+    }
+
+    stage ('Test on QA23') {
+
+      when {
+        branch 'master'
+      }
+
+      steps {
+        script {
+          def env = 'qa23'
+
+          dir('qa-test') {
+            git(
+              credentialsId: 'gitlab-jenkins-user-credentials',
+              url: 'https://git.cortex.net/qa/workflow/workflow-services.git'
+            )
+
+            sh """
+              export NODE_ENV=${env}
+              npm install
+              npm run test-report-persistence
+            """
+          }
+        }
+      }
+
+    }
+
+    stage ('Deploy bulk data (QA23)') {
+
+      when {
+        branch 'master'
+      }
+
+      steps {
+        script {
+          def env = 'qa23'
+          def db_host = 'installer@qa23-workflow'
+
+          def db = readJSON(file: "config/${env}.json")['db']
+          def db_conn = "${db['host']}:${db['port']}/${db['database']}"
+
+          sshagent([ env ]) {
+            // clean mongo
+            sh """
+              ssh ${db_host} mongo ${db_conn} clean_mongo.js
+            """
+          }
+
+          dir('test-data-loader') {
+            git(
+              credentialsId: 'gitlab-jenkins-user-credentials',
+              url: 'https://git.cortex.net/cortex/ap-workflow/test-data-loader.git'
+            )
+
+            sh """
+              export NODE_ENV=${env}
+              npm install
+              npm run load_tx_fake 
+            """
+          }
+        }
+      }
+    }
+
+    stage ('Start CO/VM retriever (QA23)') {
+
+      when {
+        branch 'master'
+      }
+
+      steps {
+        script {
+          def env = 'qa23'
+          def ssh_host = "installer@${env}-wfsvc"
+          def base_url = "http://yycqsvr-werp01"
+          def cost_object_retriever_url = "${base_url}:10310/api"
+          def vendor_master_retriever_url = "${base_url}:10210/api"
+
+          sshagent([ env ]) {
+            sh """
+              ssh ${ssh_host} 'bash -s' < scripts/invoke_co_vm.sh ${cost_object_retriever_url} ${vendor_master_retriever_url}
+            """
+          }
+        }
+      }
+    }
+
+    stage ('Load and Validate XML data (QA23)') {
+
+      when {
+        branch 'master'
+      }
+
+      steps {
+        timeout(30) {
+          script {
+            def env = 'qa23'
+
+            dir('test-data-loader') {
+              git(
+                credentialsId: 'gitlab-jenkins-user-credentials',
+                url: 'https://git.cortex.net/cortex/ap-workflow/test-data-loader.git'
+              )
+
+              sh """
+                export NODE_ENV=${env}
+                npm install
+                npm run load_tx_xml
+              """
+            }
+          }
+        }
+      }
+    }
+
+    stage ('Deploy to wfdemo') {
+      when {
+        branch 'master-disabled'
+      }
+
+      steps {
+        script {
+          def env = 'wfdemo'
+          def svc_host = 'wfdemo-wfsvc'
+          def ssh_host = "installer@${svc_host}"
+          def db_host = 'installer@wfdemo-workflow'
+
+          def db = readJSON(file: "config/${env}.json")['db']
+          def db_conn = "${db['host']}:${db['port']}/${db['database']}"
+
+          sshagent([ env ]) {
+            // clean mongo
+            sh """
+              ssh ${db_host} mongo ${db_conn} clean_mongo.js
+            """
+          }
+
+          dir('test-data-loader') {
+            git(
+              credentialsId: 'gitlab-jenkins-user-credentials',
+              url: 'https://git.cortex.net/cortex/ap-workflow/test-data-loader.git'
+            )
+
+            sh """
+              ls
+              export NODE_ENV=${env}
+              npm install
+              npm run load_tx
+            """
+          }
+        }
+      }
+    }
+
+    stage ('Deploy bulk data on wfdemo') {
+
+      when {
+        branch 'master-disabled'
+      }
+
+      steps {
+        script {
+          def env = 'wfdemo'
+          def db_host = 'installer@wfdemo-workflow'
+
+          def db = readJSON(file: "config/${env}.json")['db']
+          def db_conn = "${db['host']}:${db['port']}/${db['database']}"
+
+          sshagent([ env ]) {
+            clean mongo
+            sh """
+              ssh ${db_host} mongo ${db_conn} clean_mongo.js
+            """
+          }
+
+          dir('test-data-loader') {
+            git(
+              credentialsId: 'gitlab-jenkins-user-credentials',
+              url: 'https://git.cortex.net/cortex/ap-workflow/test-data-loader.git'
+            )
+
+            sh """
+              ls
+              export NODE_ENV=${env}
+              npm install
+              npm run load_tx
+            """
+          }
+        }
+      }
+
+    }
+
+  }
+
+  post {
+    always {
+      archiveArtifacts(
+        artifacts: 'wf-persistence-package.zip, qa-test/report.html',
+        allowEmptyArchive: true
+      )
+
+      deleteDir()
+    }
+  }
+}

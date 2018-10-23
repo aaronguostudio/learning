@@ -1,0 +1,127 @@
+pipeline {
+  agent {
+    label 'npm && quasar-cli && ssh'
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+
+  stages {
+
+    // [ACP] Remove this stage when enabling the following stage
+    stage ('npm install') {
+      steps {
+        sh """
+          npm install
+        """
+      }
+    }
+
+    // [ACP] Disabled until we build on a linux slave
+    // stage ('Unit Test') {
+    //   steps {
+    //     sh """
+    //       npm install
+    //       npm test
+    //     """
+    //   }
+    // }
+
+    stage ('Package') {
+      when {
+        branch 'master'
+      }
+
+      steps {
+        zip zipFile: 'wf-ui-package.zip'
+      }
+    }
+
+    stage ('Install') {
+      steps {
+        sh 'npm install'
+      }
+    }
+
+    stage ('Deploy to QA23') {
+      when {
+        branch 'master'
+      }
+
+      steps {
+        script {
+
+          def env = 'qa23'
+          def ui_host = "administrator@${env}-workflow"
+          def ui_proxy_uri = "https://${env}-workflow.cortex.net:8443"
+
+          sh """
+            export WF_PERSISTENCE=${ui_proxy_uri}/api/p
+            export WF_BUSINESS=${ui_proxy_uri}/api/b
+            npm run build
+          """
+
+          sshagent([ env ]) {
+            // Install application
+            sh """
+              ssh -p 23 ${ui_host} rm -rf /var/www/html/*
+              scp -P 23 -r dist/spa-mat/* ${ui_host}:/var/www/html
+            """
+
+            // Install httpd.conf
+            sh """
+              ssh -p 23 ${ui_host} 'sudo systemctl stop httpd'
+              scp -P 23 config/httpd.conf ${ui_host}:/etc/httpd/conf.d/wf-ui.httpd.conf
+              ssh -p 23 ${ui_host} 'sudo systemctl start httpd'
+            """
+          }
+
+        }
+      }
+    }
+
+    stage ('Deploy to wfdemo') {
+      when {
+        branch 'master-disabled'
+      }
+
+      steps {
+        script {
+
+          def env = 'wfdemo'
+          def ui_host = "administrator@${env}-workflow"
+          def ui_proxy_uri = "http://${env}-workflow:8080"
+
+          sh """
+            export WF_PERSISTENCE=${ui_proxy_uri}/api/p
+            export WF_BUSINESS=${ui_proxy_uri}/api/b
+            npm run build
+          """
+
+          sshagent([ env ]) {
+            sh """
+              ssh -p 23 ${ui_host} rm -rf /var/www/html/*
+              scp -P 23 -r dist/spa-mat/* ${ui_host}:/var/www/html
+              scp -P 23 -r scripts/* ${ui_host}:~
+              ssh -p 23 ${ui_host} 'bash -s' < scripts/install-httpd.sh
+            """
+          }
+
+        }
+      }
+    }
+
+  }
+
+  post {
+    always {
+      archiveArtifacts(
+        artifacts: 'wf-ui-package.zip',
+        allowEmptyArchive: true
+      )
+
+      deleteDir()
+    }
+  }
+}
