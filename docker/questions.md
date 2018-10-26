@@ -1,0 +1,1 @@
+- I can not use GUI to connect mongodb by IP ( Do I need bind an IP ) ?
