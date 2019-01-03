@@ -33,3 +33,18 @@ Read operations (such as GetItem, Query, and Scan) provide a ConsistentRead para
 
 ## Strongly Consistent Read
 - Updated data
+
+# Read Request Units and Write Request Units
+
+
+
+
+
+
+
+
+
+
+
+
+
