@@ -1,0 +1,29 @@
+{
+  "name": "aaron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-stylus": "^1.0.1",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.6",
+    "nib": "^1.1.2",
+    "postcss-css-variables": "^0.11.0",
+    "poststylus": "^1.0.0",
+    "rupture": "^0.7.1"
+  }
+}
