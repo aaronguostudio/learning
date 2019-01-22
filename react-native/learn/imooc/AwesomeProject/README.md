@@ -8,3 +8,7 @@
 ## Vector icons
 - npm add react-native-vector-icons && react-native link
 
+## Redux
+- npm add react-navigation-redux-helpers
+- npm add redux react-redux redux-thunk
+- npm add --save-dev redux-devtools

@@ -10,72 +10,74 @@ import TrendingPage from './TrendingPage'
 import FavoritePage from './FavoritePage'
 import MyPage from './MyPage'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import DynamicNavigator from '../navigator/DynamicNavigator'
 
 type Props = {};
 
 export default class HomePage extends Component<Props> {
-  _tabNavigator () {
-    // TODO icons are not displayed, fix them later
-    return createAppContainer(createBottomTabNavigator({
-      PopularPage: {
-        screen: PopularPage,
-        navigationOptions: {
-          tabBarLabel: '最热',
-          tabBarIcon: ({tintColor, focused}) => {
-            <MaterialIcons
-              name={'whatshot'}
-              size={26}
-              style={{ color: tintColor }}
-            />
-          }
-        }
-      },
-      TrendingPage: {
-        screen: TrendingPage,
-        navigationOptions: {
-          tabBarLabel: '趋势',
-          tabBarIcon: ({tintColor, focused}) => {
-            <MaterialIcons
-              name={'whatshot'}
-              size={26}
-              style={{ color: tintColor }}
-            />
-          }
-        }
-      },
-      FavoritePage: {
-        screen: FavoritePage,
-        navigationOptions: {
-          tabBarLabel: '收藏',
-          tabBarIcon: ({tintColor, focused}) => {
-            <MaterialIcons
-              name={'whatshot'}
-              size={26}
-              style={{ color: tintColor }}
-            />
-          }
-        }
-      },
-      MyPage: {
-        screen: MyPage,
-        navigationOptions: {
-          tabBarLabel: '我的',
-          tabBarIcon: ({tintColor, focused}) => {
-            <MaterialIcons
-              name={'whatshot'}
-              size={26}
-              style={{ color: tintColor }}
-            />
-          }
-        }
-      }
-    }))
-  }
+  // _tabNavigator () {
+  //   // TODO icons are not displayed, fix them later
+  //   return createAppContainer(createBottomTabNavigator({
+  //     PopularPage: {
+  //       screen: PopularPage,
+  //       navigationOptions: {
+  //         tabBarLabel: '最热',
+  //         tabBarIcon: ({tintColor, focused}) => {
+  //           <MaterialIcons
+  //             name={'whatshot'}
+  //             size={26}
+  //             style={{ color: tintColor }}
+  //           />
+  //         }
+  //       }
+  //     },
+  //     TrendingPage: {
+  //       screen: TrendingPage,
+  //       navigationOptions: {
+  //         tabBarLabel: '趋势',
+  //         tabBarIcon: ({tintColor, focused}) => {
+  //           <MaterialIcons
+  //             name={'whatshot'}
+  //             size={26}
+  //             style={{ color: tintColor }}
+  //           />
+  //         }
+  //       }
+  //     },
+  //     FavoritePage: {
+  //       screen: FavoritePage,
+  //       navigationOptions: {
+  //         tabBarLabel: '收藏',
+  //         tabBarIcon: ({tintColor, focused}) => {
+  //           <MaterialIcons
+  //             name={'whatshot'}
+  //             size={26}
+  //             style={{ color: tintColor }}
+  //           />
+  //         }
+  //       }
+  //     },
+  //     MyPage: {
+  //       screen: MyPage,
+  //       navigationOptions: {
+  //         tabBarLabel: '我的',
+  //         tabBarIcon: ({tintColor, focused}) => {
+  //           <MaterialIcons
+  //             name={'whatshot'}
+  //             size={26}
+  //             style={{ color: tintColor }}
+  //           />
+  //         }
+  //       }
+  //     }
+  //   }))
+  // }
   render () {
     // 保存最外层的 navigation
     NavigationUtil.navigation = this.props.navigation
-    const Tabs = this._tabNavigator()
-    return <Tabs />
+    // const Tabs = this._tabNavigator()
+    // return <Tabs />
+    return <DynamicNavigator />
   }
 }
 

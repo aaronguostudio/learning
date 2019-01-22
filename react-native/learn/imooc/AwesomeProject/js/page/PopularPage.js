@@ -8,27 +8,38 @@ import NavigationUtil from '../navigator/NavigationUtil'
 
 type Props = {};
 export default class PopularPage extends Component<Props> {
-  _topTabNav () {
-    return createAppContainer(createMaterialTopTabNavigator({
-      PopularTab1: {
-        screen: PopularTab,
+  constructor (props) {
+    super(props);
+    this.tabNames = ['Java', 'Android', 'iOS', 'React', 'Vue', 'Angular', 'NodeJS', 'PHP']
+  }
+  _genTabs () {
+    const tabs = []
+    this.tabNames.forEach((item, index) => {
+      tabs[`tab${index}`] = {
+        screen: props => <PopularTab {...props} tabLabel={item} />,
         navigationOptions: {
-          title: 'Tab1'
-        }
-      },
-      PopularTab2: {
-        screen: PopularTab,
-        navigationOptions: {
-          title: 'Tab2'
-        }
-      },
-      PopularTab3: {
-        screen: PopularTab,
-        navigationOptions: {
-          title: 'Tab3'
+          title: item
         }
       }
-    }))
+    })
+    return tabs
+  }
+  _topTabNav () {
+    return createAppContainer(createMaterialTopTabNavigator(
+      this._genTabs(),
+      {
+        tabBarOptions: {
+          tabStyle: styles.tabStyle,
+          upperCaseLabel: false,
+          scrollEnabled: true,
+          style: {
+            backgroundColor: 'black'
+          },
+          indicatorStyle: styles.indicatorStyle,
+          labelStyle: styles.labelStyle,
+        }
+      }
+    ))
   }
   render () {
     const TopTabs = this._topTabNav()
@@ -65,5 +76,16 @@ const styles = StyleSheet.create({
   topTabs: {
     flex: 1,
     marginTop: 30
+  },
+  tabStyle: {
+    width: 90,
+    textAlign: 'center'
+  },
+  indicatorStyle: {
+    height: 1,
+    backgroundColor: 'white'
+  },
+  labelStyle: {
+    color: 'white'
   }
 })

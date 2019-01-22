@@ -1,0 +1,771 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		077CB49F73193AEC845C2678 /* libPods-RNHybirdiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E491CDB38340EA32AF25E2D4 /* libPods-RNHybirdiOS.a */; };
+		1AFA36BB83F5084AAB9B9C69 /* libPods-RNHybirdiOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF19BB4073578CDD1000E370 /* libPods-RNHybirdiOSUITests.a */; };
+		3A047D3C4AC9A3AC21FB5314 /* libPods-RNHybirdiOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF80EBBC108CACA6FFE285F /* libPods-RNHybirdiOSTests.a */; };
+		F433AC9920E1DFA5009F5961 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F433AC9820E1DFA5009F5961 /* AppDelegate.m */; };
+		F433AC9C20E1DFA5009F5961 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F433AC9B20E1DFA5009F5961 /* ViewController.m */; };
+		F433AC9F20E1DFA5009F5961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F433AC9D20E1DFA5009F5961 /* Main.storyboard */; };
+		F433ACA120E1DFA5009F5961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F433ACA020E1DFA5009F5961 /* Assets.xcassets */; };
+		F433ACA420E1DFA5009F5961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F433ACA220E1DFA5009F5961 /* LaunchScreen.storyboard */; };
+		F433ACA720E1DFA5009F5961 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F433ACA620E1DFA5009F5961 /* main.m */; };
+		F433ACB120E1DFA5009F5961 /* RNHybirdiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F433ACB020E1DFA5009F5961 /* RNHybirdiOSTests.m */; };
+		F433ACBC20E1DFA5009F5961 /* RNHybirdiOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F433ACBB20E1DFA5009F5961 /* RNHybirdiOSUITests.m */; };
+		F4ACDF4420E2299B00291B66 /* RNPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ACDF4320E2299B00291B66 /* RNPageController.m */; };
+		F4ACDF5E20E37D9B00291B66 /* DataToJSPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ACDF5D20E37D9B00291B66 /* DataToJSPresenter.m */; };
+		F4ACDF6420E3AFEF00291B66 /* JSBridgeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ACDF6220E3AFEF00291B66 /* JSBridgeModule.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F433ACAD20E1DFA5009F5961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F433AC8C20E1DFA5009F5961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F433AC9320E1DFA5009F5961;
+			remoteInfo = RNHybirdiOS;
+		};
+		F433ACB820E1DFA5009F5961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F433AC8C20E1DFA5009F5961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F433AC9320E1DFA5009F5961;
+			remoteInfo = RNHybirdiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5537AE78218A9CCBA6F7B17B /* Pods-RNHybirdiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybirdiOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybirdiOSUITests/Pods-RNHybirdiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8E510FFE3889F225FE355090 /* Pods-RNHybirdiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybirdiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybirdiOSTests/Pods-RNHybirdiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8EF80EBBC108CACA6FFE285F /* libPods-RNHybirdiOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNHybirdiOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B948EFA31B66ED841BCBD078 /* Pods-RNHybirdiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybirdiOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybirdiOSUITests/Pods-RNHybirdiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB2FB891003AFED2EF67BB89 /* Pods-RNHybirdiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybirdiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybirdiOS/Pods-RNHybirdiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BDDB1690D696B10094BE2EF9 /* Pods-RNHybirdiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybirdiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybirdiOSTests/Pods-RNHybirdiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C32E9C61EB14F760DB5538BA /* Pods-RNHybirdiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybirdiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybirdiOS/Pods-RNHybirdiOS.release.xcconfig"; sourceTree = "<group>"; };
+		E491CDB38340EA32AF25E2D4 /* libPods-RNHybirdiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNHybirdiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F433AC9420E1DFA5009F5961 /* RNHybirdiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNHybirdiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F433AC9720E1DFA5009F5961 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F433AC9820E1DFA5009F5961 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F433AC9A20E1DFA5009F5961 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F433AC9B20E1DFA5009F5961 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F433AC9E20E1DFA5009F5961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F433ACA020E1DFA5009F5961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F433ACA320E1DFA5009F5961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F433ACA520E1DFA5009F5961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F433ACA620E1DFA5009F5961 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F433ACAC20E1DFA5009F5961 /* RNHybirdiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNHybirdiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F433ACB020E1DFA5009F5961 /* RNHybirdiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNHybirdiOSTests.m; sourceTree = "<group>"; };
+		F433ACB220E1DFA5009F5961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F433ACB720E1DFA5009F5961 /* RNHybirdiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNHybirdiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F433ACBB20E1DFA5009F5961 /* RNHybirdiOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNHybirdiOSUITests.m; sourceTree = "<group>"; };
+		F433ACBD20E1DFA5009F5961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4ACDF4220E2299B00291B66 /* RNPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPageController.h; sourceTree = "<group>"; };
+		F4ACDF4320E2299B00291B66 /* RNPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPageController.m; sourceTree = "<group>"; };
+		F4ACDF5D20E37D9B00291B66 /* DataToJSPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataToJSPresenter.m; sourceTree = "<group>"; };
+		F4ACDF6120E37DBE00291B66 /* DataToJSPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataToJSPresenter.h; sourceTree = "<group>"; };
+		F4ACDF6220E3AFEF00291B66 /* JSBridgeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridgeModule.m; sourceTree = "<group>"; };
+		F4ACDF6320E3AFEF00291B66 /* JSBridgeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridgeModule.h; sourceTree = "<group>"; };
+		FF19BB4073578CDD1000E370 /* libPods-RNHybirdiOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNHybirdiOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F433AC9120E1DFA5009F5961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				077CB49F73193AEC845C2678 /* libPods-RNHybirdiOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F433ACA920E1DFA5009F5961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A047D3C4AC9A3AC21FB5314 /* libPods-RNHybirdiOSTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F433ACB420E1DFA5009F5961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFA36BB83F5084AAB9B9C69 /* libPods-RNHybirdiOSUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B54E55CC736F3CB6B4BA71D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E491CDB38340EA32AF25E2D4 /* libPods-RNHybirdiOS.a */,
+				8EF80EBBC108CACA6FFE285F /* libPods-RNHybirdiOSTests.a */,
+				FF19BB4073578CDD1000E370 /* libPods-RNHybirdiOSUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F433AC8B20E1DFA4009F5961 = {
+			isa = PBXGroup;
+			children = (
+				F433AC9620E1DFA5009F5961 /* RNHybirdiOS */,
+				F433ACAF20E1DFA5009F5961 /* RNHybirdiOSTests */,
+				F433ACBA20E1DFA5009F5961 /* RNHybirdiOSUITests */,
+				F433AC9520E1DFA5009F5961 /* Products */,
+				F9330A67D154C2944403B4CE /* Pods */,
+				B54E55CC736F3CB6B4BA71D7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F433AC9520E1DFA5009F5961 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F433AC9420E1DFA5009F5961 /* RNHybirdiOS.app */,
+				F433ACAC20E1DFA5009F5961 /* RNHybirdiOSTests.xctest */,
+				F433ACB720E1DFA5009F5961 /* RNHybirdiOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F433AC9620E1DFA5009F5961 /* RNHybirdiOS */ = {
+			isa = PBXGroup;
+			children = (
+				F4ACDF6220E3AFEF00291B66 /* JSBridgeModule.m */,
+				F4ACDF6320E3AFEF00291B66 /* JSBridgeModule.h */,
+				F433AC9720E1DFA5009F5961 /* AppDelegate.h */,
+				F433AC9820E1DFA5009F5961 /* AppDelegate.m */,
+				F433AC9A20E1DFA5009F5961 /* ViewController.h */,
+				F433AC9B20E1DFA5009F5961 /* ViewController.m */,
+				F4ACDF4220E2299B00291B66 /* RNPageController.h */,
+				F4ACDF4320E2299B00291B66 /* RNPageController.m */,
+				F433AC9D20E1DFA5009F5961 /* Main.storyboard */,
+				F433ACA020E1DFA5009F5961 /* Assets.xcassets */,
+				F433ACA220E1DFA5009F5961 /* LaunchScreen.storyboard */,
+				F433ACA520E1DFA5009F5961 /* Info.plist */,
+				F433ACA620E1DFA5009F5961 /* main.m */,
+				F4ACDF5D20E37D9B00291B66 /* DataToJSPresenter.m */,
+				F4ACDF6120E37DBE00291B66 /* DataToJSPresenter.h */,
+			);
+			path = RNHybirdiOS;
+			sourceTree = "<group>";
+		};
+		F433ACAF20E1DFA5009F5961 /* RNHybirdiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				F433ACB020E1DFA5009F5961 /* RNHybirdiOSTests.m */,
+				F433ACB220E1DFA5009F5961 /* Info.plist */,
+			);
+			path = RNHybirdiOSTests;
+			sourceTree = "<group>";
+		};
+		F433ACBA20E1DFA5009F5961 /* RNHybirdiOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F433ACBB20E1DFA5009F5961 /* RNHybirdiOSUITests.m */,
+				F433ACBD20E1DFA5009F5961 /* Info.plist */,
+			);
+			path = RNHybirdiOSUITests;
+			sourceTree = "<group>";
+		};
+		F9330A67D154C2944403B4CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB2FB891003AFED2EF67BB89 /* Pods-RNHybirdiOS.debug.xcconfig */,
+				C32E9C61EB14F760DB5538BA /* Pods-RNHybirdiOS.release.xcconfig */,
+				BDDB1690D696B10094BE2EF9 /* Pods-RNHybirdiOSTests.debug.xcconfig */,
+				8E510FFE3889F225FE355090 /* Pods-RNHybirdiOSTests.release.xcconfig */,
+				B948EFA31B66ED841BCBD078 /* Pods-RNHybirdiOSUITests.debug.xcconfig */,
+				5537AE78218A9CCBA6F7B17B /* Pods-RNHybirdiOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F433AC9320E1DFA5009F5961 /* RNHybirdiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F433ACC020E1DFA5009F5961 /* Build configuration list for PBXNativeTarget "RNHybirdiOS" */;
+			buildPhases = (
+				087DBBF1AE3033B7D33E5E08 /* [CP] Check Pods Manifest.lock */,
+				F433AC9020E1DFA5009F5961 /* Sources */,
+				F433AC9120E1DFA5009F5961 /* Frameworks */,
+				F433AC9220E1DFA5009F5961 /* Resources */,
+				B49002CA05BE1C73E21FC2B6 /* [CP] Embed Pods Frameworks */,
+				4614A96C5CA092614F1D3691 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNHybirdiOS;
+			productName = RNHybirdiOS;
+			productReference = F433AC9420E1DFA5009F5961 /* RNHybirdiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F433ACAB20E1DFA5009F5961 /* RNHybirdiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F433ACC320E1DFA5009F5961 /* Build configuration list for PBXNativeTarget "RNHybirdiOSTests" */;
+			buildPhases = (
+				3FBBB28F2144C4270BC12C79 /* [CP] Check Pods Manifest.lock */,
+				F433ACA820E1DFA5009F5961 /* Sources */,
+				F433ACA920E1DFA5009F5961 /* Frameworks */,
+				F433ACAA20E1DFA5009F5961 /* Resources */,
+				D87835091D239A73CA9E7263 /* [CP] Embed Pods Frameworks */,
+				EF114FB152C172A77B06491D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F433ACAE20E1DFA5009F5961 /* PBXTargetDependency */,
+			);
+			name = RNHybirdiOSTests;
+			productName = RNHybirdiOSTests;
+			productReference = F433ACAC20E1DFA5009F5961 /* RNHybirdiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F433ACB620E1DFA5009F5961 /* RNHybirdiOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F433ACC620E1DFA5009F5961 /* Build configuration list for PBXNativeTarget "RNHybirdiOSUITests" */;
+			buildPhases = (
+				CCE86B455D976EE21CFFE49D /* [CP] Check Pods Manifest.lock */,
+				F433ACB320E1DFA5009F5961 /* Sources */,
+				F433ACB420E1DFA5009F5961 /* Frameworks */,
+				F433ACB520E1DFA5009F5961 /* Resources */,
+				0599A901344AEEAAEB39C0A0 /* [CP] Embed Pods Frameworks */,
+				12CC5F79BDF0951F59B8B021 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F433ACB920E1DFA5009F5961 /* PBXTargetDependency */,
+			);
+			name = RNHybirdiOSUITests;
+			productName = RNHybirdiOSUITests;
+			productReference = F433ACB720E1DFA5009F5961 /* RNHybirdiOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F433AC8C20E1DFA5009F5961 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = devio;
+				TargetAttributes = {
+					F433AC9320E1DFA5009F5961 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					F433ACAB20E1DFA5009F5961 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F433AC9320E1DFA5009F5961;
+					};
+					F433ACB620E1DFA5009F5961 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F433AC9320E1DFA5009F5961;
+					};
+				};
+			};
+			buildConfigurationList = F433AC8F20E1DFA5009F5961 /* Build configuration list for PBXProject "RNHybirdiOS" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F433AC8B20E1DFA4009F5961;
+			productRefGroup = F433AC9520E1DFA5009F5961 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F433AC9320E1DFA5009F5961 /* RNHybirdiOS */,
+				F433ACAB20E1DFA5009F5961 /* RNHybirdiOSTests */,
+				F433ACB620E1DFA5009F5961 /* RNHybirdiOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F433AC9220E1DFA5009F5961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F433ACA420E1DFA5009F5961 /* LaunchScreen.storyboard in Resources */,
+				F433ACA120E1DFA5009F5961 /* Assets.xcassets in Resources */,
+				F433AC9F20E1DFA5009F5961 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F433ACAA20E1DFA5009F5961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F433ACB520E1DFA5009F5961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0599A901344AEEAAEB39C0A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNHybirdiOSUITests/Pods-RNHybirdiOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		087DBBF1AE3033B7D33E5E08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNHybirdiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		12CC5F79BDF0951F59B8B021 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNHybirdiOSUITests/Pods-RNHybirdiOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FBBB28F2144C4270BC12C79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNHybirdiOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4614A96C5CA092614F1D3691 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNHybirdiOS/Pods-RNHybirdiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B49002CA05BE1C73E21FC2B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNHybirdiOS/Pods-RNHybirdiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCE86B455D976EE21CFFE49D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNHybirdiOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D87835091D239A73CA9E7263 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNHybirdiOSTests/Pods-RNHybirdiOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF114FB152C172A77B06491D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNHybirdiOSTests/Pods-RNHybirdiOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F433AC9020E1DFA5009F5961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4ACDF5E20E37D9B00291B66 /* DataToJSPresenter.m in Sources */,
+				F433AC9C20E1DFA5009F5961 /* ViewController.m in Sources */,
+				F4ACDF6420E3AFEF00291B66 /* JSBridgeModule.m in Sources */,
+				F433ACA720E1DFA5009F5961 /* main.m in Sources */,
+				F4ACDF4420E2299B00291B66 /* RNPageController.m in Sources */,
+				F433AC9920E1DFA5009F5961 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F433ACA820E1DFA5009F5961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F433ACB120E1DFA5009F5961 /* RNHybirdiOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F433ACB320E1DFA5009F5961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F433ACBC20E1DFA5009F5961 /* RNHybirdiOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F433ACAE20E1DFA5009F5961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F433AC9320E1DFA5009F5961 /* RNHybirdiOS */;
+			targetProxy = F433ACAD20E1DFA5009F5961 /* PBXContainerItemProxy */;
+		};
+		F433ACB920E1DFA5009F5961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F433AC9320E1DFA5009F5961 /* RNHybirdiOS */;
+			targetProxy = F433ACB820E1DFA5009F5961 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F433AC9D20E1DFA5009F5961 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F433AC9E20E1DFA5009F5961 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F433ACA220E1DFA5009F5961 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F433ACA320E1DFA5009F5961 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F433ACBE20E1DFA5009F5961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F433ACBF20E1DFA5009F5961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F433ACC120E1DFA5009F5961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB2FB891003AFED2EF67BB89 /* Pods-RNHybirdiOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RNHybirdiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.devio.RNHybirdiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F433ACC220E1DFA5009F5961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C32E9C61EB14F760DB5538BA /* Pods-RNHybirdiOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RNHybirdiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.devio.RNHybirdiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F433ACC420E1DFA5009F5961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDDB1690D696B10094BE2EF9 /* Pods-RNHybirdiOSTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RNHybirdiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.devio.RNHybirdiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNHybirdiOS.app/RNHybirdiOS";
+			};
+			name = Debug;
+		};
+		F433ACC520E1DFA5009F5961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E510FFE3889F225FE355090 /* Pods-RNHybirdiOSTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RNHybirdiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.devio.RNHybirdiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNHybirdiOS.app/RNHybirdiOS";
+			};
+			name = Release;
+		};
+		F433ACC720E1DFA5009F5961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B948EFA31B66ED841BCBD078 /* Pods-RNHybirdiOSUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RNHybirdiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.devio.RNHybirdiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RNHybirdiOS;
+			};
+			name = Debug;
+		};
+		F433ACC820E1DFA5009F5961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5537AE78218A9CCBA6F7B17B /* Pods-RNHybirdiOSUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RNHybirdiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.devio.RNHybirdiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RNHybirdiOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F433AC8F20E1DFA5009F5961 /* Build configuration list for PBXProject "RNHybirdiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F433ACBE20E1DFA5009F5961 /* Debug */,
+				F433ACBF20E1DFA5009F5961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F433ACC020E1DFA5009F5961 /* Build configuration list for PBXNativeTarget "RNHybirdiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F433ACC120E1DFA5009F5961 /* Debug */,
+				F433ACC220E1DFA5009F5961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F433ACC320E1DFA5009F5961 /* Build configuration list for PBXNativeTarget "RNHybirdiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F433ACC420E1DFA5009F5961 /* Debug */,
+				F433ACC520E1DFA5009F5961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F433ACC620E1DFA5009F5961 /* Build configuration list for PBXNativeTarget "RNHybirdiOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F433ACC720E1DFA5009F5961 /* Debug */,
+				F433ACC820E1DFA5009F5961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F433AC8C20E1DFA5009F5961 /* Project object */;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Github_RN",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "GitHubTrending": "^3.0.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-native": "^0.58.0-rc.1",
+    "react-native-check-box": "^2.1.6",
+    "react-native-code-push": "^5.4.2",
+    "react-native-easy-toast": "^1.1.0",
+    "react-native-event-bus": "^1.0.0",
+    "react-native-gesture-handler": "^1.0.12",
+    "react-native-htmlview": "^0.13.0",
+    "react-native-parallax-scroll-view": "^0.21.3",
+    "react-native-sortable-listview": "^0.2.8",
+    "react-native-splash-screen": "^3.1.1",
+    "react-native-vector-icons": "^6.0.2",
+    "react-native-webview": "^2.14.0",
+    "react-navigation": "^3.0.9",
+    "react-navigation-redux-helpers": "^2.0.9",
+    "react-navigation-tabs": "^1.0.2",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.50.0",
+    "react-test-renderer": "16.6.3",
+    "redux-devtools": "^3.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
