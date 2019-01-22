@@ -1,18 +1,20 @@
 <template>
   <div>
     <header class="flex justify-between items-center a-px-md header">
-      <nuxt-link to='/'>AG Studio</nuxt-link>
+      <div>
+        AG Studio
+      </div>
       <div class="menus">
-        <nuxt-link class="menu a-ml-md" to="/">
+        <nuxt-link class="menu" to="/" exact>
           Home
         </nuxt-link>
-        <nuxt-link class="menu a-ml-md" to="/projects">
+        <nuxt-link class="menu" to="/projects">
           Projects
         </nuxt-link>
-        <nuxt-link class="menu a-ml-md" to="/about">
+        <nuxt-link class="menu" to="/about">
           About
         </nuxt-link>
-        <nuxt-link class="menu a-ml-md" to="/contact">
+        <nuxt-link class="menu" to="/contact">
           Contact
         </nuxt-link>
       </div>
@@ -42,6 +44,7 @@ export default {
   height $menuHeight
   background white
 .menus
-  menu
-    color #FFF !important
+  .menu
+    padding 0px 10px
+    text-align center
 </style>

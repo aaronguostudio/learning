@@ -11,5 +11,7 @@ module.exports = {
     '@nuxtjs'
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'vue/singleline-html-element-content-newline': false
+  }
 }

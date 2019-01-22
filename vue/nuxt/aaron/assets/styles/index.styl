@@ -7,3 +7,15 @@
 .a-banner
   height 400px
   background-color: $light
+.nuxt-link-active
+  position relative
+  color $primary
+  font-weight 600
+  &:after
+    position absolute
+    left 7px
+    bottom: -3px
+    content ''
+    width calc(100% - 16px)
+    height 2px
+    background-color: $primary
