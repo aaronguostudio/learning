@@ -4,8 +4,8 @@ const withStylus = require('@zeit/next-stylus')
 const poststylus = require('poststylus')
 const autoprefixer = require('autoprefixer')
 
-const widthStylus = require('@zeit/next-stylus')
-module.exports = widthStylus({
+module.exports = withStylus({
+  cssModules: true,
   stylusLoaderOptions: {
     use: [
       nib(),

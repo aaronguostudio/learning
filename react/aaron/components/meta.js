@@ -1,5 +1,4 @@
 import Head from 'next/head' // global header
-import "../styles/index.styl" // global styles
 
 export default () => (
   <div>
@@ -10,6 +9,7 @@ export default () => (
         content="initial-scale=1.0, width=device-width"
         key="viewport"
       />
+      <link href="/static/index.css" />
     </Head>
   </div>
 )
