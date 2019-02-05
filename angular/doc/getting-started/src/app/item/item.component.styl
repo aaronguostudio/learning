@@ -1,0 +1,45 @@
+.item
+  display: flex
+  position relative
+  border-bottom: 1px solid #e8e8e8
+  min-height: 30px
+  margin-top: 30px
+  padding 10px 0
+  padding-bottom: 20px
+  &:hover
+    .title
+      color blue
+    &:after
+      content: ''
+      position absolute
+      top 12px
+      left -16px
+      width 2px
+      height 20px
+      background blue
+      border-radius: 2px
+  .left
+    flex: 1
+    padding-right 30px
+  .right
+    display flex
+    flex-direction: column
+
+.title
+  width: 100%
+  margin-top: 6px
+  font-size: 20px
+  font-weight: 700
+.date
+  font-size: 14px
+  color: #a8a8a8
+
+.details
+  margin-top: 15px
+  font-size: 16px
+
+.action-container
+  margin-top: 28px
+
+.delete
+  margin-top: 10px
