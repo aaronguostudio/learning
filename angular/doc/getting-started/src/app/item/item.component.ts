@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from '../models/item'
+import { Item } from '../models/item';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-item',
@@ -8,14 +9,9 @@ import { Item } from '../models/item'
 })
 export class ItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private messageService: MessageService) {
 
-  // item: Item = {
-  //   id: '1',
-  //   title: 'test',
-  //   details: 'lorem',
-  //   date: '20190205',
-  // }
+  }
 
   @Input() item: Item;
 
@@ -23,11 +19,11 @@ export class ItemComponent implements OnInit {
   }
 
   onDone (item: Item): void {
-    alert(1)
+    this.messageService.add(`${item.title} is done`)
   }
 
   onDelete (item: Item): void {
-    alert(2)
+    this.messageService.add('Done')
   }
 
 }

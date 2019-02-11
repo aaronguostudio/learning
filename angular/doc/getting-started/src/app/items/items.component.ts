@@ -17,12 +17,12 @@ export class ItemsComponent implements OnInit {
   items: Item[];
   
   ngOnInit() {
-    this.getItems()
+    this.getItems();
   }
 
   getItems(): void {
-    this.items = this.itemService.getItems();
-    console.log('> this.items', this.items)
+    this.itemService.getItems()
+      .subscribe(items => this.items = items);
   }
 
 }
