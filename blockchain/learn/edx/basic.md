@@ -1,4 +1,4 @@
-## Key concept
+## Key concepts
 - Block Chain
 - Transaction
 - Peer-to-Peer Network Architecture
