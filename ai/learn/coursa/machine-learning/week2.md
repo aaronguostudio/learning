@@ -89,6 +89,7 @@ sum(A, 2)
 A = magix(9)
 flipud(eye(9))
 
+temp = pinv(A)
 
 
 
