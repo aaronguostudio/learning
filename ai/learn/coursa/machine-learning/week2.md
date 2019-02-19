@@ -92,6 +92,61 @@ flipud(eye(9))
 temp = pinv(A)
 
 
+# Plot
+
+t = [0:0.01:1]
+y1 = sin(t)
+y2 = sin(t)
+plot(t, y1)
+hold on;
+plot(t, y2, 'r')  // r is red
+
+xlabel('time')
+ylabel('value')
+legend('sin', 'cos')
+title('my plot')
+print -dpng 'myplot.png'
+
+close
+
+figure(1); plot(t, y1);
+figure(2); plot(t, y2);
+subplot(1, 2, 1); %divide by 2 and how 1
+
+axis([0.5 1 -1 1])  // x and y steps
+
+imagesc(magic(50)), colorbar, colormap, gray;  // chain function
+
+# Conditions and For
+
+v=zeros(10, 1)
+for i=1:10,
+  v(i)=2^i;
+end;
+
+dindices=1:10;
+
+while i<=5,
+  v(i) = 100;
+  i = i+1;
+end;
+
+while true;
+  v(i)=999;
+  i = i+1
+  if i == 6,
+    break;
+  end;
+end;
+
+<!-- self defined functions, refer to this folder -->
+
+
+<!-- 假设一个学习数据 -->
+x = [1 1; 1 2; 1 3]
+y = [1; 2; 3]
+
+
 
 
 
