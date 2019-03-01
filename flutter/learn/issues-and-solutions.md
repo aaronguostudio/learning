@@ -5,3 +5,6 @@
 
 ## iphone can not start the app and show not trust
 - open general->deveices->trust can enable the app
+
+## Build failed and mention need to select team
+- open Runner.xcodeproj, select runner root folder, select team or check bundler
