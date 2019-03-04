@@ -9,12 +9,13 @@
 
 
 # Asp.net core MVP
-- Data Migration
-Add-Migration Initial
-Update-Database
+- Data Migration, Eneity Framework Core Migrations Feature
+- Tools > NuGet Package Manager
+    - Add-Migration Initial
+    - Update-Database
 
 - SQL Server Object Explorer
 Visual Studio > View > SQL Server Object Explorer
 
-<!-- Start from here: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/controller-methods-views?view=aspnetcore-2.2 -->
+<!-- Start from here: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/search?view=aspnetcore-2.2 -->
 
