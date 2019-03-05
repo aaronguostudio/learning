@@ -5,7 +5,7 @@ class LinearRegression:
   def __init__(self):
     self.coef_ = None
     self.interception_ = None
-    self._theta_ = None
+    self._theta = None
 
   # normal equiation
   def fit_normal(self, X_train, y_train):
