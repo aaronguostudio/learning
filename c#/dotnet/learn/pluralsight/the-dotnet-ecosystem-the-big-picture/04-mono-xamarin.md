@@ -1,5 +1,5 @@
 - Mono runtime make C# working iOS, Mac OS and Android
-- self-contained
+- self-contained 
 
 # Create Project
 - need Xamarin as workload
