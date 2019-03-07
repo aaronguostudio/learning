@@ -1,0 +1,4 @@
+# MSBuild
+- .sln
+- .csproj
+- .vbproj
