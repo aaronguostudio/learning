@@ -6,8 +6,9 @@ var VSHADER_SOURCE, FSHADER_SOURCE
 
 VSHADER_SOURCE =
   'attribute vec4 a_Position;\n' + 
+  'uniform mat4 u_ModelMatrix;\n' +
   'void main () {\n' + 
-  'gl_Position = a_Position;\n' +
+  'gl_Position = u_ModelMatrix * a_Position;\n' +
   '}\n'
 
 FSHADER_SOURCE =
@@ -44,8 +45,10 @@ gl.program = program
 
 function initVertexBuffers (gl) {
   var vertices = new Float32Array([
-    0, 0.5, -0.5, -0.5, 0.5, -0.5
+    -1, 1, -1, -1, 1, -1
   ])
+
+  // get three times from vertices array
   var n = 3
   var vertexBuffer = gl.createBuffer()
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer)
@@ -64,9 +67,15 @@ var n = initVertexBuffers(gl)
 
 gl.clearColor(0, 0, 0, 1)
 
+var u_ModelMatrix = gl.getUniformLocation(gl.program, 'u_ModelMatrix')
+var modelMatrix = new Matrix4()
+modelMatrix.setRotate(75, 0, 1, 0)
+gl.uniformMatrix4fv(u_ModelMatrix, false, modelMatrix.elements)
+
 // clear canvas and add bg color
 function draw() {
   gl.clear(gl.COLOR_BUFFER_BIT)
+  // mode, first, count
   gl.drawArrays(gl.TRIANGLES, 0, n)
 }
 
