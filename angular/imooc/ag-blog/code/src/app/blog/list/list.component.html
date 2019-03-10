@@ -1,0 +1,20 @@
+<div class="a-pa-md">
+  <div>Filtered By: {{_filter | uppercase | convertToSpaces: '-'}}</div>
+  <input
+    style="margin-top: 10px;"
+    typr="text"
+    [(ngModel)]="filter"
+  />
+</div>
+<div class="list flex full-width">
+  <div
+    class="a-pa-md list-item"
+    *ngFor="let b of filteredBlogs"
+  >
+    <app-list-item [item]="b">
+    </app-list-item>
+  </div>
+</div>
+<!-- <button mat-fab>
+  <mat-icon>add</mat-icon>
+</button> -->

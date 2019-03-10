@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{item.title}}
+    </mat-card-title>
+  </mat-card-header>
+  <img
+    class="full-width"
+    alt="Cover Image"
+    mat-card-image
+    [src]="item.coverImg"
+  >
+  <mat-card-content>
+    {{item.desc}}
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <div class="flex-center a-pa-md">
+        <button
+          [routerLink]="item.path"
+          mat-stroked-button
+        >Details</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

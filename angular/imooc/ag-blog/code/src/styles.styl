@@ -1,0 +1,54 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// global reset
+html, body, app-root, .site
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  min-width: 320px
+  max-width: 2600px
+  margin-left: auto
+  margin-right: auto
+
+.active
+  position relative
+  &:before
+    content: ''
+    position absolute
+    right 0
+    width 2px
+    height 100%
+    background-color #3f51b5
+
+.site
+  display flex
+  flex-direction: column
+
+.site-name
+  margin-left: 15px
+.main
+  flex: 1
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  .sidebar
+    width: 240px
+  .content
+    padding: 20px
+
+
+// common styles
+// layout
+.flex
+  display: flex
+.flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+.full-width
+  width: 100%
+
+.a-pa-md
+  padding: 10px
