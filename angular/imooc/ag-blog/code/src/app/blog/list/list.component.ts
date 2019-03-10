@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from 'src/app/domain/blog.model';
 import { BlogService } from '../blog.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -12,6 +13,7 @@ export class ListComponent implements OnInit {
   blogs: Blog[] = [];
   filteredBlogs: Blog[];
   _filter: string;
+  category: string;
   errorMessage: string;
 
   get filter(): string {
@@ -28,10 +30,15 @@ export class ListComponent implements OnInit {
     return this.blogs.filter((b: Blog) => b.title.toLowerCase().indexOf(filter) !== -1);
   }
 
-  constructor(private blogService: BlogService) {
+  constructor(
+    private blogService: BlogService,
+    private route: ActivatedRoute
+  ) {
   }
 
   ngOnInit() {
+    this.category = this.route.snapshot.paramMap.get('category')
+    console.log('>', this.category)
     this.blogService.getBlogs().subscribe(
       blogs => {
         this.blogs = blogs;

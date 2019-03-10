@@ -2,7 +2,7 @@ import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { LoginComponent } from '../login/login/login.component';
+// import { LoginComponent } from '../login/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DomSanitizer } from '@angular/platform-browser';
@@ -12,7 +12,7 @@ import { loadSvgResources } from '../utils/svg.util';
 import { SharedModule } from '../shared/shared.module.ts';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, LoginComponent],
+  declarations: [HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
     HttpClientModule,
     SharedModule,
@@ -21,7 +21,7 @@ import { SharedModule } from '../shared/shared.module.ts';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    LoginComponent,
+    // LoginComponent,
   ]
 })
 export class CoreModule {

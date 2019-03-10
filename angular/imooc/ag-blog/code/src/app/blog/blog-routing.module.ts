@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ListComponent } from './list/list.component';
 import { ContentComponent } from './content/content.component';
+import { ContentGuard } from './content/content.guard';
 
 const routes: Routes = [
   {
@@ -10,6 +11,7 @@ const routes: Routes = [
   },
   {
     path: ':category/:id',
+    canActivate: [ ContentGuard ],
     component: ContentComponent
   }
 ];
