@@ -31,6 +31,126 @@ export class TaskHomeComponent implements OnInit {
             avatar: ''
           },
           dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
+        },
+        {
+          id: 2,
+          desc: 'Task 2: Learn Java',
+          owner: {
+            id: 1,
+            name: 'Alex',
+            avatar: ''
+          },
+          dueDate: new Date(),
         }
       ]
     },
@@ -61,7 +181,7 @@ export class TaskHomeComponent implements OnInit {
       ]
     },
     {
-      id: 2,
+      id: 3,
       name: 'Completed',
       tasks: [
         {

@@ -1,31 +1,31 @@
-<div mat-subheader>
-  <div>
-    <h3>{{header}}</h3>
-  </div>
-  <div>
-    <button mat-button>
-      <mat-icon>add_circle_outline</mat-icon>
-      <span>New Task</span>
-    </button>
-  </div>
-  <div>
-    <!-- <button mat-icon-button [matMenuTriggerFor]='menu'>
-      <mat-icon>keyboard_arrow_down</mat-icon>
+<div
+  class="flex between items-center header"
+>
+  <div>{{header}}</div>
+  <!-- <div> -->
+    <!-- <button mat-button>
+      <mat-icon style="margin-right: 10px;">add_circle_outline</mat-icon>
+      <span>New</span>
     </button> -->
+  <!-- </div> -->
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]='menu'>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
   </div>
 </div>
 
-<!-- <mat-menu #menu="matMenu">
+<mat-menu #menu="matMenu">
   <button mat-menu-item>
-    <md-icon>mode_edit</md-icon>
+    <mat-icon>mode_edit</mat-icon>
     <span>Edit List Name</span>
   </button>
   <button mat-menu-item>
-    <md-icon [svgIcon]="'move'"></md-icon>
+    <mat-icon [svgIcon]="'move'"></mat-icon>
     <span>Move List</span>
   </button>
   <button mat-menu-item>
-    <md-icon>delete_forever</md-icon>
+    <mat-icon>delete_forever</mat-icon>
     <span>Delete List</span>
   </button>
-</mat-menu> -->
+</mat-menu>
