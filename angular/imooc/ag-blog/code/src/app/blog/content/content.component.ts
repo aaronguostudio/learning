@@ -19,7 +19,7 @@ export class ContentComponent implements OnInit {
   }
 
   onBack():void {
-    this.router.navigate(['/programming']);
+    this.router.navigate(['/blog/programming']);
   }
 
 }

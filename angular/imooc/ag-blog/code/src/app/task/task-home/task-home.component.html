@@ -1,0 +1,17 @@
+<div class="list-container">
+  <app-task-list
+    *ngFor="let l of lists"
+  >
+    <app-task-header></app-task-header>
+    <app-task-item
+      *ngFor="let t of l.tasks"
+    >
+    </app-task-item>
+  </app-task-list>
+</div>
+<button
+  class="add-new"
+  mat-fab
+>
+  <mat-icon>add</mat-icon>
+</button>

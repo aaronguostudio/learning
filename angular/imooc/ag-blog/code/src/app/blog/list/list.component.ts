@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Blog } from 'src/app/domain/blog.model';
 import { BlogService } from '../blog.service';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { NewBlogComponent } from '../new-blog/new-blog.component';
 
 @Component({
   selector: 'app-list',
@@ -31,6 +33,7 @@ export class ListComponent implements OnInit {
   }
 
   constructor(
+    public dialog: MatDialog,
     private blogService: BlogService,
     private route: ActivatedRoute
   ) {
@@ -38,7 +41,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.category = this.route.snapshot.paramMap.get('category')
-    console.log('>', this.category)
+    // console.log('>', this.category)
     this.blogService.getBlogs().subscribe(
       blogs => {
         this.blogs = blogs;
@@ -47,6 +50,22 @@ export class ListComponent implements OnInit {
       // convert the error to any types
       error => this.errorMessage = error as any
     );
+  }
+  // displayWithBlog can also accept object
+  diaplayWithBlog(blogTitle: string) {
+    return blogTitle;
+  }
+
+  openNewBlogDialog() {
+    const dialogRef = this.dialog.open(NewBlogComponent, {
+      disableClose: true,
+      data: {
+        title: 'test'
+      }
+    });
+    dialogRef.afterClosed().subscribe(res => {
+      console.log('>', res)
+    })
   }
 
 }

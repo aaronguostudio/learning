@@ -1,11 +1,29 @@
-<h2 class="a-pa-md">{{category | uppercase}}</h2>
-<div class="a-pa-md">
-  <div>Filtered By: {{_filter | uppercase | convertToSpaces: '-'}}</div>
-  <input
-    style="margin-top: 10px;"
-    typr="text"
-    [(ngModel)]="filter"
-  />
+<div class="a-pa-md title">{{category | uppercase}}</div>
+<div class="a-pa-md flex-center full-width">
+  <mat-form-field
+    class="full-width"
+    style="max-width: 600px;"
+  >
+    <input
+      matInput
+      aria-label="Filter"
+      placeholder="Filter"
+      [(ngModel)]="filter"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="diaplayWithBlog"
+    >
+      <mat-option
+        *ngFor="let b of filteredBlogs"
+        [value]="b.title"
+      >
+        {{b.title}}
+      </mat-option>
+    </mat-autocomplete>
+    <!-- <mat-hint>Filtered By: {{_filter | lowercase | convertToSpaces: '-'}}</mat-hint> -->
+  </mat-form-field>
 </div>
 <div class="list flex full-width">
   <div
@@ -16,6 +34,13 @@
     </app-list-item>
   </div>
 </div>
-<!-- <button mat-fab>
+<div *ngIf="filteredBlogs && filteredBlogs.length <= 0">
+  Empty
+</div>
+<button
+  class="add-new"
+  mat-fab
+  (click)="openNewBlogDialog()"
+>
   <mat-icon>add</mat-icon>
-</button> -->
+</button>

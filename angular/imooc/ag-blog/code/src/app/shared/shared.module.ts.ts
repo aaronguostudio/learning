@@ -11,6 +11,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatMenuModule } from '@angular/material/menu';
 
 // shared_module imports and exports shared modules
 
@@ -28,6 +31,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatListModule,
     MatCardModule,
     MatDividerModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatMenuModule,
   ],
   exports: [
     CommonModule,
@@ -36,9 +42,13 @@ import { MatDividerModule } from '@angular/material/divider';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatListModule,
     MatInputModule,
     MatCardModule,
     MatDividerModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatMenuModule,
   ]
 })
 export class SharedModule { }

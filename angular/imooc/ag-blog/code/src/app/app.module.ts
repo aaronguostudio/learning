@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlogModule } from './blog/blog.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TaskModule } from './task/task.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatButtonModule,
     MatIconModule,
     BlogModule,
+    TaskModule,
     AppRoutingModule,  // at last
   ],
   providers: [],

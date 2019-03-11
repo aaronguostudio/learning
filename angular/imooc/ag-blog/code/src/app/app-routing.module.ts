@@ -5,7 +5,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/programming',
+    redirectTo: '/blog/programming',
+    pathMatch: 'full'
+  },
+  {
+    path: 'task',
+    redirectTo: '/task',
     pathMatch: 'full'
   },
   {

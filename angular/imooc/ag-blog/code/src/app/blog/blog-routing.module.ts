@@ -6,11 +6,11 @@ import { ContentGuard } from './content/content.guard';
 
 const routes: Routes = [
   {
-    path: ':category',
+    path: 'blog/:category',
     component: ListComponent
   },
   {
-    path: ':category/:id',
+    path: 'blog/:category/:id',
     canActivate: [ ContentGuard ],
     component: ContentComponent
   }
