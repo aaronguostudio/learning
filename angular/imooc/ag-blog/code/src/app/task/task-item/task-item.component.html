@@ -1,3 +1,19 @@
-<mat-card class="card">
-  task-item works!
+<mat-card
+  class="card"
+  [ngClass]="{
+    'priority-normal': item.priority === 3,
+    'priority-important': item.priority === 2,
+    'priority-emergancy': item.priority === 1
+  }"
+>
+  <mat-list-item>
+    <mat-checkbox [checked]="item.complete"></mat-checkbox>
+    <div class="content">
+      {{item.desc}}
+    </div>
+    <div class="bottom-bar" *ngIf="item.dueDate">
+      {{item.dueDate | date: "yy-MM-dd"}}
+    </div>
+    <mat-icon *ngIf="item.reminder">alarm</mat-icon>
+  </mat-list-item>
 </mat-card>

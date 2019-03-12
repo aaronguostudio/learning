@@ -1,0 +1,52 @@
+<form>
+    <h2 mat-dialog-title>test</h2>
+    <div mat-dialog-content>
+      <p>T</p>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Title"
+        />
+      </mat-form-field>
+      <mat-radio-group>
+        <mat-radio-button
+          *ngFor="let priority of priorities"
+          [value]="priority.value"
+        >
+          {{priority.label}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="dueDatepicker"
+          placeholder="Choose a date"
+        >
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="dueDatepicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker
+          #dueDatepicker
+        ></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="reminderDatepicker"
+          placeholder="Choose a date"
+        >
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="reminderDatepicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker
+          #reminderDatepicker
+        ></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-stroked-button>No Thanks</button>
+      <button mat-stroked-button (click)="onSave()">Save</button>
+    </div>
+  </form>

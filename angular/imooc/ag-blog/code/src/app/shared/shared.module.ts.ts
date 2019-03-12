@@ -14,6 +14,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // shared_module imports and exports shared modules
 
@@ -34,6 +38,10 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDialogModule,
     MatAutocompleteModule,
     MatMenuModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   exports: [
     CommonModule,
@@ -49,6 +57,10 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDialogModule,
     MatAutocompleteModule,
     MatMenuModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ]
 })
 export class SharedModule { }

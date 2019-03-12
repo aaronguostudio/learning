@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NewTaskComponent } from '../new-task/new-task.component';
 
 @Component({
   selector: 'app-task-home',
@@ -15,142 +17,171 @@ export class TaskHomeComponent implements OnInit {
         {
           id: 1,
           desc: 'Task 1: Learn Angular',
+          completed: true,
           owner: {
             id: 1,
             name: 'Aaron',
             avatar: ''
           },
           dueDate: new Date(),
+          reminder: true,
+          priority: 1,
         },
         {
           id: 2,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 2,
         },
         {
-          id: 2,
+          id: 3,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 4,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 5,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 6,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 7,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 8,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 9,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 10,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 11,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 12,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 13,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         },
         {
-          id: 2,
+          id: 14,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 3,
         }
       ]
     },
@@ -161,22 +192,26 @@ export class TaskHomeComponent implements OnInit {
         {
           id: 1,
           desc: 'Task 1: Learn Angular',
+          completed: false,
           owner: {
             id: 1,
             name: 'Aaron',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 1,
         },
         {
           id: 2,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 2,
         }
       ]
     },
@@ -187,30 +222,38 @@ export class TaskHomeComponent implements OnInit {
         {
           id: 1,
           desc: 'Task 1: Learn Angular',
+          completed: false,
           owner: {
             id: 1,
             name: 'Aaron',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 1,
         },
         {
           id: 2,
           desc: 'Task 2: Learn Java',
+          completed: false,
           owner: {
             id: 1,
             name: 'Alex',
             avatar: ''
           },
           dueDate: new Date(),
+          priority: 2,
         }
       ]
     }
   ]
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  launchNewTaskDialog() {
+    this.dialog.open(NewTaskComponent);
   }
 
 }
