@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\code\\a-lib\\c#\\dotnet\\learn\\pluralsight\\building-apps-with-aspnet-mvc-4\\code\\OdeToFood\\OdeToFood\\OdeToFood.csproj",
+  "TargetFramework": "v4.6.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

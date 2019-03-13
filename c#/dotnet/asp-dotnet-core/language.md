@@ -1,0 +1,11 @@
+# Actions typically return an ActionResult
+- ContentResult
+- EmptyResult
+- FileContentResult / FilePathResult / FileStreamResult
+- HttpUnauthorizedResult
+- JavaScriptResult
+- JsonResult
+- RedirectResult
+- RedirectToRouteResult
+- ViewResult
+- PartialViewResult
