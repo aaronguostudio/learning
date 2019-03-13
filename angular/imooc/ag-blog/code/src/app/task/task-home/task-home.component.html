@@ -5,10 +5,14 @@
     <app-task-header
       [header]="l.name"
       (newTask)="launchNewTaskDialog()"
+      (editTaskListName)="launchEditTaskListNameDialog()"
+      (moveTask)="launchMoveTaskDialog()"
+      (deleteTask)="launchDeleteTaskDialoa()"
     ></app-task-header>
     <app-task-item
       *ngFor="let t of l.tasks"
       [item]="t"
+      (editTaskItem)="launchUpdateTaskDialog(t)"
     >
     </app-task-item>
   </app-task-list>
@@ -16,6 +20,7 @@
 <button
   class="add-new"
   mat-fab
+  (click)="onAddListClick()"
 >
   <mat-icon>add</mat-icon>
 </button>

@@ -1,13 +1,14 @@
 <form>
-  <h2 tx-center mat-dialog-title>New Task</h2>
+  <h2 class="title" mat-dialog-title>{{title}}</h2>
   <div mat-dialog-content>
-    <p>Task Title</p>
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Title"
-      />
-    </mat-form-field>
+    <div class="column">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Task List Name"
+        />
+      </mat-form-field>
+    </div>
   </div>
   <div class="flex-center" mat-dialog-actions>
     <button mat-stroked-button>No Thanks</button>

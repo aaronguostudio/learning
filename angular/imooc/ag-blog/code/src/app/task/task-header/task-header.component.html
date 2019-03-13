@@ -5,7 +5,7 @@
     <span>{{header}}</span>
     <button
       mat-icon-button
-      style="margin-right: 15px;"
+      style="margin-left: 10px;"
       (click)="onNewTaskClick()"
     >
       <mat-icon>add_circle_outline</mat-icon>
@@ -19,15 +19,24 @@
 </div>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
+  <button
+    mat-menu-item
+    (click)="onEditTaskListName()"
+  >
     <mat-icon>mode_edit</mat-icon>
     <span>Edit List Name</span>
   </button>
-  <button mat-menu-item>
+  <button
+    mat-menu-item
+    (click)="onMoveTaskClick()"
+  >
     <mat-icon [svgIcon]="'move'"></mat-icon>
     <span>Move List</span>
   </button>
-  <button mat-menu-item>
+  <button
+    mat-menu-item
+    (click)="onDeleteClick()"
+  >
     <mat-icon>delete_forever</mat-icon>
     <span>Delete List</span>
   </button>

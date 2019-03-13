@@ -5,3 +5,4 @@
 - ng g m module-name --flat -m app
 - ng g g directory/name
 - ng build --prod
+- ng g c -it -is     // inline-template and inline-style

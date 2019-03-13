@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NewTaskComponent } from '../new-task/new-task.component';
+import { CopyTaskComponent } from '../copy-task/copy-task.component';
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { NewTaskListComponent } from '../new-task-list/new-task-list.component';
 
 @Component({
   selector: 'app-task-home',
@@ -247,13 +250,59 @@ export class TaskHomeComponent implements OnInit {
     }
   ]
 
-  constructor(private dialog: MatDialog) { }
+  constructor(
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit() {
   }
 
   launchNewTaskDialog() {
-    this.dialog.open(NewTaskComponent);
+    this.dialog.open(NewTaskComponent, {
+      data: {
+        title: 'New Task'
+      }
+    });
+  }
+
+  launchEditTaskListNameDialog() {
+    this.dialog.open(NewTaskListComponent, {
+      data: {
+        title: 'Edit List Name'
+      }
+    })
+  }
+
+  launchMoveTaskDialog() {
+    this.dialog.open(CopyTaskComponent, {data: {
+      lists: this.lists
+    }});
+  }
+
+  launchUpdateTaskDialog(task) {
+    this.dialog.open(NewTaskComponent, {
+      data: {
+        title: 'Update Task',
+        task
+      }
+    });
+  }
+
+  launchDeleteTaskDialoa() {
+    this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        title: 'Delete List',
+        content: 'Are you sure to delete this task?'
+      }
+    })
+  }
+
+  onAddListClick () {
+    this.dialog.open(NewTaskListComponent, {
+      data: {
+        title: 'New Task List'
+      }
+    })
   }
 
 }

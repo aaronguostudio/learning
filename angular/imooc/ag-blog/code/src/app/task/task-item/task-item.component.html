@@ -5,15 +5,23 @@
     'priority-important': item.priority === 2,
     'priority-emergancy': item.priority === 1
   }"
+  (click)="onTaskItemClick()"
 >
   <mat-list-item>
-    <mat-checkbox [checked]="item.complete"></mat-checkbox>
-    <div class="content">
-      {{item.desc}}
+    <div class="flex">
+      <mat-checkbox
+        [checked]="item.complete"
+        (click)="onCheckBoxClick($event)"
+      ></mat-checkbox>
+      <div class="a-ml-md">
+        <div class="content">
+          {{item.desc}}
+        </div>
+        <div class="bottom-bar a-mt-sm text-grey" *ngIf="item.dueDate">
+          {{item.dueDate | date: "yyyy-MM-dd"}}
+        </div>
+        <!-- <mat-icon *ngIf="item.reminder">alarm</mat-icon> -->
+      </div>
     </div>
-    <div class="bottom-bar" *ngIf="item.dueDate">
-      {{item.dueDate | date: "yy-MM-dd"}}
-    </div>
-    <mat-icon *ngIf="item.reminder">alarm</mat-icon>
   </mat-list-item>
 </mat-card>

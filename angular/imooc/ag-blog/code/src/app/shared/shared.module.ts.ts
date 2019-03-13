@@ -18,6 +18,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 // shared_module imports and exports shared modules
 
@@ -42,6 +43,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSelectModule,
   ],
   exports: [
     CommonModule,
@@ -61,6 +63,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSelectModule,
   ]
 })
 export class SharedModule { }
