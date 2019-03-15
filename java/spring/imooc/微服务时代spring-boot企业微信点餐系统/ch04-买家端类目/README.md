@@ -37,6 +37,42 @@ private Integer categoryId;
 
 // 我的这里 findOne 提示不对，可能是版本问题
 repository.findById(1)
+
+
+// 动态更新时间
+@Entity
+@DynamicUpdate
+public class ProductCategory {
+
 ```
 
-## 继续于： https://coding.imooc.com/lesson/117.html#mid=5624
+## 安装插件
+- Lombok 里面的一个功能是自动生成和维护 get set 方法
+- Plugins: Lombok Plugin
+- 这样代码中就可以省略 get set 和 toString 的方法
+```java
+@Entity
+@DynamicUpdate
+@Data
+public class ProductCategory {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer categoryId;
+    private String categoryName;
+    private Integer categoryType;
+    private Date createTime;
+    private Date updateTime;
+}
+```
+
+
+## 添加自定义查询方法
+```java
+public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Integer> {
+    List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);
+}
+```
+
+
+## 开始于 ch05 买家商品 dao

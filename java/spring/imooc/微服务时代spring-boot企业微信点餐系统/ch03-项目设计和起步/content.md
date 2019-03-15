@@ -23,7 +23,7 @@
 
 # 创建项目
 - IntelliJ IDEA > Spring Initializer > JDK 1.8 > web 项目
-- 最开始的时候无法 run, 添加 pom.xm 到 IDE 的 Maven Projects 里面
+- 最开始的时候无法 run, 添加 pom.xml 到 IDE 的 Maven Projects 里面
 
 # 日志
 ## 日志框架的能力
@@ -43,7 +43,7 @@
   - 日志实现
     - JUL JDK 自带   //太简单
     - Log4j
-    - Log4j2    // 太差前，性能好，过度设计
+    - Log4j2    // 太超前，性能好，过度设计
     - Logback   // Log4j 的升级
 
 ```xml
