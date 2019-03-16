@@ -5,6 +5,7 @@
     'priority-important': item.priority === 2,
     'priority-emergancy': item.priority === 1
   }"
+  [@card]="cardState"
   (click)="onTaskItemClick()"
 >
   <mat-list-item>

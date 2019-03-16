@@ -33,7 +33,9 @@ import { TaskModule } from './task/task.module';
     TaskModule,
     AppRoutingModule,  // at last
   ],
-  providers: [],
+  providers: [
+    {provide: 'BASE_CONFIG', useValue: 'http://localhost:4200'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

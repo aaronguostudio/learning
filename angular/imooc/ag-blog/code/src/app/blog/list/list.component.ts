@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Blog } from 'src/app/domain/blog.model';
 import { BlogService } from '../blog.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { NewBlogComponent } from '../new-blog/new-blog.component';
 
+
+// ChangeDetectionStrategy.OnPush will tell angular don't detect
+// my chagnes, I will push my changes. This way can improve performance
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -35,7 +38,7 @@ export class ListComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private blogService: BlogService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
   }
 

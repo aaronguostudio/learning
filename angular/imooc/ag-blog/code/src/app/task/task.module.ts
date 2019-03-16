@@ -19,7 +19,7 @@ import { NewTaskListComponent } from './new-task-list/new-task-list.component';
     NewTaskComponent,
     CopyTaskComponent,
     ConfirmDialogComponent,
-    NewTaskListComponent
+    NewTaskListComponent,
   ],
   imports: [
     SharedModule,
