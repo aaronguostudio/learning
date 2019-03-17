@@ -2,6 +2,8 @@
 
   <app-task-list
     *ngFor="let l of lists"
+    app-drappable
+    [dragEnterClass]="'drag-enter'"
   >
     <app-task-header
       [header]="l.name"

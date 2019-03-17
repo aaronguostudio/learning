@@ -5,8 +5,9 @@
 - ng g m module-name --flat -m app
 - ng g g directory/name
 - ng build --prod
-- ng g c -it -is     // inline-template and inline-style
-- ng g m directive
+- ng g c -it -is          // inline-template and inline-style
+- ng g m directive        // create a module contains directives
+- ng g d directive/drag   // create a directive
 
 
 

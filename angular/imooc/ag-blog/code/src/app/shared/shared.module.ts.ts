@@ -19,6 +19,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { DirectiveModule } from '../directive/directive.module';
+
 
 // shared_module imports and exports shared modules
 
@@ -44,6 +46,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    DirectiveModule,
   ],
   exports: [
     CommonModule,
@@ -64,6 +67,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    DirectiveModule,
   ]
 })
 export class SharedModule { }

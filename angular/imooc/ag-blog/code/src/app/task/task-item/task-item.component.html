@@ -6,6 +6,8 @@
     'priority-emergancy': item.priority === 1
   }"
   [@card]="cardState"
+  [app-draggable]="true"
+  [draggedClass]="'drag-start'"
   (click)="onTaskItemClick()"
 >
   <mat-list-item>
