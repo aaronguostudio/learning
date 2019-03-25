@@ -10,12 +10,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="KNN.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ch04/KNN.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="6-4-实现线性回归中的梯度下降.ipynb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch06-Gradient-Descent/6-4-实现线性回归中的梯度下降.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="0" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinearRegression.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch06-Gradient-Descent/playML/LinearRegression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleLinearRegression.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ch06-Gradient-Descent/playML/SimpleLinearRegression.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1005">
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,7 +69,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="390" />
     <option name="width" value="1680" />
     <option name="height" value="1050" />
@@ -56,7 +79,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -67,24 +89,19 @@
             <path>
               <item name="python-and-ml" type="b2602c69:ProjectViewProjectNode" />
               <item name="python-and-ml" type="462c0819:PsiDirectoryNode" />
-              <item name="ch04" type="462c0819:PsiDirectoryNode" />
+              <item name="ch06-Gradient-Descent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python-and-ml" type="b2602c69:ProjectViewProjectNode" />
               <item name="python-and-ml" type="462c0819:PsiDirectoryNode" />
-              <item name="ch04" type="462c0819:PsiDirectoryNode" />
-              <item name=".ipynb_checkpoints" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python-and-ml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python-and-ml" type="462c0819:PsiDirectoryNode" />
-              <item name="ch04" type="462c0819:PsiDirectoryNode" />
-              <item name="practice" type="462c0819:PsiDirectoryNode" />
+              <item name="ch06-Gradient-Descent" type="462c0819:PsiDirectoryNode" />
+              <item name="playML" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -137,7 +154,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32967034" />
@@ -162,6 +179,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ch04/KNN.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch04/KNN.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
@@ -169,8 +193,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ch04/KNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        <state relative-caret-position="165">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch06-Gradient-Descent/6-4-实现线性回归中的梯度下降.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch06-Gradient-Descent/playML/LinearRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch06-Gradient-Descent/playML/SimpleLinearRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1005">
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
