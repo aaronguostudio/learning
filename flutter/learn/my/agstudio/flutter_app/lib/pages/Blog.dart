@@ -8,6 +8,9 @@ class Blog extends StatefulWidget {
 class _BlogState extends State<Blog> {
   @override
   Widget build(BuildContext context) {
-    return Text("Blog");
+    return Container(
+      height: 10,
+      child: Text("Blog");,
+    );
   }
 }

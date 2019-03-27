@@ -66,7 +66,7 @@ class _TabNavigatorState extends State<TabNavigator> {
               color: _activeColor,
             ),
             title: Text(
-                'Search',
+                'Projects',
                 style: TextStyle(
                     color: _currentIndex != 1 ? _defaultColor : _activeColor
                 )
@@ -82,7 +82,7 @@ class _TabNavigatorState extends State<TabNavigator> {
               color: _activeColor,
             ),
             title: Text(
-                'Travel',
+                'Blog',
                 style: TextStyle(
                     color: _currentIndex != 2 ? _defaultColor : _activeColor
                 )
@@ -98,7 +98,7 @@ class _TabNavigatorState extends State<TabNavigator> {
               color: _activeColor,
             ),
             title: Text(
-                'My',
+                'About',
                 style: TextStyle(
                     color: _currentIndex != 3 ? _defaultColor : _activeColor
                 )

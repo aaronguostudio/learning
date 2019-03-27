@@ -8,6 +8,21 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Text('Home');
+    return Container(
+      height: 30.0,
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Row(
+        children: <Widget>[
+          Text("Test"),
+          Text("Test"),
+          IconButton(
+            icon: Icon(
+              Icons.home,
+              color: Colors.amberAccent
+            )
+          ),
+        ],
+      ),
+    );
   }
 }
