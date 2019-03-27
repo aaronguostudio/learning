@@ -3,6 +3,9 @@
 - No primitives
 - Most everthing is object
 
+# Add dependencies
+- bundle add package-name
+
 # Rails console
 - rails c environment       // default environment is development
 
@@ -14,8 +17,9 @@
 - Subject.save
 - Subject.create(...)       // new and save
 - Subject.update(...)       // update and save
-- Subject.updateAttributes
-- Subject.destroy           // delete a record gracefully
+- Subject.updateAttributes 
+- Subject.delete()          // delete relationship
+- Subject.destroy()         // delete a record and relationship
 - Subject.find()            // find by id if not found throw error
 - Subject.find_by_id()      // find by id if not found return nil
 - Subject.all
@@ -33,6 +37,7 @@
 - Subject.order(:position => :desc)
 - Subject.order("positon DESC")
 - Subject.order("subjects.create_at ASC")  // when joining tables
+- instance.errors.full_message   // if receive error, show the full message
 
 # Named Scopes
 ```ruby
@@ -44,3 +49,13 @@ class Subject < ApplicationRecord
   scope :search, lambda{ |query| where(["name LIKE ?", "%#{query}%"]) }
 end
 ```
+
+# rails console
+- page.somefunctions(true)     // reload from db instead of cache
+
+
+# Ruby Language
+- yield
+- rescued
+- <<-
+- 
