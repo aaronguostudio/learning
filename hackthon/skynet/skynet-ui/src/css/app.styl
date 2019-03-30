@@ -1,0 +1,54 @@
+// app global css
+@import '../../node_modules/a-quasar-ui/style/a-global'
+.q-layout-drawer
+  background-color: $secondary !important
+.q-layout-page
+  background-color: #d8d8dd !important
+.user-container
+  padding 4px !important
+  .q-item-main
+    .q-item-label
+      font-size 14px
+  .q-item-side
+    min-width auto
+    display flex
+    align-items center
+    .q-item-avatar
+      width 28px
+      height 28px
+  .q-item-side-right
+    .q-icon
+      font-size 16px
+      color $grey-5
+
+.q-layout-drawer
+  .q-icon
+    font-size 16px
+    color $grey-5 !important
+.q-layout-drawer
+  .q-collapsible-sub-item
+    .q-item-label
+      color $grey-5
+      font-size 14px
+
+.q-layout-drawer .q-item-link:hover
+  background-color #183954
+.q-layout-drawer .q-item-link.router-link-exact-active
+  background-color #316cb5
+  .q-icon
+    color #FFF !important
+  .q-item-label
+    color #FFF
+
+.warn-text
+  font-size 12px
+  color $grey-8
+
+.a-btn-md
+  .q-btn-inner
+    height 20px
+.modal-backdrop
+  background-color: rgba(0,0,0,.8)
+.q-carousel-quick-nav
+  background-color: transparent
+  transform: scale(.5)

@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEBUG	../ml/config.py	/^DEBUG = True/;"	kind:variable	line:4
+Flask	../ml/app.py	/^from flask import Flask, make_response, jsonify$/;"	kind:namespace	line:4
+HTTP	../ml/lib/http.py	/^class HTTP:$/;"	kind:class	line:3
+HTTP	../ml/lib/product.py	/^from .http import HTTP$/;"	kind:namespace	line:2
+Product	../ml/lib/predict.py	/^from .product import Product$/;"	kind:namespace	line:3
+Product	../ml/lib/product.py	/^class Product:$/;"	kind:class	line:4
+app	../ml/app.py	/^app = Flask(__name__)$/;"	kind:variable	line:7
+app.py	../ml/app.py	1;"	kind:file	line:1
+config.py	../ml/config.py	1;"	kind:file	line:1
+get	../ml/lib/http.py	/^  def get(url, return_json=True):$/;"	kind:member	line:5
+http.py	../ml/lib/http.py	1;"	kind:file	line:1
+jsonify	../ml/app.py	/^from flask import Flask, make_response, jsonify$/;"	kind:namespace	line:4
+make_response	../ml/app.py	/^from flask import Flask, make_response, jsonify$/;"	kind:namespace	line:4
+np	../ml/lib/predict.py	/^import numpy as np$/;"	kind:namespace	line:1
+predict	../ml/app.py	/^def predict(year, product):$/;"	kind:function	line:25
+predict.py	../ml/lib/predict.py	1;"	kind:file	line:1
+predict_year_budget	../ml/app.py	/^from lib.predict import predict_year_budget$/;"	kind:namespace	line:5
+predict_year_budget	../ml/lib/predict.py	/^def predict_year_budget(year, product):$/;"	kind:function	line:5
+product.py	../ml/lib/product.py	1;"	kind:file	line:1
+requests	../ml/lib/http.py	/^import requests$/;"	kind:namespace	line:1
+search_by_year_and_product	../ml/lib/product.py	/^  def search_by_year_and_product(cls, year, product):$/;"	kind:member	line:9
+status	../ml/app.py	/^def status():$/;"	kind:function	line:14
+urllib	../ml/lib/product.py	/^import urllib$/;"	kind:namespace	line:1

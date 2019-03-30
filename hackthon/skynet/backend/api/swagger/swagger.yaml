@@ -1,0 +1,220 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Cyberdyne
+# during dev, should point to your local machine
+host: localhost:10010
+# basePath prefixes all resource paths 
+basePath: /
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /suppliers:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: supplier
+    get:
+      description: Returns list of suppliers
+      # used as the method name of the controller
+      operationId: getSuppliers
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/SupplierNames"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /products:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: product
+    get:
+      description: Returns list of products
+      # used as the method name of the controller
+      operationId: getProducts
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/ProductNames"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+            
+  /product-raw-values:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: transaction
+    get:
+      description: Returns list of product raw transation values
+      parameters:
+        - in: query
+          name: page
+          required: true
+          type: integer
+        - in: query
+          name: pageSize
+          required: true
+          type: integer
+      operationId: allTransactions
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/ProductQueryResult"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /product-values:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: transaction
+    get:
+      description: Returns list of costs for products
+      parameters:
+        - in: query
+          name: month
+          required: true
+          type: integer
+        - in: query
+          name: year
+          required: true
+          type: integer
+      # used as the method name of the controller
+      operationId: searchProductValues
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              type: object
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    put:
+      description: Inserts list of supplier products
+      parameters:
+        - name: payload
+          in: body
+          description: list of supplier products
+          required: true
+          schema:
+            $ref: "#/definitions/Products"
+      operationId: putProducts
+      responses:
+        "204":
+          description: Success, no content response
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+            
+  /transactions/report:
+    x-swagger-router-controller: transaction
+    get:
+      description: Reports previous spending for the selected year
+      parameters:
+        - in: query
+          name: year
+          required: true
+          type: integer
+        - in: query
+          name: product
+          required: true
+          type: string
+      # used as the method name of the controller
+      operationId: reportMonthlySpending
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+            description: each number is a month of the year
+            properties:
+              1:
+                type: number
+              2:
+                type: number
+              3:
+                type: number
+              4:
+                type: number
+              5:
+                type: number
+              6:
+                type: number
+              7:
+                type: number
+              8:
+                type: number
+              9:
+                type: number
+              10:
+                type: number
+              11:
+                type: number
+              12:
+                type: number
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+            
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  SupplierNames:
+    type: array
+    items:
+      type: string
+  ProductNames:
+    type: array
+    items:
+      type: string
+  ProductQueryResult:
+    properties:
+      totalCount:
+        type: integer
+      rows:
+        $ref: "#/definitions/Products"
+  Products:
+    type: array
+    items:
+      type: object
+      properties:
+        supplier:
+          type: string
+        year:
+          type: integer
+        month:
+          type: integer
+        product:
+          type: string
+        price:
+          type: number
+        quantity:
+          type: integer
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string

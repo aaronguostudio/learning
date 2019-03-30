@@ -1,0 +1,15 @@
+{
+  "name": "data-loader",
+  "version": "1.0.0",
+  "description": "skynet",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "skynet",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.33"
+  },
+  "devDependencies": {}
+}
