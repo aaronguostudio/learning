@@ -4,7 +4,7 @@
 
 ### One to One
 - In rails irb
-- remove relationship    // subject.page = nil
+- subject.page = nil     // remove relationship 
 - subject.page = page    // add relationship, will store in db
 - subject.age.destory    // remove relationship and remove the record
 

@@ -6,8 +6,15 @@
 # Add dependencies
 - bundle add package-name
 
-# Rails console
-- rails c environment       // default environment is development
+# Rails cli
+- rails new project_name -d mysql     // -d is database
+- rails c environment                 // default environment is development
+- rails g controller Subjects index show new edit delete  //Controller is capital and plural with all of the views
+
+# Rails DB
+- rails g model User
+- rails g migration migration_name    // create a migration
+- rails db:migrate
 
 # ActionRecord Syntax
 - Subject = Subject.new
