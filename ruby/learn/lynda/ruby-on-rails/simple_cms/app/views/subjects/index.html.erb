@@ -1,0 +1,24 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="subjects index">
+  <%= link_to 'New Section', new_subject_path, :class => 'action new' %>
+  <table>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.position %></td>
+        <td><%= subject.name %></td>
+        <td><%= subject.visible ? 'Yes' : 'No' %></td>
+        <td><%= subject.pages.size %></td>
+        <td class="actions">
+          <%= link_to 'Show', subject_path(subject), :class => 'action show' %>
+          <%= link_to 'Edit', edit_subject_path(subject), :class => 'action edit' %>
+          <%= link_to 'Delete', delete_subject_path(subject), :class => 'action delete' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -7,9 +7,11 @@
 - bundle add package-name
 
 # Rails cli
-- rails new project_name -d mysql     // -d is database
-- rails c environment                 // default environment is development
+- rails new project_name -d mysql                         // -d is database
+- rails c environment                                     // default environment is development
 - rails g controller Subjects index show new edit delete  //Controller is capital and plural with all of the views
+- rails routes     // list all of the routes
+
 
 # Rails DB
 - rails g model User

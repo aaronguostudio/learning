@@ -1,0 +1,20 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="subjects index">
+  <%= link_to '< Back', subjects_path, :class => 'back-link' %>
+  <table>
+    <tr>
+      <td><%= @subject.position %></td>
+      <td><%= @subject.name %></td>
+      <td><%= @subject.visible ? 'Yes' : 'No' %></td>
+      <td><%= @subject.pages.size %></td>
+      <td class="actions">
+        
+      </td>
+    </tr>
+  </table>
+</div>

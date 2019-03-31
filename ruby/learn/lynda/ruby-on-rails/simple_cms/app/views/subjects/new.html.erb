@@ -1,0 +1,21 @@
+<div class="subjects index">
+  <%= link_to '< Back', subjects_path, :class => 'back-link' %>
+  <h2>New Subject</h2>
+
+  <%#=
+    form_for(@subject, :url => subjects_path, :method => 'post') do |f|
+  %>
+  <%# This can be simplified as below %>
+  <%= form_for(@subject) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.text_field(:name) %></td>
+      <td><%= f.text_field(:position) %></td>
+      <td><%= f.text_field(:visible) %></td>
+    </tr>
+  </table>
+  <div>
+    <%= f.submit("Create Subject") %>
+  </div>
+  <% end %>
+</div>
