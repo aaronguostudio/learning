@@ -1,0 +1,26 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="pages index">
+  <%= link_to 'New Page', new_page_path, :class => 'action new' %>
+  <table>
+    <% @pages.each do |page| %>
+      <tr>
+        <td style="width: 100px;"><%= page.subject.id %></td>
+        <td style="width: 100px;"><%= page.name %></td>
+        <td style="width: 100px;"><%= page.position %></td>
+        <td style="width: 100px;">permalink <%= page.permalink %></td>
+        <td style="width: 100px;"><%= page.visible ? 'Yes' : 'No' %></td>
+        <td style="width: 100px;"><%= page.sections.size %></td>
+        <td class="actions">
+          <%= link_to 'Show', page_path(page), :class => 'action show' %>
+          <%= link_to 'Edit', edit_page_path(page), :class => 'action edit' %>
+          <%= link_to 'Delete', delete_page_path(page), :class => 'action delete' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+<div class="pages index">
+  <%= link_to '< Back', pages_path, :class => 'back-link' %>
+  <h2>New Page</h2>
+  <%= form_for(@page) do |f| %>
+  <table>
+    <tr>
+      subject id: <td><%= f.text_field(:subject_id) %></td>
+      name: <td><%= f.text_field(:name) %></td>
+      permalink: <td><%= f.text_field(:permalink) %></td>
+      position: <td><%= f.text_field(:position) %></td>
+      visible: <td><%= f.text_field(:visible) %></td>
+    </tr>
+  </table>
+  <div>
+    <%= f.submit("Create Page") %>
+  </div>
+  <% end %>
+</div>

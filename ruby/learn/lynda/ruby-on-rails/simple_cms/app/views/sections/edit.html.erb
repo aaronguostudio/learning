@@ -1,0 +1,19 @@
+<div class="sections index">
+  <%= link_to '< Back', sections_path, :class => 'back-link' %>
+  <h2>Update Section</h2>
+  <%= form_for(@section) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.text_field(:subject) %></td>
+      <td><%= f.text_field(:name) %></td>
+      <td><%= f.text_field(:position) %></td>
+      <td><%= f.text_field(:visible) %></td>
+      <td><%= f.text_field(:content_type) %></td>
+      <td><%= f.text_field(:content) %></td>
+    </tr>
+  </table>
+  <div>
+    <%= f.submit("Update Section") %>
+  </div>
+  <% end %>
+</div>

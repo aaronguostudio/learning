@@ -1,0 +1,10 @@
+<div>
+  <%= link_to '< Back', pages_path, :class => 'back-link' %>
+  <div>
+  Are you sure delete this page?
+  </div>
+  <%= form_for(@page, :method => 'delete') do |f| %>
+    <%= f.object.name %>
+    <%= f.submit("Delete Page") %>
+  <% end %>
+</div>

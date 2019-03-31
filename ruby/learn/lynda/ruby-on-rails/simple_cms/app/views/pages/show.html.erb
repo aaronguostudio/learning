@@ -1,0 +1,18 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="pages index">
+  <%= link_to '< Back', pages_path, :class => 'back-link' %>
+  <table>
+    <tr>
+      <td><%= @page.section_id %></td>
+      <td><%= @page.position %></td>
+      <td><%= @page.name %></td>
+      <td><%= @page.visible ? 'Yes' : 'No' %></td>
+      <td><%= @page.sections.size %></td>
+    </tr>
+  </table>
+</div>
