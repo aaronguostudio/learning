@@ -7,7 +7,8 @@
 - bundle add package-name
 
 # Rails cli
-- rails new project_name -d mysql                         // -d is database
+- rails new project-name -d mysql                         // -d is database
+- rails new project-name --api -T                         // Create a api project without test
 - rails c environment                                     // default environment is development
 - rails g controller Subjects index show new edit delete  //Controller is capital and plural with all of the views
 - rails routes     // list all of the routes

@@ -15,3 +15,16 @@ end
 - <%= link_to('Show Subjects', subject_path(@subject.id, :format => 'verbose')) %>
 - <%= link_to('Edit Subject', edit_subject_path(@subject.id)) %>
 
+# Models
+- rails g model Todo title:string created_by:string
+- rails g model Item name:string done:boolean todo:references
+- rails db:migrate
+
+# Test
+- add tests
+- rails exec rspec
+- add associations in model
+- rails exec rspec
+
+# Controller
+- rails g controller ModelNamePlusS

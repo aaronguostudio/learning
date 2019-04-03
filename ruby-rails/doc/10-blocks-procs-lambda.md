@@ -60,4 +60,12 @@
 ```ruby
   my_proc = Proc.new { |x| puts x }
   my_proc.call(1)
+
+  # Different from lambda, proc can ignore arguments
+  t = Proc.new { |x,y| puts "I don't care about arguments" }
 ```
+
+# Lambda and Procs
+- Lambdas are defined with -> {} and procs with Proc.new {}.
+- Procs return from the current method, while lambdas return from the lambda itself.
+- Procs don’t care about the correct number of arguments, while lambdas will raise an exception.
