@@ -30,3 +30,9 @@ Things you may want to cover:
 - bundle install
 - rails generate spec:install
 - mkdir spec/factories
+- add assocications to model
+- bundle exec rspec
+
+# Auto load dependencies
+- in spec/rails_helper.rb
+- Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
