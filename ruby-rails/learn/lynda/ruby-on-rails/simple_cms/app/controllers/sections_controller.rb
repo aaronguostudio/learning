@@ -1,6 +1,10 @@
 class SectionsController < ApplicationController
+  layout 'admin'
   def index
     @sections = Section.sorted
+
+    # Set a page title, similar to ASP.NET ViewBag
+    # @page_title = "All Sections"
   end
 
   def show
@@ -13,6 +17,7 @@ class SectionsController < ApplicationController
 
   def create
     @section = Section.new(section_params)
+    binding.pry
     if @section.save
       flash[:notice] = "Section created successfully"
       redirect_to(sections_path)

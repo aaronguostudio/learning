@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple CMS - <%= @page_title || "Admin Area" %></title>
+  </head>
+  <body>
+    <% if !flash[:notice].blank? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <div class="test-hover">
+      Hover test
+    </div>
+    <!-- Before yield -->
+    <%= yield %>
+    <!-- After yield -->
+  </body>
+</html>

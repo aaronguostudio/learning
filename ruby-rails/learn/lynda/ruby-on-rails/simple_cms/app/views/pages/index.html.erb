@@ -1,9 +1,3 @@
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
-
 <div class="pages index">
   <%= link_to 'New Page', new_page_path, :class => 'action new' %>
   <table>

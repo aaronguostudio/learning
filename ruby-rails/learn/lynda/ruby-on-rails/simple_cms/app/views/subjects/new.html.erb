@@ -7,15 +7,10 @@
   %>
   <%# This can be simplified as below %>
   <%= form_for(@subject) do |f| %>
-  <table>
-    <tr>
-      <td><%= f.text_field(:name) %></td>
-      <td><%= f.text_field(:position) %></td>
-      <td><%= f.text_field(:visible) %></td>
-    </tr>
-  </table>
-  <div>
-    <%= f.submit("Create Subject") %>
-  </div>
+    <%#= render partial: 'form', :locals => { :f => f }%>
+    <%= render partial: 'form', locals: { :f => f } %>
+    <div>
+      <%= f.submit("Create Subject") %>
+    </div>
   <% end %>
 </div>
