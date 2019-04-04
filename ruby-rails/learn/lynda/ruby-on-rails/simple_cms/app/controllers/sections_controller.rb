@@ -1,3 +1,5 @@
+require 'pry'
+
 class SectionsController < ApplicationController
   layout 'admin'
   def index
@@ -8,7 +10,8 @@ class SectionsController < ApplicationController
   end
 
   def show
-    @sections = Section.find(params[:id])
+    # binding.pry
+    @section = Section.find(params[:id])
   end
 
   def new
@@ -17,7 +20,7 @@ class SectionsController < ApplicationController
 
   def create
     @section = Section.new(section_params)
-    binding.pry
+    
     if @section.save
       flash[:notice] = "Section created successfully"
       redirect_to(sections_path)
@@ -27,7 +30,7 @@ class SectionsController < ApplicationController
   end
 
   def edit
-    @page = Page.find(params[:id])
+    @section = Section.find(params[:id])
   end
 
   def update

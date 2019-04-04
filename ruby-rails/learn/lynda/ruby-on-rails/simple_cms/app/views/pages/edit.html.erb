@@ -2,16 +2,9 @@
   <%= link_to '< Back', pages_path, :class => 'back-link' %>
   <h2>Update Page</h2>
   <%= form_for(@page) do |f| %>
-  <table>
-    <tr>
-      <td><%= f.text_field(:subject) %></td>
-      <td><%= f.text_field(:name) %></td>
-      <td><%= f.text_field(:position) %></td>
-      <td><%= f.text_field(:visible) %></td>
-    </tr>
-  </table>
-  <div>
-    <%= f.submit("Update Page") %>
-  </div>
+    <%= render partial: 'form', locals: { :f => f } %>
+    <div>
+      <%= f.submit("Update Page") %>
+    </div>
   <% end %>
 </div>

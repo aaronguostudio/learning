@@ -1,10 +1,10 @@
 <div class="sections index">
   <%= link_to '< Back', sections_path, :class => 'back-link' %>
   <h2>New Section</h2>
-  <%= form_for(@section) do |s| %>
-    <%= render partial: 'form', locals: { :s => s } %>
+  <%= form_for(@section) do |f| %>
+    <%= render partial: 'form', locals: { :f => f } %>
     <div>
-      <%= s.submit("Create Section") %>
+      <%= f.submit("Create Section") %>
     </div>
   <% end %>
 </div>

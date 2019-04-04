@@ -13,3 +13,7 @@ Hirb.enable
 
 # rspec
 - rails generate rspec:install
+
+# binding.pry
+- https://learn.co/lessons/debugging-with-pry
+- Notice: when install, put it in the package and do 'bundle install'
