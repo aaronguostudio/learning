@@ -26,3 +26,31 @@
 - subject.size
 - subject.pages.empty?
 - subject.clear
+
+## Active Record Query
+- https://guides.rubyonrails.org/active_record_querying.html
+
+
+## ApplicationRecord
+- In Rails 5, Model < ApplicationRecord < ActiveRecord::Base
+```ruby
+# Old way to include
+# But now, ActiveRecord::Base forever includes MyAwesomeFeature and any class inheriting from it also includes MyAwesomeFeature even if they don’t want it.
+module MyAwesomeFeature
+  def do_something_great
+    puts "Doing something complex stuff!!"
+  end
+end
+
+ActiveRecord::Base.include(MyAwesomeFeature)
+
+
+# New way
+# But with ApplicationRecord, they will be localized to only those models which are inheriting from ApplicationRecord, effectively only to your application.
+class ApplicationRecord < ActiveRecord::Base
+  include MyAwesomeFeature
+
+  self.abstract_class = true
+end
+
+```

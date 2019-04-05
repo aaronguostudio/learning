@@ -3,6 +3,9 @@
 - No primitives
 - Most everthing is object
 
+# RVM
+- rvm install ruby-2.4.1
+
 # Add dependencies
 - bundle add package-name
 
@@ -67,5 +70,8 @@ end
 # Ruby Language
 - yield
 - rescued
-- <<-
-- 
+
+
+# Common Questions
+- # unknow rails
+  - https://stackoverflow.com/questions/7788946/rails-keeps-telling-me-that-its-not-currently-installed
