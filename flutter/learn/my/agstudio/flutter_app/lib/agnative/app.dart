@@ -20,10 +20,10 @@ class _AgNativeState extends State<AgNativeApp> {
     return MaterialApp(
       title: 'Aaron Guo Studio',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.black38,
       ),
       home: Center(
-         child: Text("test"),
+         child: Text("test123"),
       )
     );
   }

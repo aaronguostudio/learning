@@ -10,7 +10,7 @@ class _BlogState extends State<Blog> {
   Widget build(BuildContext context) {
     return Container(
       height: 10,
-      child: Text("Blog");,
+      child: Text("Blog"),
     );
   }
 }
