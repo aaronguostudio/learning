@@ -14,7 +14,6 @@ class _HomeState extends State<Home> {
       child: Row(
         children: <Widget>[
           Text("Test"),
-          Text("Test"),
           IconButton(
             icon: Icon(
               Icons.home,
