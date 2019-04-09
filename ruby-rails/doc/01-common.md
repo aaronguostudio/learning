@@ -75,3 +75,6 @@ end
 # Common Questions
 - # unknow rails
   - https://stackoverflow.com/questions/7788946/rails-keeps-telling-me-that-its-not-currently-installed
+
+# Ruby 
+- https://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/
