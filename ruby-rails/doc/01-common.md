@@ -2,6 +2,7 @@
 - OOP
 - No primitives
 - Most everthing is object
+- Ruby is dynamically and strongly typed
 
 # RVM
 - rvm install ruby-2.4.1
