@@ -92,3 +92,12 @@ insert table_name (column_name) select column_name from users where age > 16;
 
 <!-- Start from here -->
 <!-- https://www.imooc.com/video/2398 -->
+
+
+
+
+# Other resources
+- https://www.imooc.com/learn/194
+- https://www.imooc.com/learn/398
+- https://www.imooc.com/learn/427
+- https://www.imooc.com/learn/449
