@@ -8,5 +8,12 @@
 
 - commands
 ```bash
+# check disk and swap
 free -m
+
+# find
+find . -name test.txt
+
+
+
 ```
