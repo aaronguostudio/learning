@@ -5,6 +5,9 @@
 # Config MySQL
 ```sql
 
+select version()
+
+
 -- show variables isolation
 show variables like '%iso%'
 -- update isolation
@@ -37,7 +40,7 @@ create table if not exists table_name(
   age tinyint unsigned,
   salary float(8,2) unsigned,
   role varchar(20) default 'staff'
-)
+);
 
 -- Foreign key will create index automatically
 create table if not exists table_name (
@@ -45,7 +48,7 @@ create table if not exists table_name (
     uid bignit unsigned,
     foreign key (uid) references other_table_name (id)
   );
-)
+);
 
 -- Alter table
 alter table table_name add age tinyint unsigned not null default 10 after column;
@@ -62,7 +65,30 @@ alter table table_name modify id smallint unsigned null not first;
 alter table table_name change id new_id_name bigint unsigned null not;
 alter table table_name rename new_table_name;
 rename table table_name to new_table_name;
+
+
+-- CRUD
+insert table_name values (null, 'name', 12);  -- null will auto generate
+insert table_name values (default, 'name', 12);  -- null will auto generate
+insert table_name values (default, 'name', md5('123'));
+
+insert table_name set col_name='aaron', col_name='1212';
+update table_name set col_name='newvalue' , col_name='newvalue' [where...];
+delete from table_name where id = 1;
+
+-- select
+select count(*) from table_table;
+select table_name.column_name from table_name;
+select table_name.column_name as alias_name from table_name;
+select column_name from table_name group by column_name; --group for result
+select column_name from table_name group by column_name having column_name > 3;
+select column_name from table_name group by column_name having column_name > 3 order by column_name asc/desc;
+select column_name from table_name limit 2,2;
+select column_name from table_name limit 2 offset 2;
+
+-- subquery
+insert table_name (column_name) select column_name from users where age > 16;
 ```
 
 <!-- Start from here -->
-https://www.imooc.com/video/2252
+<!-- https://www.imooc.com/video/2398 -->
