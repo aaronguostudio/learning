@@ -24,38 +24,39 @@
 - rails db:migrate
 
 # ActionRecord Syntax
-- Subject = Subject.new
-- Subject = Subject.new(:attr1=value, :attr2=value)
-- Subject.attr = value
-- Subject.new_record?       // true is catching, false is in db
-- Subject.save
-- Subject.create(...)       // new and save
-- Subject.update(...)       // update and save
-- Subject.updateAttributes 
-- Subject.delete()          // delete relationship
-- Subject.destroy()         // delete a record and relationship
-- Subject.find()            // find by id if not found throw error
-- Subject.find_by_id()      // find by id if not found return nil
-- Subject.all
-- Subject.first
-- Subject.last
+- Model = Model.new
+- Model = Model.new(:attr1=value, :attr2=value)
+- Model.attr = value
+- Model.new_record?       // true is catching, false is in db
+- Model.save
+- Model.create(...)       // new and save
+- Model.update(...)       // update and save
+- Model.updateAttributes 
+- Model.delete()          // delete relationship
+- Model.destroy()         // delete a record and relationship
+- Model.find()            // find by id if not found throw error
+- Model.find_by_id()      // find by id if not found return nil
+- Model.all
+- Model.first
+- Model.last
+- Model.attribute_names
 
 # Condition Express Types
-- Subject.where(:prop => name)
-- Subject.where("prop = name")
-- Subject.where(["prop = ?", "name:])
-- Subject.order(:position).limit(20).offset(50)
-- Subject.order("position")
-- Subject.order(:position => :asc)
-- Subject.order("positon ASC")
-- Subject.order(:position => :desc)
-- Subject.order("positon DESC")
-- Subject.order("subjects.create_at ASC")  // when joining tables
+- Model.where(:prop => name)
+- Model.where("prop = name")
+- Model.where(["prop = ?", "name:])
+- Model.order(:position).limit(20).offset(50)
+- Model.order("position")
+- Model.order(:position => :asc)
+- Model.order("positon ASC")
+- Model.order(:position => :desc)
+- Model.order("positon DESC")
+- Model.order("subjects.create_at ASC")  // when joining tables
 - instance.errors.full_message   // if receive error, show the full message
 
 # Named Scopes
 ```ruby
-class Subject < ApplicationRecord
+class Model < ApplicationRecord
   scope :visible, lambda{ where(:visible => true) }
   scope :invisible, lambda{ where(:visible => false) }
   scope :sorted, lambda{ order("position ASC") }

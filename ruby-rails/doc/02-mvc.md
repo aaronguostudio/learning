@@ -1,4 +1,4 @@
-# Basic
+# Model
 
 ## Assocation
 :dependent
@@ -54,3 +54,10 @@ class ApplicationRecord < ActiveRecord::Base
 end
 
 ```
+
+
+# Controller
+
+## Build-in props
+- request.headers["..."]
+- params[:username]
