@@ -16,6 +16,7 @@
 - rails c environment                                     // default environment is development
 - rails g controller Subjects index show new edit delete  //Controller is capital and plural with all of the views
 - rails routes     // list all of the routes
+- Delayed::Job.find(x).invoke_job
 
 
 # Rails DB
