@@ -34,4 +34,4 @@ expr substr $string $position $length #索引从 1 开始
 sub=`expr substr "$str" 10 5`
 
 # 2.6 命令替换
-开始于这里
+# all users

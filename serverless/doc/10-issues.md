@@ -1,0 +1,3 @@
+- bucket does not exist error
+  - https://forum.serverless.com/t/the-specified-bucket-does-not-exist-error/5079/2
+  - sls info --stage-dev -v
