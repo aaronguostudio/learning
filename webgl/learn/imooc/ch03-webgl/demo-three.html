@@ -1,0 +1,67 @@
+<!-- Create a rotating trangle using three.js -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="demo"></canvas>
+
+  <script type="text/javascript" src="../three.js"></script>
+  <script type="text/javascript">
+    var width = 400
+    var height = 400
+    var canvas = document.getElementById("demo")
+    var renderer = new THREE.WebGLRenderer({ canvas })
+    var scene = new THREE.Scene()
+    var camera = new THREE.OrthographicCamera( -width / 2, width / 2, height / 2, -height / 2, -1000, 1000)
+    renderer.setSize(width, height)
+
+    var trangleShape = new THREE.Shape()
+    trangleShape.moveTo(0, 100)
+    trangleShape.lineTo(-100, -100)
+    trangleShape.lineTo(100, -100)
+    trangleShape.lineTo(0, 100)
+
+    var geometry = new THREE.ShapeGeometry( trangleShape )
+    var material = new THREE.MeshBasicMaterial({
+      color: 0x00ff00,
+      side: THREE.DoubleSide
+    })
+    var mesh = new THREE.Mesh( geometry, material )
+    mesh.position.x = 0
+    mesh.position.y = 0
+    mesh.position.z = 1
+    scene.add(mesh)
+
+    camera.position.x = 0
+    camera.position.y = 0
+    camera.position.z = 0
+    camera.lookAt(new THREE.Vector3(0, 0, 1))
+
+    var currentAngle = 0
+    var lastTimestamp = Date.now()
+
+    var animate = function () {
+      var now = Date.now()
+      var duration = now - lastTimestamp
+      lastTimestamp = now
+      currentAngle = currentAngle + duration / 2000 * Math.PI
+    }
+
+    var render = function () {
+      animate()
+      mesh.rotation.set(currentAngle, currentAngle, currentAngle)  // x, y, z
+      renderer.render(scene, camera)
+      requestAnimationFrame(render)
+    }
+
+    render()
+  
+  </script>
+</body>
+</html>

@@ -7,8 +7,10 @@ var VSHADER_SOURCE, FSHADER_SOURCE
 VSHADER_SOURCE =
   'attribute vec4 a_Position;\n' + 
   'uniform mat4 u_ModelMatrix;\n' +
+  'uniform mat4 u_ViewMatrix;\n' +
+  'uniform mat4 u_ProjectionMatrix;\n'
   'void main () {\n' + 
-  'gl_Position = u_ModelMatrix * a_Position;\n' +
+    'gl_Position = u_ProjectionMatrix * u_ModelMatrix * u_ViewMatrix * a_Position;\n' +
   '}\n'
 
 FSHADER_SOURCE =
@@ -43,6 +45,15 @@ gl.linkProgram(program)
 gl.useProgram(program)
 gl.program = program
 
+var currentAngle = 0
+g_last = new Date()
+
+var tick = function () {
+  animate()
+  draw()
+  requestAnimationFrame(tick)
+}
+
 function initVertexBuffers (gl) {
   var vertices = new Float32Array([
     -1, 1, -1, -1, 1, -1
@@ -69,14 +80,29 @@ gl.clearColor(0, 0, 0, 1)
 
 var u_ModelMatrix = gl.getUniformLocation(gl.program, 'u_ModelMatrix')
 var modelMatrix = new Matrix4()
-modelMatrix.setRotate(75, 0, 1, 0)
-gl.uniformMatrix4fv(u_ModelMatrix, false, modelMatrix.elements)
+var u_ViewMatrix = gl.getUniformLocation(gl.program, 'u_ViewMatrix')
+var viewMatrix = new Matrix4()
+viewMatrix.lookAt(0, 0, 0.8, 0, 0, -1, 0, 1, 0 )
+
+var u_ProjectionMatrix = gl.getUniformLocation(gl.program, 'u_ProjectionMatrix')
+var projectionMatrix = new Matrix4()
+projectionMatrix.perspective(120, 1, 0.1, 1000)
+
+function animate () {
+  var now = Date.now()
+  var duration = now - g_last
+  g_last = now
+  currentAngle = currentAngle + duration / 1000 * 10
+}
 
 // clear canvas and add bg color
 function draw() {
+  modelMatrix.setRotate(currentAngle, 0, 0, 1)
+  gl.uniformMatrix4fv(u_ModelMatrix, false, modelMatrix.elements)
+  gl.uniformMatrix4fv(u_ViewMatrix, false, viewMatrix.elements)
+  gl.uniformMatrix4fv(u_ProjectionMatrix, false, projectionMatrix.elements)
   gl.clear(gl.COLOR_BUFFER_BIT)
-  // mode, first, count
   gl.drawArrays(gl.TRIANGLES, 0, n)
 }
 
-draw()
+tick()
