@@ -107,8 +107,8 @@ interface Indexable {
   [x: string]: Animal
 }
 
-let indexableArray: Indexable = [new Animal(), new Animal()]
-console.log(indexableArray[0])
+// let indexableArray: Indexable = [new Animal(), new Animal()]
+// console.log(indexableArray[0])
 
 
 // start from here
