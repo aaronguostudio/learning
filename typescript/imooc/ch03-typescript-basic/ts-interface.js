@@ -4,9 +4,9 @@ function printLabel(labelledObj) {
 }
 printLabel({ label: 'test' });
 function createSquare(config) {
-    let newSquare = { color: 'white', area: 100 };
+    let newSquare = { color: 'white', area: 10000 };
     config.color ? newSquare.color = config.color : null;
-    config.width ? newSquare.area = config.width : null;
+    config.width ? newSquare.area = config.width * config.width : null;
     return newSquare;
 }
 let sq1 = createSquare({ color: 'red' });
@@ -38,7 +38,27 @@ class Dog extends Animal {
         this.breed = breed;
     }
 }
-let indexableArray = [new Animal(), new Animal()];
-console.log(indexableArray[0]);
+// let indexableArray: Indexable = [new Animal(), new Animal()]
+// console.log(indexableArray[0])
 // start from here
 // https://coding.imooc.com/lesson/330.html#mid=24483
+let passcode = 'passcode';
+class Employee {
+    constructor() {
+        this._fullName = '';
+    }
+    get fullName() {
+        return this._fullName;
+    }
+    set fullName(newName) {
+        if (passcode && passcode === 'passcode') {
+            this._fullName = newName;
+        }
+        else {
+            console.log('Wrong cridentials');
+        }
+    }
+}
+let employee = new Employee();
+employee.fullName = 'Aaron Guo';
+console.log(employee.fullName);

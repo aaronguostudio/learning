@@ -11,7 +11,7 @@ printLabel({ label: 'test' })
 
 
 // optional
-interface Square {
+interface Square2 {
   color: string
   area: number
 }
@@ -21,10 +21,10 @@ interface SquareConfig {
   width?: number
 }
 
-function createSquare(config: SquareConfig): Square {
-  let newSquare = { color: 'white', area: 100 }
+function createSquare(config: SquareConfig): Square2 {
+  let newSquare = { color: 'white', area: 10000 }
   config.color ? newSquare.color = config.color : null
-  config.width ? newSquare.area = config.width : null
+  config.width ? newSquare.area = config.width * config.width : null
   
   return newSquare
 }
@@ -113,3 +113,23 @@ interface Indexable {
 
 // start from here
 // https://coding.imooc.com/lesson/330.html#mid=24483
+
+let passcode = 'passcode'
+
+class Employee {
+  private _fullName: string = ''
+  get fullName(): string {
+    return this._fullName
+  }
+  set fullName (newName: string) {
+    if (passcode && passcode === 'passcode') {
+      this._fullName = newName
+    } else {
+      console.log('Wrong cridentials')
+    }
+  }
+}
+
+let employee = new Employee()
+employee.fullName = 'Aaron Guo'
+console.log(employee.fullName)
