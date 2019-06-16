@@ -43,10 +43,10 @@ function error(mes: string): never {
   throw new Error('This is never')
 }
 
-declare function create (o: object | null): void;
+declare function createFactory (o: object | null): void;
 
-create({prop: 0})
-create(null)
+createFactory({prop: 0})
+createFactory(null)
 
 // 类型断言
 let someValue:any = 'this is a string'

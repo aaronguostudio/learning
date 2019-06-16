@@ -35,8 +35,8 @@ console.log('> union type is', unionType);
 function error(mes) {
     throw new Error('This is never');
 }
-create({ prop: 0 });
-create(null);
+createFactory({ prop: 0 });
+createFactory(null);
 // 类型断言
 let someValue = 'this is a string';
 let strLength = someValue.length;
