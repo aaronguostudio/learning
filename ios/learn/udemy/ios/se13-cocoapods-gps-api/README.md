@@ -41,6 +41,7 @@ end
 - knowledge: how to use segues
   - checkout project about the basic of segue
 - add protocol to the second page ( inorder to pass data back to the first screen )
-
-<!-- start from here -->
-https://www.udemy.com/ios-12-app-development-bootcamp/learn/lecture/10929212#overview
+- knowledge: pass data from pages
+  - a new simple example
+  - two pages switch each other but they won't keep their states
+  - A simple project PassDataBetweenPages is created
