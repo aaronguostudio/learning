@@ -38,5 +38,26 @@ end
   - try catch in swift
   - Navigation Controller
     - select controller -> editor -> embed in -> Navigation Controller
+  - TableView in chat Controller
+    - tableView delegate: UITableViewDelegate, UITableViewDataSource
+    - declare: cellForRowAtIndexPath
+    - declare: numberOfRowsInSection
+    - .xib / .nib to design the custom cell
+      - create a sub-class for UITableViewCell
+      - register the nib
+      - config cell to make its height adjust automatically
+  - Message Model
+  - Animation
+    - update constrain params
+    - trigger textFieldBeginEditing
+    - add UITapGestureRecognizer()
+    - add @objc to compatible with object-C
+  - Send message and save to firebase
+  - Retrieve data from db and convert to dictionary data type
+  - Diplay data in the UI
+  - Update firebase rules
+    - "rules": {
+          ".read": "auth != null",
+          ".write": "auth != null"
+      }
 
-<!-- start from se199 -->
