@@ -1,0 +1,26 @@
+# Steps
+- 代码从项目中移出，在 anki 中查看代码
+- 阅读微信文档
+- 设置域名，转发到自己的本地
+  - natapp
+    - ./natapp -authtoken=token
+  - 网页授权绑定
+    - 获取微信端的字段
+    - 这里需要去掉 /sell 以保证个目录可以被访问
+- 手动获取微信授权
+  - 文档：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
+  - 创建申请 token 的 url
+  - 添加回调的 controller 解析回调以及携带的参数
+  - 微信打开拼接的 url 获取 code
+    - https://open.weixin.qq.com/connect/oauth2/authorize?appid=appid&redirect_uri=http://aaronstudio.natapp1.cc/sell/weixin/auth&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+  - 再使用 code 获取 access_token
+    - https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code
+    - 使用 RestTemplate 发送请求
+- 使用 SDK 获取微信授权
+  - SDK: https://github.com/Wechat-Group/WxJava
+  - 根据文档，使用 WxCpService weCpService = ...
+    - InteliJ 查看 implementation : opetion + command + b
+- 使用 charles 抓包
+  - 设置手机代理
+    - ip and port:8888
+  - 可以查看传输细节
