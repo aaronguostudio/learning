@@ -14,5 +14,30 @@
 - add accessory as checkmark for tablecell
 - add barButtonItem in navigation, add as system item
 - handle user input and update the table view
+- introduce about appDelegate and it's lifecycle
+  - application
+  - applicationWillResignActive
+  - applicationDidEnterBackground
+  - applicationWillEnterForeground
+  - applicationDidBecomeActive
+  - applicationWillTeminate
+- store data in userDefaults
+  - userDefaults will load all at once
+  - userDefaults can only store small data
+  - userDefaults can not store an array of custom objects
+- get data from userDefaults
+- get stored file location
+  print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+- singelton in swift
+- using ItemDataModel for storing items
+  - save an array of ItemDataModel in userDefault will cause the app crashing
+- use encoder to save custom data to plist
 
-<!-- start from 224 -->
+  <!-- start from 234 -->
+
+
+
+
+
+
+
