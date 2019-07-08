@@ -3,6 +3,7 @@
 - project: ./ios/imooc/Todoey
 
 ## Code
+- check branch: todoey-app-codable
 - check off landscape
 - add TableViewController and set it as initial controller
 - reconnect TableViewController to a ViewController class
@@ -35,6 +36,7 @@
 - load and decode data from plist
 
 # Core Data
+- check branch: todoey-app-core-data
 - 6 different approaches of storing data in iOS, check anki card
 - create a project has core data, the purpose is copying the template code to todoey app
 - create a DataModel type of file in todoey app and paste the related code from new project
@@ -78,4 +80,31 @@ extension TodoListViewController : UISearchBarDelegate {
   - add selectedCategory property for TodoListViewController and add didSet hook
 - add NSCompoundPredicate to trigger multiple query based on parentCategory and query
 
-<!-- start from 248 -->
+# Realm
+- install pod 'RealmSwift'
+- init realm in AppDelegation
+- create data model and add @objc dynamic var name : String = ""
+- check the location of realm storage
+  - print(Realm.Configuration.defaultConfiguration.fileURL)
+  - use realm browser open the file, command + shift + G to go to the path
+- create Item and Category data models and define the relationships
+- fix the code to align with realm implementation
+- CRUD
+  - load categories
+  - deal with the situation when categories is nil
+  - save categories and items
+  - delete items
+  - query and sort items
+  - add new dateCreated field on Item
+  - delete the app to make the data to migrate
+
+# Dress up
+- add pod
+  - pod 'SwipeCellKit', :git => 'https://github.com/SwipeCellKit/SwipeCellKit.git', :branch => 'swift_4.2'
+- add delete method as documentation mentioned
+- add delete icon
+- make Content View inherits from SwipTableViewCell and module as SwipeCellKit
+- add delete function
+- add expansion to delete
+
+<!-- start from 258 -->
