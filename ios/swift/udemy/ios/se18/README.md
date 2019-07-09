@@ -106,5 +106,19 @@ extension TodoListViewController : UISearchBarDelegate {
 - make Content View inherits from SwipTableViewCell and module as SwipeCellKit
 - add delete function
 - add expansion to delete
+- add a parent SwipeTableViewController which has the expansion deletion function
+  - define cellForRowAt function to define the cell, also change the cell name to genaric "Cell"
+  - retrieve cell from super: let cell = super.tableView(tableView, cellForRowAt: indexPath)
+  - override delete function
+  - do it on the TodoListViewController, don't forget to chagne the cell to inherits the module SwipeCellKit
+- Chameleon
+  - add colors
+- Improve the UI
+  - navigationController check Perfers Large Titles
+  - how to use guard
+  - await navigationController loaded, using viewWillAppear hook
+  - using guard let instead of if let
+  - reset nav bar color in viewWillDisappear hook
 
-<!-- start from 258 -->
+# Done
+- so many knowledge from this module, will create a practice app using the concepts
