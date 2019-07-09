@@ -2,7 +2,8 @@
 - create a todoey app
 - project: ./ios/imooc/Todoey
 
-## Code
+## UserDefaults
+> userDefaults is for storing sample data, it should be really small
 - check branch: todoey-app-codable
 - check off landscape
 - add TableViewController and set it as initial controller
@@ -32,6 +33,7 @@
 - singelton in swift
 - using ItemDataModel for storing items
   - save an array of ItemDataModel in userDefault will cause the app crashing
+  - plist is designed for simple key value storage, use codeable to store custom datatype
 - use encoder to save custom data to plist
 - load and decode data from plist
 
@@ -44,33 +46,30 @@
   - change the model name
 - create an Entity in DataModel
   - add attributes and check optionl
-  - select Module to Current Product Module
+  - select Module to Current Product Module, in the shield icon menu
   - codegen types
     - Category/Extension could add some custom code
     - Class Definition is auto-generated
     - Manul/None is fully costum designed
-  - NSPersistentContainer will use default container
+  - in AppDelegation, NSPersistentContainer will use default container
   - Updatting Item as CoreData model and add save/load functions
 - in core data
   - what is contenxt
+  - in Controller, get context that created in the AppDelegation
+    - (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContainer
 - load and delete data from coreData
 - searchBar
   - add searchBar delegate
-```swfit
-// another way to delegate
-extension TodoListViewController : UISearchBarDelegate {
-  func searchBarSearchButtonClicked(_ searchNar: UISearchBar) {
-    // ...
+  ```swfit
+  // another way to delegate
+  extension TodoListViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchNar: UISearchBar) { ... }
   }
-}
-
-```
+  ```
   - NSPredicate and query from the database
     - check this to learn more: https://academy.realm.io/posts/nspredicate-cheatsheet/
     - query the database
   - hide search bar in an async in main Thread
-
-# Add category for todo list
 - create a new tableViewController and link it to navigation controller as a Relational Segue
 - create class for this new tableViewController
 - create Category model and setup the relationship
@@ -83,6 +82,7 @@ extension TodoListViewController : UISearchBarDelegate {
 # Realm
 - install pod 'RealmSwift'
 - init realm in AppDelegation
+  - init a class without reference: _ = try Realm()
 - create data model and add @objc dynamic var name : String = ""
 - check the location of realm storage
   - print(Realm.Configuration.defaultConfiguration.fileURL)
@@ -95,6 +95,8 @@ extension TodoListViewController : UISearchBarDelegate {
   - save categories and items
   - delete items
   - query and sort items
+  - add an item for Category
+    - currentCategory.items.apprend(newItem)
   - add new dateCreated field on Item
   - delete the app to make the data to migrate
 
@@ -108,6 +110,7 @@ extension TodoListViewController : UISearchBarDelegate {
 - add expansion to delete
 - add a parent SwipeTableViewController which has the expansion deletion function
   - define cellForRowAt function to define the cell, also change the cell name to genaric "Cell"
+  - get cell from parentView: let cell = super.tableView(...)
   - retrieve cell from super: let cell = super.tableView(tableView, cellForRowAt: indexPath)
   - override delete function
   - do it on the TodoListViewController, don't forget to chagne the cell to inherits the module SwipeCellKit
@@ -116,7 +119,7 @@ extension TodoListViewController : UISearchBarDelegate {
 - Improve the UI
   - navigationController check Perfers Large Titles
   - how to use guard
-  - await navigationController loaded, using viewWillAppear hook
+  - using viewWillAppear hook, this will make sure navigationController loaded
   - using guard let instead of if let
   - reset nav bar color in viewWillDisappear hook
 
