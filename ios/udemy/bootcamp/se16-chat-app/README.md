@@ -31,6 +31,7 @@ end
 
 # Coding outline
 - connecting to Firebase
+  - add email auth on firebase configuration
   - add connecting code in AppDelegate
   - create real-time database
 - Firebase
