@@ -19,3 +19,6 @@
 
 # Cool Repo
 - git@github.com:2d-inc/HistoryOfEverything.git
+
+## Softwares
+- iTerm2 - https://www.iterm2.com/
