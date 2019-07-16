@@ -15,3 +15,4 @@
   - Row
   - Column
   - Container
+  - Expanded view
