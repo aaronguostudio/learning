@@ -1,1 +1,3 @@
-<!-- start from 72 -->
+- Using Wrap component
+- Using class and basic class knowledge in Dart
+- Using package
