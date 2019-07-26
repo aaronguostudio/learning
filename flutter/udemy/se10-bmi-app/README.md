@@ -88,5 +88,68 @@ Car myCar = Car(drive: slowDrive)
 
 ```
 
+- using slider and using sliderTheme
 
-<!-- start from here https://www.udemy.com/flutter-bootcamp-with-dart/learn/lecture/14485546#overview -->
+```dart
+SliderTheme(
+  // SliderTheme.of(context) will copy all current styles, instead of
+  // define all of them. then use copyWith to overwrite some
+  data: SliderTheme.of(context).copyWith(
+    inactiveTrackColor: Color(0xF8D8E98),
+    activeTrackColor: Colors.white,
+    thumbColor: Color(0xFFEB1555),
+    overlayColor: Color(0x29EB1555),
+    thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12.0),
+    overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0),
+  ),
+  child: Slider(
+      value: height.toDouble(),
+      min: 120.0,
+      max: 220.0,
+      onChanged: (double height) {
+        setState(() {
+          this.height = height.round();
+        });
+      }
+  ),
+)
+```
+
+- flutter const naming convention
+  - adding k as prefix represents for const
+
+- Using RawMaterialButton and compose it as a custom component
+
+- navigation
+  - tempalte project
+  - https://github.com/londonappbrewery/Navigation-Flutter-Demo
+  - Navigator.push()
+  - Navigator.pop()
+  - Using Named Route
+
+```dart
+return MaterialApp(
+  initialRoute: '/',
+  routes: {
+    '/': (context) => Screen0(),
+    '/first': (context) => Screen1(),
+    '/second': (context) => Screen2(),
+  },
+);
+
+// go to a named route
+Navigator.pushNamed(context, '/first');
+```
+
+- Dart maps
+```dart
+Map<String, int> phoneBook = {
+  'Aaron': 123323,
+  'Ben': 12144,
+}
+
+main () {
+  print(phoneBook['Aaron'])
+}
+```
+
