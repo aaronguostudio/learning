@@ -153,3 +153,4 @@ main () {
 }
 ```
 
+- pass params to component
