@@ -79,3 +79,10 @@ class Location {
 ```
 
 <!-- starts from https://www.udemy.com/flutter-bootcamp-with-dart/learn/lecture/14485916#overview -->
+
+- using http to call api
+- using dart:convert to parse json
+- using flutter_spinkit to show a loader
+- passing data from loading screen to location screen
+- padding data back to the preverious screen
+
