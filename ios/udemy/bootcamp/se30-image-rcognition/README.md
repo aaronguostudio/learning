@@ -1,0 +1,9 @@
+- get a card: https://limitlesstcg.com/tools/proxies/
+  - eevee upr 104
+  - oddish bus 4
+- create a ar resourse group
+- create a plane
+- get a 3d model
+  - http://roestudios.co.uk/project/3d-pokemon-models
+- convert from .obj to usdz
+  - xcrun usdz_converter /Users/arronstudio/workflow/a-code/ios/udemy/Poke3D-materials/133\ -\ Eevee/Eevee.obj ./eevee.usdz
