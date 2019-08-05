@@ -84,5 +84,6 @@ class Location {
 - using dart:convert to parse json
 - using flutter_spinkit to show a loader
 - passing data from loading screen to location screen
+  - pass data to location screen constructor
 - padding data back to the preverious screen
 
