@@ -4,9 +4,11 @@
 # Design
 - https://appicon.co/
 - https://www.materialpalette.com/
+
 ## Free resources
 - https://icons8.com/ouch
 - https://www.vecteezy.com/
+- https://www.freepik.com/
 
 ## DIY
 - https://www.canva.com
