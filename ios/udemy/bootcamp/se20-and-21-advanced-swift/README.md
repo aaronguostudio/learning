@@ -86,7 +86,8 @@ print(bucketsOfPaint)
   - open
 - using computed property to convert String to int
 - refactory the code using MVC pattern
-- start from https://www.udemy.com/ios-12-app-development-bootcamp/learn/lecture/11860678#questions
+- refactory model using struct instead of class
+- start from https://www.udemy.com/ios-12-app-development-bootcamp/learn/lecture/11860682#questions
 
 # Structs vs. Classes in swift
 
