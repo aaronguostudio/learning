@@ -1,3 +1,14 @@
 # Using constrain layout
 - In Dicee app
   - convert linearLayout to constraintLayout
+  - add constrains to logo, images and buttons
+  - use guideline to position logo
+  - in the rotate menu, can create another layout for landscape view
+- Resource qualifiers
+  - res > new resource file > available qualifiers
+  - I can choose different resource files
+- Locale
+  - go to strings.xml
+  - open editor
+  - add locale for multi-languages
+  - system languate will choose different languages
