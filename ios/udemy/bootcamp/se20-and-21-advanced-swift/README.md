@@ -99,3 +99,16 @@ print(bucketsOfPaint)
 // class are reference type
 
 ```
+
+# tuple
+```swift
+let touple1 = ("Aaron", 12)
+print(touple1.0)
+
+let touple2 = (name: "Aaron")
+print(touple2.name)
+
+let touple3: (name: String, age: Int)
+touple3 = (name: "Aaron", age: 12)
+
+```

@@ -1,0 +1,14 @@
+# 初始化项目
+- create-react-app project-name --use-npm
+  - npm i normalize.css -s
+- create basic proejct structrues, using page and modules ( never use this pattern before )
+  - index
+  - order
+  - query
+  - ticket
+- eject project and update webpack
+  - add new js entries in webpack
+  - add new html template
+  - update entry from arry to object and add the other entries
+  - update html to add other htmls
+  - build 之后应该会有四个独立的页面
