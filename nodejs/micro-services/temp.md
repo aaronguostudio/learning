@@ -1,0 +1,3 @@
+- useful infro
+  - https://cnodejs.org/topic/59f6e8ff688da99d4fa91e11
+  - https://segmentfault.com/a/1190000015051682
