@@ -13,3 +13,14 @@
 - 理解如何使用 useCallback 优化
 - 理解如何使用 useMemo 批量 bindActionCreators to dispatch
   - 这样做是因为目前 react 还没有对 hooks 提供非常好的支持，以后可以关注更新
+
+# 城市选择浮层-顶部搜索栏
+- npm i classnames -s
+- classnames 工具库的使用
+- useState() 的使用
+- 使用 useMemo 优化 ‘计算属性’
+- useEffect 并且优化 cityData 的加载
+- 使用本地缓存保存 cityData 并增加时间戳
+- 创建 cityData 各个子组件
+- 使用 position: sticky 实现 sticky header 的效果
+- 使用 memo 优化所有无状态组件
