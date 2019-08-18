@@ -24,3 +24,7 @@
 
 ## Softwares
 - iTerm2 - https://www.iterm2.com/
+
+## Others
+- Lin CMS
+- SendGrid
