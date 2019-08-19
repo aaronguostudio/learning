@@ -1,3 +1,2 @@
 # 数据结构与模块设计
-
-<!-- starts from: https://coding.imooc.com/lesson/348.html#mid=25273 -->
+- 理解怎样从原型和定义好的后端返回数据中提炼前端使用的数据模型
