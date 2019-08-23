@@ -28,3 +28,6 @@
 ## Others
 - Lin CMS
 - SendGrid
+- Fivetran
+- snowflake
+- looker

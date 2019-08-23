@@ -13,4 +13,6 @@
 - 在开发环境和生产环境下分别处理 error
 
 # 关系和非关系数据库
-<!-- https://coding.imooc.com/lesson/342.html#mid=24688 -->
+- 使用 ORM 生成表
+- sequelize 需要配合驱动 mysql2
+- 配置 sequelize 并使用它生成 tables
