@@ -16,3 +16,11 @@
 - 使用 ORM 生成表
 - sequelize 需要配合驱动 mysql2
 - 配置 sequelize 并使用它生成 tables
+
+# Sequelize
+- This will delete table and generate one on every startup, never use it on production
+```js
+sequelize.sync({
+  force: true
+})
+```
