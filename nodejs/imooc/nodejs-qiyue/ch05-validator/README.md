@@ -24,3 +24,20 @@ sequelize.sync({
   force: true
 })
 ```
+
+# 关于中间件
+- koa 的中间件是一次性实例化，静态的
+  - 比如：
+```js
+// 每次请求都会生成一个实例
+router.post('/', async (ctx) => {
+  // ...
+  // new Validator()...
+})
+
+
+// 只在启动的时候生成一个实例，多个请求都会修改 validator 的属性
+router.post('/', new Validator(), async (ctx) => {
+
+})
+```
