@@ -1,0 +1,2 @@
+- 关于 bcrypt 的一些知识
+  - https://medium.com/@paulrohan/how-bcryptjs-works-90ef4cb85bf4
