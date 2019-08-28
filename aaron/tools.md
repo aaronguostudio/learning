@@ -18,6 +18,7 @@
 
 # Mobile
 - fastlane
+- bitrise
 
 # Cool Repo
 - git@github.com:2d-inc/HistoryOfEverything.git
@@ -26,8 +27,10 @@
 - iTerm2 - https://www.iterm2.com/
 
 ## Others
-- Lin CMS
 - SendGrid
 - Fivetran
 - snowflake
 - looker
+
+## npm package
+- Lin CMS
