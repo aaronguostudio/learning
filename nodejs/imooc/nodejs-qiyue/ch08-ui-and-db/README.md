@@ -21,4 +21,6 @@
 # 数据的初始化
 - 导入数据
 
-<!-- https://coding.imooc.com/lesson/342.html#mid=25330 -->
+# 小程序已经支持 npm 包
+- 需要在小程序做 base64 加密
+- header: { Authorization: ’Basic ‘ + basic64 }
