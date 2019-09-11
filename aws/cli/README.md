@@ -1,0 +1,4 @@
+- pip3 install awscli
+- pip3 install awscli --upgrade
+- pip list -o
+  - check outdated package
