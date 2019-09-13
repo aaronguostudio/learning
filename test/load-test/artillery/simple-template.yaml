@@ -1,0 +1,42 @@
+config:
+  target: "https://bd3rct7ujg.execute-api.us-east-1.amazonaws.com/dev"
+  phases:
+    - duration: 150
+      arrivalRate: 0
+      rampTo: 150
+  processor: "./my-functions.js"
+
+scenarios:
+  # - name: "Create, get, update, delete and health check"
+  - flow:
+    - function: "generateRandomData"
+    - get:
+        url: "/users/health"
+    - log: "Sent a request to create user with {{firstname}}, {{lastname}}, {{username}}, {{email}}, {{password}}"
+
+    - post:
+        url: "/users"
+        json:
+          firstname: "{{firstname}}"
+          lastname: "{{lastname}}"
+          username: "{{username}}"
+          email: "{{email}}"
+          password: "{{password}}"
+          phone: "{{phone}}"
+        capture:
+          - json: "$.id"
+            as: "id"
+
+    - log: "Sent a request to create user with {{firstname}}, {{lastname}}, {{username}}, {{email}}, {{password}}"
+
+    - get:
+        url: "/users"
+
+    - patch:
+        url: "/users/{{id}}"
+        json:
+          email: "{{email}}"
+    - log: "Sent a request to update user with {{email}}"
+
+    - delete:
+        url: "/users/{{id}}"
