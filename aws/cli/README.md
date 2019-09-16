@@ -17,9 +17,7 @@ aws rds create-db-instance --db-instance-identifier database-id --allocated-stor
 aws rds modify-db-instance --db-instance-identifier serverless-users-medium --publicly-accessible
 
 # delete
-aws rds delete-db-instance \
---db-instance-identifier serverless-users \
---skip-final-snapshot
+aws rds delete-db-instance --db-instance-identifier serverless-users --skip-final-snapshot
 
 ```
 - DB connections
