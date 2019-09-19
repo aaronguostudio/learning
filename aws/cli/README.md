@@ -32,6 +32,4 @@ aws rds delete-db-instance --db-instance-identifier serverless-users --skip-fina
     - db.t2.medium type has 413
 
 - Check pg active connection
-  - select *
-    from pg_stat_activity
-    where datname = 'serverless-users';
+  - select * from pg_stat_activity where datname='serverless-users';
