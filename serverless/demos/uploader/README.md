@@ -1,0 +1,3 @@
+- Issues
+  - signing issue: using signature v4
+  - s3 access denied: add action:* to s3 bucket
