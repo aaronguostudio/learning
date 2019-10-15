@@ -1,2 +1,0 @@
-// import './drawFace'
-import './drawBarChat'
