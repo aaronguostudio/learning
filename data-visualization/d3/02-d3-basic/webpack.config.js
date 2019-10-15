@@ -38,5 +38,15 @@ module.exports = {
         }
       }
     }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(csv|png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      }
+    ]
   }
 }
