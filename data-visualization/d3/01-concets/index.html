@@ -60,7 +60,12 @@
       </svg>
     </div>
     <script>
+      /*
+        This demo contains using rect, circle, line and path.
+        And also some simple interaction examples using JavaScript to manipulate SVG elements in html
+      */
       var startX = 0, startY = 0, graphX = 0, graphY = 0, scale = 1, step = .2, moving = false
+
       updateGraph = () => {
         var graph = document.getElementById('graph')
         graph.setAttribute('transform', `scale(${scale}) translate(${graphX} ${graphY})`)

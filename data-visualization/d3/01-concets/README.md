@@ -1,5 +1,7 @@
 # Concepts
 
+> Starts from 00:00:00
+
 ## Dataset Types
 
 - tables
@@ -11,6 +13,10 @@
   - fields
   - geometry
 
+## Basic JavaScript
+
+- [SKIP] Very basic JavaScript knowledge
+
 ## Basic svg
 
-- check index.html
+- Check index.html for using svg in with html and js
