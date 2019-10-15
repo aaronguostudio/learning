@@ -24,3 +24,7 @@
 ## Resources
 
 - [Using d3 formatting](http://bl.ocks.org/zanarmstrong/05c1e95bf7aa16c4768e)
+
+## Continue
+
+<!-- scatter plot -->

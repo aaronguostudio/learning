@@ -1,2 +1,2 @@
 // import './01-drawFace'
-import './04-drawScatterPlot'
+import './04-drawScatterPlot-cars'
