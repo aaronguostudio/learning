@@ -14,12 +14,12 @@
 
 ## Index
 
-- SVG concepts, 01-concepts/index.html
-- Making a face (2:34:00), 02-d3-basic/drawFace.js
-- Making a bar chart (3:15:00), 02-d3-basic/darBarChat.js
-- Customizing Axis ((3:44:02)
-  - Using formatter
-- Making a Scatter Plot (4:10:00)
+1. SVG concepts, 01-concepts/index.html
+2. Making a face (2:34:00)
+3. Making a bar chart (3:15:00)
+4. Customizing Axis ((3:44:02)
+5. Making a Scatter Plot (4:10:00)
+6. Making Line and Area Charts (4:34:33)
 
 ## Resources
 
