@@ -1,2 +1,1 @@
-// import './01-drawFace'
-import './05-drawScatterPlot-cars'
+import './08-drawLineAndAreaChart-area'

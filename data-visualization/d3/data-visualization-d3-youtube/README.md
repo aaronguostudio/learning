@@ -19,7 +19,9 @@
 3. Making a bar chart (3:15:00)
 4. Customizing Axis ((3:44:02)
 5. Making a Scatter Plot (4:10:00)
-6. Making Line and Area Charts (4:34:33)
+6. Making Line and Area Charts - plot (4:34:33)
+7. Making Line and Area Charts - line (4:43:00)
+8. Making Line and Area Charts - area
 
 ## Resources
 
@@ -27,4 +29,4 @@
 
 ## Continue
 
-<!-- scatter plot -->
+<!-- 4:55:28 -->
