@@ -10,6 +10,21 @@
 
 > 01-first-scene.html
 
-- basic scene, geometry, material, camera, animation
+- basic scene, geometry, material, camera, animation, spot
 - stats.js
 - data.gui.js
+- responsive scene
+
+### Basic components
+
+- 01-scene
+  - AmbientLight
+  - scene
+    - add
+    - children
+    - getObjectByName
+    - remove
+    - traverse
+    - fog
+    - override Material
+- 02 Geometry and grid
