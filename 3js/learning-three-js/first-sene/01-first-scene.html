@@ -1,24 +1,27 @@
-  <!DOCTYPE html>
-
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Example 01.01 - Basic skeleton</title>
     <script type="text/javascript" src="../libs/three.js"></script>
+    <script type="text/javascript" src="../libs/stats.js"></script>
+    <script type="text/javascript" src="../libs/dat.gui.js"></script>
     <style>
       body {
         margin: 0;
         overflow: hidden;
       }
     </style>
-</head>
+  </head>
 <body>
 
-<div id="webgl">
-</div>
+<div id="webgl"></div>
+<div id="Stats-output"></div>
 
 <script type="text/javascript">
   function init() {
+
+    const stats = initStats();
+
     // create scene and camera
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000)
@@ -57,7 +60,7 @@
     const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
     sphere.castShadow = true
     sphere.position.x = 20
-    sphere.position.y = 4
+    sphere.position.y = 0
     sphere.position.z = 2
     scene.add(sphere)
 
@@ -71,9 +74,52 @@
     spotLight.castShadow = true
     scene.add(spotLight)
 
+    var step = 0;
+    var controls = new function () {
+      this.rotationSpeed = 0.02
+      this.bouncingSpeed = 0.03
+    }
+
+    const gui = new dat.GUI()
+    gui.add(controls, 'rotationSpeed', 0, 0.5)
+    gui.add(controls, 'bouncingSpeed', 0, 0.5)
+
+    function renderScene () {
+      stats.update()
+
+      cube.rotation.x += controls.rotationSpeed
+      cube.rotation.y += controls.rotationSpeed
+      cube.rotation.z += controls.rotationSpeed
+
+      step += controls.bouncingSpeed;
+      sphere.position.x = 20 + ( 10 * (Math.cos(step)));
+      sphere.position.y = 2 + ( 10 * Math.abs(Math.sin(step)));
+
+      requestAnimationFrame(renderScene)
+      renderer.render(scene, camera)
+    }
+
+    function initStats () {
+      const stats = new Stats()
+      stats.setMode(0)
+      stats.domElement.style.position = 'absolute';
+      stats.domElement.style.left = '0px';
+      stats.domElement.style.top = '0px';
+      document.getElementById("Stats-output").appendChild(stats.domElement);
+      return stats;
+    }
+
+    function onResize () {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', onResize, false)
+
     // render
     document.getElementById('webgl').appendChild(renderer.domElement)
-    renderer.render(scene, camera)
+    renderScene()
   }
   window.onload = init
 </script>

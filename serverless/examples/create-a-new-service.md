@@ -1,0 +1,1 @@
+- serverless create --template aws-nodejs --path aws-node-s3-signature
