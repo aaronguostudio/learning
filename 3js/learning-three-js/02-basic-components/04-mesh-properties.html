@@ -166,6 +166,12 @@
 
         render();
 
+        function onclick () {
+          alert(1)
+        }
+
+        render.domElement.addEventListener('click', onclick, true)
+
         function render() {
             stats.update();
 
