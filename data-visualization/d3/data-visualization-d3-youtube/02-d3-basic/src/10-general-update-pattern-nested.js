@@ -1,5 +1,5 @@
 import { select, range } from 'd3'
-import { fruitBowl } from './fruitBowl'
+import { fruitBowl } from './fruitBowl-nested.js'
 
 const canvas = select('svg')
 const width = 900

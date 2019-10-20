@@ -8,25 +8,27 @@ const radiusScale = scaleOrdinal()
   .domain(['apple', 'lemon'])
   .range([50, 30])
 
-export const fruitBow = (selection, props) => {
+const xPosition = (d, i) => i * 120 + 100
+
+export const fruitBowl = (selection, props) => {
   const { fruits, height } = props
   const circles = selection.selectAll('circle')
-    .data(fruits)
+    .data(fruits, d => d.id)
 
-   // adding merge will make the data binding alive
-   // merge combines enter and update
   circles
     .enter()
     .append('circle')
-      .attr('cx', (d, i) => i * 120 + 100)
+      .attr('cx', xPosition)
       .attr('cy',  height / 2 + 50)
+      .attr('r', 0)
     .merge(circles)
       .attr('fill', d => colorScale(d.type))
+      .transition()
+      .duration(500)
+      .attr('cx', xPosition)
       .attr('r', d => radiusScale(d.type))
-
-  // the object itself is the update function
-  // circles
-  //   .attr('fill', d => colorScale(d.type))
-  //   .attr('r', d => radiusScale(d.type))
-  circles.exit().remove()
+  circles.exit()
+    .transition(500)
+    .attr('r', 0)
+    .remove()
 }

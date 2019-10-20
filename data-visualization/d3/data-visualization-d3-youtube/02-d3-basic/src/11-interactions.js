@@ -1,5 +1,5 @@
 import { select, range } from 'd3'
-import { fruitBowl } from './fruitBowl'
+import { fruitBowl } from './fruitBowl-interaction'
 
 const canvas = select('svg')
 const width = 900
@@ -15,9 +15,31 @@ const makeFruit = type => ({
 
 let fruits = range(5)
   .map(() => makeFruit('apple'))
+let selectedFruid = null
+let hoveredFruid = null
+
+const setSelectedFruit = d => {
+  selectedFruid = d.id
+  render()
+}
+
+const setHoveredFruit = d => {
+  hoveredFruid = d.id
+  render()
+}
 
 const render = () => {
-  fruitBowl(canvas, { fruits, height })
+  fruitBowl(
+    canvas,
+    {
+      fruits,
+      height,
+      setSelectedFruit,
+      selectedFruid,
+      setHoveredFruit,
+      hoveredFruid
+    }
+  )
 }
 
 render()
@@ -39,7 +61,6 @@ setTimeout(() => {
 
 setTimeout(() => {
   fruits = fruits.filter((d, i) => {
-    console.log('>d', d, i, i !== 1)
     return i !== 1
   })
   render()

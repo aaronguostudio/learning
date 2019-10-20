@@ -23,11 +23,16 @@
 7. Making Line and Area Charts - line (4:43:00)
 8. Making Line and Area Charts - area
 9. The general update pattern of D3.js
+   1. enter, merge, exit
+   2. transition
+   3. object consistancy
+   4. single object
+10. The general update pattern and nested elements
+11. Interactions
 
 ## Resources
 
 - [Using d3 formatting](http://bl.ocks.org/zanarmstrong/05c1e95bf7aa16c4768e)
 - [VizHub for real demos](https://vizhub.com/)
-
 
 <!-- animation: https://www.youtube.com/watch?v=_8V5o2UHG0E&t=17649s -->
