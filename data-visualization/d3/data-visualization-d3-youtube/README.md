@@ -34,5 +34,6 @@
 
 - [Using d3 formatting](http://bl.ocks.org/zanarmstrong/05c1e95bf7aa16c4768e)
 - [VizHub for real demos](https://vizhub.com/)
+- [D3 examples](https://blockbuilder.org/search)
 
 <!-- animation: https://www.youtube.com/watch?v=_8V5o2UHG0E&t=17649s -->
