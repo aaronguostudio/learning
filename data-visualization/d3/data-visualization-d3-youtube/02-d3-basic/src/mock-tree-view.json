@@ -1,0 +1,205 @@
+{
+  "data": {
+    "id": "Kudosee"
+  },
+  "children": [
+    {
+      "data": {
+        "id": "Revenue"
+      },
+      "children": [
+        {
+          "data": {
+            "id": "Sale Product"
+          },
+          "children": [
+            {
+              "data": {
+                "id": "Pricing Model"
+              }
+            },
+            {
+              "data": {
+                "id": "Updating official website"
+              }
+            },
+            {
+              "data": {
+                "id": "Marketing activities"
+              }
+            },
+            {
+              "data": {
+                "id": "Report analysis"
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "id": "Product"
+          },
+          "children": [
+            {
+              "data": {
+                "id": "Notification functionality"
+              }
+            },
+            {
+              "data": {
+                "id": "Report Review"
+              }
+            },
+            {
+              "data": {
+                "id": "Comments on goals"
+              }
+            },
+            {
+              "data": {
+                "id": "Onboarding customers"
+              }
+            },
+            {
+              "data": {
+                "id": "AWS API Gateway Investication"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "data": {
+        "id": "Production"
+      },
+      "children": [
+        {
+          "data": {
+            "id": "Sale Product"
+          },
+          "children": [
+            {
+              "data": {
+                "id": "Pricing Model"
+              }
+            },
+            {
+              "data": {
+                "id": "Updating official website"
+              }
+            },
+            {
+              "data": {
+                "id": "Marketing activities"
+              }
+            },
+            {
+              "data": {
+                "id": "Report analysis"
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "id": "Product"
+          },
+          "children": [
+            {
+              "data": {
+                "id": "Notification functionality"
+              }
+            },
+            {
+              "data": {
+                "id": "Report Review"
+              }
+            },
+            {
+              "data": {
+                "id": "Comments on goals"
+              }
+            },
+            {
+              "data": {
+                "id": "Onboarding customers"
+              }
+            },
+            {
+              "data": {
+                "id": "AWS API Gateway Investication"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "data": {
+        "id": "Marketing"
+      },
+      "children": [
+        {
+          "data": {
+            "id": "Sale Product"
+          },
+          "children": [
+            {
+              "data": {
+                "id": "Pricing Model"
+              }
+            },
+            {
+              "data": {
+                "id": "Updating official website"
+              }
+            },
+            {
+              "data": {
+                "id": "Marketing activities"
+              }
+            },
+            {
+              "data": {
+                "id": "Report analysis"
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "id": "Product"
+          },
+          "children": [
+            {
+              "data": {
+                "id": "Notification functionality"
+              }
+            },
+            {
+              "data": {
+                "id": "Report Review"
+              }
+            },
+            {
+              "data": {
+                "id": "Comments on goals"
+              }
+            },
+            {
+              "data": {
+                "id": "Onboarding customers"
+              }
+            },
+            {
+              "data": {
+                "id": "AWS API Gateway Investication"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

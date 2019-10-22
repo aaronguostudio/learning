@@ -31,6 +31,7 @@
 11. Interactions (6:28:43)
 12. Draw map (6:45:13)
 13. Draw map interaction (7:05:00)
+14. Tree visulization (7:31:17)
 
 ## Resources
 
@@ -40,5 +41,6 @@
 - [D3 geographic](https://github.com/d3/d3-geo)
 - [D3 geographic projections](https://github.com/d3/d3-geo-projection)
 - [D3 pan and zoom](https://github.com/d3/d3-zoom)
-
-<!-- animation: https://www.youtube.com/watch?v=_8V5o2UHG0E&t=17649s7:26
+- [D3 hierarchy](https://github.com/d3/d3-hierarchy)
+- [D3 tidy tree](https://observablehq.com/@d3/tidy-tree)
+- [D3 stratify](https://observablehq.com/@d3/d3-stratify)
