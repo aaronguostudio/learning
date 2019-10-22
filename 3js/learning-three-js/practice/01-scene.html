@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice 01 - Scene</title>
+    <script type="text/javascript" src="../libs/three-96.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .container {
+        display: flex;
+      }
+      .panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 100vh;
+        background: #0d2531;
+        color: #FFF;
+        padding: 20px;
+      }
+      .canvas {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="panel">
+        <div onclick="handleMoveCube()">Move Cube</div>
+      </div>
+      <div class="canvas" id="WebGL-output"></div>
+    </div>
+    <script type="text/javascript">
+      var mouse = new THREE.Vector2()
+      var raycaster = new THREE.Raycaster()
+
+      var moveCube = false
+
+
+      function init () {
+
+        // scene
+        const scene = new THREE.Scene()
+        scene.overrideMaterial = new THREE.MeshLambertMaterial({ color: 0xffffff })
+
+        // render
+        const renderer = new THREE.WebGLRenderer()
+        renderer.setClearColor(new THREE.Color(0xa7a7b9, 1.0))
+        renderer.setSize(window.innerWidth, window.innerHeight)
+        renderer.shadowMapEnabled = true
+
+        // plane
+        var planeGeometry = new THREE.PlaneGeometry(100, 60, 1, 1)
+        var planeMaterial = new THREE.MeshLambertMaterial({color: 0xD8CA00})
+        var plane = new THREE.Mesh(planeGeometry, planeMaterial)
+        plane.receiveShadow = true
+        plane.rotation.x = -0.5 * Math.PI
+        plane.position.x = 20
+        plane.position.y = 0
+        plane.position.z = 0
+        scene.add(plane);
+
+        // camera
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        scene.add(camera)
+        camera.position.x = -40
+        camera.position.y = 30
+        camera.position.z = 30
+        camera.lookAt(scene.position)
+
+        // cube
+        const cubeGeometry = new THREE.BoxGeometry(5, 5, 5)
+        const cubeMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xffffff})
+        const cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
+        cube.castShadow = true
+        cube.name = 'block'
+
+        cube.position.x = planeGeometry.parameters.width - 100;
+        cube.position.y = 5;
+        cube.position.z = -60 + planeGeometry.parameters.height;
+
+        // add the cube to the scene
+        scene.add(cube);
+
+        // light
+        const ambientLight = new THREE.AmbientLight(0xcccccc)
+        scene.add(ambientLight)
+
+        var spotLight = new THREE.SpotLight(0xffffff);
+        spotLight.position.set(-40, 60, 10)
+        spotLight.castShadow = true
+        scene.add(spotLight)
+
+        document.getElementById("WebGL-output").appendChild(renderer.domElement)
+
+        function render () {
+          // update the picking ray with the camera and mouse position
+          raycaster.setFromCamera( mouse, camera )
+          // calculate objects intersecting the picking ray
+          var intersects = raycaster.intersectObjects( scene.children )
+
+          console.log('>intersects', intersects)
+
+          for ( var i = 0; i < intersects.length; i++ ) {
+            intersects[ i ].object.material.color.set( 0xff0000 )
+          }
+
+
+          if (moveCube && cube.position.z < -60 + planeGeometry.parameters.height) {
+            cube.position.z += .2
+          }
+          requestAnimationFrame(render)
+          renderer.render(scene, camera)
+        }
+
+        render()
+      }
+
+      function handleMoveCube () {
+        moveCube = true
+      }
+
+      function onMouseMove (e) {
+        mouse.x = (event.clientX / window.innerWidth) * 2 -1
+        mouse.y = (event.clientY / window.innerHeight) * 2 + 1
+        console.log('>>>>>>>>')
+      }
+
+      document.addEventListener(
+        'mousemove',
+        onMouseMove,
+        false
+      )
+
+      window.onload = init
+    </script>
+  </body>
+</html>
