@@ -2,7 +2,7 @@ import { select, tree, hierarchy, linkHorizontal, zoom, event } from 'd3'
 import data from './mock-tree-view.json'
 
 const canvas = select('svg')
-const margin = { top: 560, right: 1100, bottom: 560, left: 1100 }
+const margin = { top: 560, right: 400, bottom: 560, left: 600 }
 
 const width = document.body.clientWidth
 const height = document.body.clientHeight
@@ -62,4 +62,3 @@ g.selectAll('text').data(root.descendants())
     }
   })
   .text(d => d.data.data.id)
-

@@ -32,6 +32,7 @@
 12. Draw map (6:45:13)
 13. Draw map interaction (7:05:00)
 14. Tree visulization (7:31:17)
+15. Color and size legends (8:04:48)
 
 ## Resources
 
