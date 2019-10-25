@@ -47,3 +47,4 @@
 - [D3 tidy tree](https://observablehq.com/@d3/tidy-tree)
 - [D3 stratify](https://observablehq.com/@d3/d3-stratify)
 - [D3 scale crhomatic](https://github.com/d3/d3-scale-chromatic)
+- [Data Science](https://blog.exploratory.io/)
