@@ -1,1 +1,1 @@
-import './15-color-and-size-legends'
+import './16-choropleth-map'

@@ -33,6 +33,7 @@
 13. Draw map interaction (7:05:00)
 14. Tree visulization (7:31:17)
 15. Color and size legends (8:04:48)
+16. Choropleth map (8:33:27)
 
 ## Resources
 
@@ -45,3 +46,4 @@
 - [D3 hierarchy](https://github.com/d3/d3-hierarchy)
 - [D3 tidy tree](https://observablehq.com/@d3/tidy-tree)
 - [D3 stratify](https://observablehq.com/@d3/d3-stratify)
+- [D3 scale crhomatic](https://github.com/d3/d3-scale-chromatic)
