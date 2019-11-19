@@ -1,14 +1,20 @@
-# Install
+# CLI
+
+## Install
+
 - pip3 install awscli
 - pip3 install awscli --upgrade
 - pip list -o
   - check outdated package
 
-# RDS
+## RDS
+
 - aws rds describe-db-instances --db-instance-identifier dbname
 
 ## Query postgres connection limitation
+
 - Create and update DB
+
 ```bash
 # create
 aws rds create-db-instance --db-instance-identifier database-id --allocated-storage 20 --db-instance-class db.t3.medium --engine postgres --master-username username --master-user-password password --db-name dbname
@@ -20,6 +26,7 @@ aws rds modify-db-instance --db-instance-identifier serverless-users-medium --pu
 aws rds delete-db-instance --db-instance-identifier serverless-users --skip-final-snapshot
 
 ```
+
 - DB connections
   - MySQL
     - [DB connection limitation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Performance.html)
@@ -33,3 +40,20 @@ aws rds delete-db-instance --db-instance-identifier serverless-users --skip-fina
 
 - Check pg active connection
   - select * from pg_stat_activity where datname='serverless-users';
+
+## cli tips
+
+- [config mulitple profile](https://serverless-stack.com/chapters/configure-multiple-aws-profiles.html)
+  - aws configure --profile newAccount
+  - sls deploy --aws-profile newAccount
+
+## API Gateway
+
+- aws apigateway get-rest-apis
+- aws apigateway get-resources --rest-api-id xxx
+  - this could find the root id
+- update api name
+
+  - aws apigateway update-rest-api --rest-api-id=fv3wud5wzl --patch-operations op=replace,value='dev-logan',path=/name
+
+- aws apigateway delete-rest-api --rest-api-id x9uskjlp5c --profile=payload

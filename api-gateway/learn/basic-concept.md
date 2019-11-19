@@ -1,4 +1,7 @@
-# API Gateway Goal
+# API Gateway
+
+## API Gateway Goal
+
 - Distribute API development
   - multiple teams can work on it
 - support multiple languages
@@ -6,7 +9,8 @@
 - minimize deployment risks
 - minimize hardware footprint
 
-# Managing microservices
+## Managing microservices
+
 - Central configuration
 - Service discovery
 - Load balancing
