@@ -1,4 +1,5 @@
 import numpy as np
+from .metrics import r2_score
 
 """
 参数学习算法，不需要存储用户传入的数据集，
@@ -39,6 +40,10 @@ class SimpleLinearRegression:
 
   def _predict(self, x_single):
     return self.a_ * x_single + self.b_
+
+  def score(self, x_test, y_test):
+    y_predict = self.predict(x_test)
+    return r2_score(y_test, y_predict)
 
   def __repr__(self):
     return "SimpleLinearRegression2()"
