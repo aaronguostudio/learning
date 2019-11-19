@@ -1,6 +1,6 @@
 # Skynet Buyer Report and Machine Learning
 
-## Local deploy steps:
+## Local deploy steps
 
 - Seed data (Follow README.md in data folder)
 - Start Backend Server (Follow README.md in backend folder)
