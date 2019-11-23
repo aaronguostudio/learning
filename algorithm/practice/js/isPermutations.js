@@ -1,5 +1,5 @@
-const a = "baa"
-const b = "baa"
+const a = "weewbaabdaff"
+const b = "baabdafweewf"
 
 const isPermutation = (a, b) => {
   const charsMap = new Map()
@@ -10,11 +10,8 @@ const isPermutation = (a, b) => {
   // add
   for (var i = 0; i < a.length; i++) {
     let count = charsMap.get(a[i])
-    if (!count) {
-      charsMap.set(a[i], 1)
-    } else {
-      charsMap.set(a[i], count + 1)
-    }
+    const newCount = count ? count + 1 : 1
+    charsMap.set(a[i], newCount)
   }
 
   // sub
