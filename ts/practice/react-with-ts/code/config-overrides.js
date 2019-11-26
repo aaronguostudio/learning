@@ -1,10 +1,9 @@
-const path = require("path")
 const {
   override,
   addLessLoader,
-  // enableEslintTypescript,
-  addBabelPresets
-  // addTslintLoader
+  enableEslintTypescript,
+  addBabelPresets,
+  addTslintLoader
 } = require("customize-cra")
 
 // module.exports = override(
@@ -36,8 +35,8 @@ module.exports = override(
     "@babel/preset-flow",
     "@babel/preset-react"
   ),
-  // enableEslintTypescript(),
-  // addTslintLoader({}),
+  enableEslintTypescript(),
+  addTslintLoader({}),
   addLessLoader({
     javascriptEnabled: true
     // modifyVars: {
