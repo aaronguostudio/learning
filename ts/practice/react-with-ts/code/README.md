@@ -19,7 +19,10 @@
     - notice, because of using CRA, I don't need to install anything, it's already configured
     - [For typescript](https://www.npmjs.com/package/eslint-config-react-app)
   - [For javascript](https://medium.com/@pppped/extend-create-react-app-with-airbnbs-eslint-config-prettier-flow-and-react-testing-library-96627e9a9672)
+- [Add Prettier](https://create-react-app.dev/docs/setting-up-your-editor)
 
 ## Prototyping with typescript
 
 - CRA offers a easy way to handle eslint. By add a .env file and add EXTEND_ESLINT=false will turn off extended esint configuration. For the warning from the browser, add a .eslintignore file and add src will ignore all warnings
+
+<!-- starts from https://create-react-app.dev/docs/developing-components-in-isolation -->
