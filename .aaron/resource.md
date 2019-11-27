@@ -32,6 +32,17 @@
 
 - iTerm2 - https://www.iterm2.com/
 
+## npm package
+
+- Lin CMS
+- load test
+  - https://artillery.io/
+
+## Cool Repo
+
+- git@github.com:2d-inc/HistoryOfEverything.git
+
+
 ## Others
 
 - SendGrid
@@ -43,13 +54,4 @@
 - Netlify
   - prerender.io
 - Mixpanel
-
-## npm package
-
-- Lin CMS
-- load test
-  - https://artillery.io/
-
-## Cool Repo
-
-- git@github.com:2d-inc/HistoryOfEverything.git
+- https://www.workable.com/

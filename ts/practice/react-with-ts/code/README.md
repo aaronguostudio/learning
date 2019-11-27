@@ -1,5 +1,15 @@
 # React with TypeScript
 
+## Topics
+
+- Adding eslint and prettier
+- Adding polyfill
+- Storybook
+  - [Story Book](https://create-react-app.dev/docs/developing-components-in-isolation/#!)
+  - [Getting started](https://www.learnstorybook.com/intro-to-storybook/react/en/get-started/)
+    - add new components without business logic (Live TDD)
+    - snapshort test (run npm test will trigger the storybook test)
+
 ## Good practice for using typescript
 
 - [Good practice](https://medium.com/@vitalyb/dont-let-typescript-slow-you-down-92d394ec8c9f)
@@ -25,4 +35,4 @@
 
 - CRA offers a easy way to handle eslint. By add a .env file and add EXTEND_ESLINT=false will turn off extended esint configuration. For the warning from the browser, add a .eslintignore file and add src will ignore all warnings
 
-<!-- starts from https://create-react-app.dev/docs/developing-components-in-isolation -->
+<!-- start from https://www.learnstorybook.com/intro-to-storybook/react/en/composite-component/ -->
