@@ -14,6 +14,13 @@
   - Concurrent Mode
     - Suspense
 
+## More about react
+
+- Features
+  - virtual dom
+  - ssr
+  - one-way data binding
+
 ## Resources
 
 - [TypeScript](https://github.com/piotrwitek/react-redux-typescript-guide)
