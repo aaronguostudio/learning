@@ -64,3 +64,35 @@ let myArray: StringArray;
 myArray = ["Bob", "Fred"];
 
 let myStr: string = myArray[0];
+
+
+/*
+  Class types
+  ---------------------------------------------------------
+*/
+// interface ClockInterface {
+//   currentTime: Date;
+//   setTime(d: Date): void;
+// }
+// class Clock implements ClockInterface {
+//   currentTime: Date = new Date()
+//   constructor (h: number, m: number) {
+//   }
+//   setTime (d: Date) {
+//     this.currentTime = d;
+//   }
+// }
+
+
+
+// this will get error because constructor is
+// the private side of a class, it won't check
+// the private side, instead, it checks the
+// instance side
+// interface ClockConstructor {
+//   new (hour: number, minute: number);
+// }
+// class Clock implements ClockConstructor {
+//   currentTime: Date;
+//   constructor(h: number, m: number) { }
+// }
