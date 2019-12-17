@@ -17,10 +17,7 @@ myArray = ["Bob", "Fred"];
 var myStr = myArray[0];
 var Clock = /** @class */ (function () {
     function Clock(h, m) {
-        this.currentTime = new Date();
     }
-    Clock.prototype.setTime = function (d) {
-        this.currentTime = d;
-    };
+    Clock.prototype.tick = function () { };
     return Clock;
 }());
