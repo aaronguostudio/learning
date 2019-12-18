@@ -42,3 +42,30 @@ var Programmer = /** @class */ (function (_super) {
     return Programmer;
 }(Person));
 exports.Programmer = Programmer;
+var FrontEndProgrammer = /** @class */ (function (_super) {
+    __extends(FrontEndProgrammer, _super);
+    function FrontEndProgrammer(firstName, lastName, age, skills) {
+        var _this = _super.call(this, firstName, lastName, age, skills) || this;
+        _this.draw = function () {
+            console.log("Front-end developer " + _this.firstName + " " + _this.lastName + " can code using " + _this.skills.join(' '));
+        };
+        return _this;
+    }
+    return FrontEndProgrammer;
+}(Programmer));
+exports.FrontEndProgrammer = FrontEndProgrammer;
+var FullStackProgrammer = /** @class */ (function (_super) {
+    __extends(FullStackProgrammer, _super);
+    function FullStackProgrammer(firstName, lastName, age, skills) {
+        var _this = _super.call(this, firstName, lastName, age, skills) || this;
+        _this.draw = function () {
+            console.log("Full-stack developer " + _this.firstName + " " + _this.lastName + " can code using " + _this.skills.join(' '));
+        };
+        _this.designDb = function (dbName) {
+            console.log("Full-stack developer " + _this.firstName + " " + _this.lastName + " designs db " + dbName);
+        };
+        return _this;
+    }
+    return FullStackProgrammer;
+}(Programmer));
+exports.FullStackProgrammer = FullStackProgrammer;

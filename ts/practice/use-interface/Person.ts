@@ -36,15 +36,19 @@ class FrontEndProgrammer extends Programmer implements drawable {
     super(firstName, lastName, age, skills)
   }
 
+  drawStyle: 'flat design'
+
   draw = () : void => {
     console.log(`Front-end developer ${this.firstName} ${this.lastName} can code using ${this.skills.join(' ')}`)
   }
 }
 
-class FullStackProgrammer extends Programmer implements drawable, designDb {
+class FullStackProgrammer extends Programmer implements buildPage {
   constructor(firstName: string, lastName: string, age: number, skills: string[]) {
     super(firstName, lastName, age, skills)
   }
+
+  drawStyle: 'material design'
 
   draw = () : void => {
     console.log(`Full-stack developer ${this.firstName} ${this.lastName} can code using ${this.skills.join(' ')}`)
@@ -53,9 +57,14 @@ class FullStackProgrammer extends Programmer implements drawable, designDb {
   designDb = (dbName: string) : void => {
     console.log(`Full-stack developer ${this.firstName} ${this.lastName} designs db ${dbName}`)
   }
+
+  buildPage = () : void => {
+    console.log('Build Page')
+  }
 }
 
 interface drawable {
+  drawStyle: string
   draw (page: string) : void
 }
 
@@ -63,9 +72,16 @@ interface designDb {
   designDb (db: string) : void
 }
 
+interface buildPage extends drawable, designDb {
+  buildPage () : void
+}
+
 export {
   Person,
   Programmer,
   FrontEndProgrammer,
-  FullStackProgrammer
+  FullStackProgrammer,
+  drawable,
+  designDb,
+  buildPage
 }

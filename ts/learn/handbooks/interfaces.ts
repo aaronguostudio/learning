@@ -112,3 +112,32 @@ const Clock: ClockConstructor = class Clock implements ClockInterface {
   constructor(h: number, m: number) {}
   tick () {}
 }
+
+// An example of using interface, extends interface
+// is in ts/practice/use-interface/index.ts
+
+
+
+
+/*
+  Hybrid Types
+  ---------------------------------------------------------
+*/
+
+interface Counter {
+  (start: number): string
+  interval: number
+  reset(): void
+}
+
+function getCounter () {
+  let counter = (function (start : number) {}) as Counter
+  counter.interval = 32
+  counter.reset = function () {}
+  return counter
+}
+
+let c = getCounter()
+c(10)
+c.reset()
+c.interval = 10
