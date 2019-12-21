@@ -1,6 +1,40 @@
 // Source: http://www.typescriptlang.org/docs/handbook/interfaces.html
 
 /*
+  Function types
+  ---------------------------------------------------------
+*/
+function vote1 (candidate: string, callback: (result: string) => any) {
+  callback(candidate)
+}
+
+vote1('ABC', res => console.log(res) )
+
+/*
+  Object types
+  ---------------------------------------------------------
+*/
+
+interface JQuery {
+  text(context: string)
+}
+
+interface JQueryStatic {
+  get(url: string, callback: (data: string) => any)
+  (query: string): JQuery
+}
+
+declare var $: JQueryStatic
+
+$.get(
+  "http://mysite.org/divContent",
+  function (data: string) {
+    $("div").text(data)
+  }
+)
+
+
+/*
   Duck typing
   ---------------------------------------------------------
 */

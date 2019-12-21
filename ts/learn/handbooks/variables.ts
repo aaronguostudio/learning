@@ -25,3 +25,5 @@ for (var i = 0; i < 10; i++) {
 
 // http://www.typescriptlang.org/docs/handbook/interfaces.html
 // readonly vs const
+
+
