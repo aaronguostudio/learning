@@ -151,6 +151,14 @@ public class Array<E> {
             remove(index);
     }
 
+    public E getLast () {
+        return get(size - 1);  // 可以复用之前的判断
+    }
+
+    public E getFirst () {
+        return get(0);
+    }
+
     @Override
     public String toString () {
         StringBuilder res = new StringBuilder();
