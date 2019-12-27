@@ -127,7 +127,7 @@ public class Array<E> {
             data[i - 1] = data[i];
         }
 
-        data[index] = null; // loitering objects, 不是必须要删除，不等于 memory leak
+        data[size - 1] = null; // loitering objects, 不是必须要删除，不等于 memory leak
         size--;
 
         if (size == data.length / 4 && data.length / 2 != 0)  // lazy, 避免复杂度震荡
