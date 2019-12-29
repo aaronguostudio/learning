@@ -130,3 +130,30 @@ class Node {
   Node right;
 }
 ```
+
+## 07 Set and Map
+
+一个值得注意的一点，Set and Map 都可以通过定义接口来实现应用，而底层的实现则可以不同。比如之前用 Array 和 Linked List 实现了 Stack 和 Queue 的功能。实现的方式其实是多种多样的。
+
+### Set
+
+- 特点
+  - Unique element
+  - 因为不可重复，所以 Binary Search Tree 是很好的实现方式
+- 应用
+  - 用户访问次数，需要去掉重复的用户
+  - 广告点击率，需要去掉重复的 IP
+  - 词汇量的统计，去掉重复的单词
+- 使用 BSTSet 和 LinkedListSet 在性能上有巨大的差异
+  - 原因
+    - add, contains, remove
+      - 链表为了去重，还要检查是否存在当前的元素，所以是 O(n)
+      - 搜索树的话，每次都是减去一半，最高的遍历是树的高度（深度 h）O(h)
+      - h 和 n 的关系：每层有 2^(h - 1)
+        - n = 2^0 + 2^1 + ... + 2^h-1
+          - 等比数列求和：n = 2^h - 1
+          - h = log2(n + 1) = O(log2n) 的复杂度 (log 级别的关系) -> O(logn)
+      - 需要注意，如果数据近乎有序的话，BSF 可能退化成链表
+        - 解决这个问题，可以通过创建平衡二叉树
+
+<!-- https://coding.imooc.com/lesson/207.html#mid=13706 -->
