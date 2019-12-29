@@ -1,5 +1,17 @@
 # HTTP
 
+## Basic Concepts
+
+- URI and URL
+  - URI contains URL and URN
+    - URL 像一个地址，URN 像一个名字（唯一标识）
+    - 能称之为 URL，都要有一个访问方式（机制），比如
+      - ftp:...
+      - http:...
+      - telnet:...
+    - URI, 比如
+      - www.imooc.com // 这是一个 URI 因为没有指定：HTTP 还是其他访问机制
+
 ## 报文
 
 - HTTP 报文结构分析 - 请求报文
@@ -7,17 +19,20 @@
   ![请求报文](http-request.png)
 
 - 报文头
-  - 通用报文头
+  - General
     - Cache-Control
+      - HTTP/1.1, same as pragma
     - Connection
     - Date
-    - Pragma
     - Trailer
     - Transfer-Encoding
     - Upgrade
     - Via
     - Warning
-  - 请求专业
+  - Request headers
+    - Pragma
+      - HTTP/1.0, same as Cache-Control
+      - 例如：Pragma: no-cache
     - Accept
     - Accept-Charset
     - Accept-Encoding
@@ -35,7 +50,6 @@
     - Proxy-Authorization
     - Range
     - Referer
-    - TE
     - User-Agent
   - 响应报文头
     - Accept-Ranges
@@ -70,6 +84,7 @@
     - Accept-Languate: zh-en, zh; q=0.7,en-us,en;q=0.3
   - Connection
     - Connection: keep-alive
+      - HTTP/1.1 中默认为 keep-alive
     - Connection: close
   - Host
     - 指定被请求资源的 Internet 主机和端口号，通常来自 HTTP URL
@@ -84,29 +99,35 @@
 
 - 常用方法
   - GET
-  - POST 创建资源
-  - PUT 幂等性，缺少验证机制，通常被 POST 替代
-  - DELETE 也是缺少验证机制
-  - HEAD 经常用来判断链接的有效性
+  - POST    创建资源
+  - PUT     幂等性，缺少验证机制，通常被 POST 替代
+  - DELETE  也是缺少验证机制
   - OPTIONS 返回支持的方法
-  - TRACE 回显服务器收到的请求，主要用于测试或诊断
+  - HEAD    经常用来判断链接的有效性
+  - TRACE   回显服务器收到的请求，主要用于测试或诊断
   - CONNECT 开启双向沟通的通道，通常用于 VPN, 客户端和服务器建立 connect 之后进行代理
+- 注意：PUT, PATCH, DELETE 缺少验证机制更多是历史原因，现在没有这个问题了，但是一些防火墙可能会过滤这几个 methods
 
 ## 状态管理
 
 - Cookie and Session
   - Cookie and Session 区别
     - 存放位置不同
+      - Cookie 在客户端
+      - Session 在服务端
     - Session 更安全，或者将 Cookie 加密也能保证安全
     - 有效期的不同
+      - Cookie 失效久
+      - Session 根据服务端的 implementation
     - 对服务器的压力不同，Session 需要更多的资源
   - Session
+    - Session ID 需要保存在客户端
     - 保存 Session ID 的方式
       - Cookie
+        - 如果客户端禁用了 Cookie 就没法保存了
       - URL 重写
       - 隐藏表单
     - Session 的有效期
-      - 超时
       - 通过程序调用
 
 ## 深度理解技术细节
@@ -117,6 +138,7 @@
   - 字库表，字符集，编码方式
     - 字库表，字符的数据库
     - 字符集，存储的二进制，可以映射到字符
+      - 比如 ASCII 65 对应 A
     - 编码方式，这些二进制通过算法压缩，比如 unicode, utf-8
   - 常见编码方式
     - ASCII
@@ -181,8 +203,8 @@
   - public     客户端和代理服务器(CDN)都可缓存
   - private    只有客户端可以缓存
   - expires    优先级低于 max-age, 服务器告诉浏览器多久再去请求
-  - if-Modified-Since  浏览器告诉服务器，和 Last-Modifed 是一对
   - Etag       资源标识
+  - if-Modified-Since  浏览器告诉服务器，和 Last-Modifed 是一对
   - if-None-Match 缓存资源标识，浏览器告诉无服务器上次的 Etag, 它们会进行比较
 
 - 应用场景
