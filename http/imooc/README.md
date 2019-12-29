@@ -244,3 +244,59 @@
       - 返回 206 Partial Content 使用断点续传
 - 断点续传的过程
   ![断点续传](content-range.png)
+
+## HTTPS
+
+- HTTPS and HTTP 是不同的协议
+  - https 增加了中间层做安全验证
+  - https = http + tls
+    - TLS 传输层加密协议, 前身是 SSL
+  - HTTP > SSL > TCP > IP > 链路层
+- 功能
+  - 内容加密
+  - 身份认证
+  - 数据完整性
+- https 工作流程
+  ![workflow](https-workflow.png)
+
+## HTTPS 的改进
+
+- 瓶颈
+  - 一条连接只发送一个请求
+  - 请求只能客户端发起，服务端没法主动通知客户端
+  - header 不经压缩
+  - 每次互相发送 header 造成浪费
+  - 非强制压缩发送
+- 新的协议
+  - WebSocket
+    - 特点
+      - 基于 HTTP 的补充，有部分交集
+      - 服务端主动发送消息给客户端
+    - 核心增加的字段
+      - request
+        - Upgrade: websocket
+        - Connection: Upgrade
+        - Sec-WebSocket-Key: base64 加密
+        - Sec-WebSocket-Protocol: chat, superchat
+        - Sec-WebSocket-Version: 13
+      - response
+        - Upgrade: websocket
+        - Connection: Upgrade
+        - Sec-WebSocket-Accept: xxxxx
+        - Sec-WebSocket-Protocl: chat
+  - SPDY
+    - Google 提出
+    - 改进
+      - 多路复用，请求优化
+      - 设置优先级，而不是像 HTTP 先进先出
+      - 支持服务器推送技术（偏重于资源的推送）
+      - 压缩 header
+      - 强制 SSL 加密
+  - HTTP 2.0
+    - 根据 SPDY 的核心进行改进
+    - 性能增强的核心：Binary Framing
+      [!Binary Framing](http2-binary-framing.png)
+    - 首部压缩
+      - 建立 headers frame
+      - 不再发送相同的 header
+      - 多路复用
