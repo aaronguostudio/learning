@@ -113,5 +113,6 @@ public class Main {
         LinkedListQueue<Integer> linkedListQueue1 = new LinkedListQueue<>();
         double timeC = testQueue(linkedListQueue1, opCount2);
         System.out.println("LinkedListQueue1, time: " + timeC + " s");
+
     }
 }
