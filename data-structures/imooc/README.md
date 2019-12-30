@@ -166,3 +166,17 @@ class Node {
   - 链表也可以，但是太慢
 - 多重映射
   - key 可以重复
+
+### Heap
+
+- 特性
+  - 二叉堆是一颗完全二叉树
+  - 父亲节点大于等于子节点，最大堆，相反就是最小堆
+  - heap 可以使用一个数组存储
+    - 当 index 为 0
+      - i 的 parent: (i-1)/2
+      - i 的 left: i * 2 + 1
+      - i 的 right: i * 2 + 2
+  - 完全二叉树不会退化为链表
+
+<!-- https://coding.imooc.com/lesson/207.html#mid=13742 -->
