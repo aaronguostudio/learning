@@ -300,3 +300,4 @@
       - 建立 headers frame
       - 不再发送相同的 header
       - 多路复用
+      - 请求优先级

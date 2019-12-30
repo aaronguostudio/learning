@@ -156,4 +156,13 @@ class Node {
       - 需要注意，如果数据近乎有序的话，BSF 可能退化成链表
         - 解决这个问题，可以通过创建平衡二叉树
 
-<!-- https://coding.imooc.com/lesson/207.html#mid=13706 -->
+### Map
+
+- 用 Binary Search Tree 实现的 Map 会大大好于用 LinkedList 实现的映射
+- 有序映射
+  - 通常基于树去实现
+- 和无序映射
+  - 通常通过 HashTable 实现
+  - 链表也可以，但是太慢
+- 多重映射
+  - key 可以重复
