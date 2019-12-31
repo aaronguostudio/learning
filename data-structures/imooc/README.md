@@ -178,5 +178,9 @@ class Node {
       - i 的 left: i * 2 + 1
       - i 的 right: i * 2 + 2
   - 完全二叉树不会退化为链表
-
-<!-- https://coding.imooc.com/lesson/207.html#mid=13742 -->
+- 广义的堆和队列
+  - d 差堆 d-ary heap
+  - 索引堆
+  - 二项堆
+  - 斐波那契堆
+  - 栈也可以理解成是一个队列

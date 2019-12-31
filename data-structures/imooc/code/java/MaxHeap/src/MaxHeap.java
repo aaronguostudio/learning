@@ -9,6 +9,20 @@ public class MaxHeap<E extends Comparable<E>> {
         data = new Array<>();
     }
 
+
+    // heapify 的算法，是从下往上 sort 一个数组
+    // 找到最后一个非叶子节点，然后做下沉操作。最后
+    // 遍历到最顶端完成 heapify 的操作
+    // 如果将 n 个元素逐个插入，算法是 O(nlogn)
+    // heapify 的过程复杂度为 O(n)
+    // 这里作为构造函数给出
+
+    public MaxHeap(E[] arr) {
+        data = new Array<>(arr);
+        for (int i = parent(arr.length - 1); i >=0; i--)
+            siftDown(i);
+    }
+
     public int size () {
         return data.getSize();
     }
@@ -56,6 +70,18 @@ public class MaxHeap<E extends Comparable<E>> {
         data.removeLast();
         siftDown(0);
         return ret;
+    }
+
+
+    public E replace (E e) {
+        E ret = findMax();
+        data.set(0, e);
+        siftDown(0);
+        return ret;
+    }
+
+    public void heapify () {
+
     }
 
     private void siftDown(int k) {
