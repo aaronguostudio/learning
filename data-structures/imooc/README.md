@@ -184,3 +184,8 @@ class Node {
   - 二项堆
   - 斐波那契堆
   - 栈也可以理解成是一个队列
+
+### Line Tree
+
+- 什么是线段树
+  [line tree](line-tree.png)
