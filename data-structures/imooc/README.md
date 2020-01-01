@@ -214,3 +214,35 @@ class Node {
   - 树状数组：Binary Index Tree
 - 区间的其他解决方案
   - RMQ: Range Mimimum Query
+
+### Trie 字典树
+
+- 定义
+  - 每个节点有 26 个指向下个节点的指针
+  - 如果要大小写，或者存在其他字符，会需要若干个节点
+  - 每个节点应该有个 isWord 因为不一定只有叶子节点能够构成一个 word
+- Trie with Map 也可以做词频统计的功能
+- Trie 的局限性
+  - 最大的问题是空间
+- Trie 的扩展
+  - 压缩字典树 Compressed Trie 可以把独立的子节点放到一个节点，解决占用空间大的问题
+
+    ![Compressed Trie](compressed-trie.png)
+
+  - Ternay Search Trie
+    - 节省更多的空间
+
+    ![Ternary Search Trie](ternary-search-trie.png)
+  - 后缀树
+- 更多字符串的问题
+  - 子串查询的算法
+    - KMP
+    - Boyer-Moore
+    - Rabin-Karp
+  - 文件压缩
+    - 霍夫曼算法
+  - 模式匹配
+    - 正则表达式
+  - 编译原理
+  - 生物科学
+    - DNA 就是一个巨大的字符串
