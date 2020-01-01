@@ -5,26 +5,34 @@ This project follows liuyubobobo's datastructures course on imooc
 - [github](https://github.com/liuyubobobo/Play-with-Algorithms)
 - [如何学习](https://mp.weixin.qq.com/s?__biz=MzU4NTIxODYwMQ==&mid=2247483836&idx=1&sn=90854aa76507281403e4dd9cd434a12b&chksm=fd8caefacafb27ec78f999fde4f1217c04c6e2ff28cf51fe511d8fa29d484d9281ff91de8c9c&token=88683563&lang=zh_CN#rd)
 
-## 01 概览
+## 总结
 
-### Real life examples
-
-- Database
-  - tree: AVL, 红黑树，Treap, 伸展树，B 树
-  - hashtable
-- 操作系统
-  - stack
-    - 系统栈，函数的循环调用
-  - heap
-    - 优先队列
-- 文件压缩
-  - 哈弗曼树(比较简单的算法)
-- 通讯录
-  - trie - 前缀树
-- 游戏
-  - 寻路算法
-    - DFS 深度优先
-    - BFS 广度优先
+- 数据结构的分类
+  - 线性
+    - dynamic array, queue, stack, linked list
+    - hashtable (本身就是一个数组，也可以实现的比较复杂)
+  - 树
+    - binary search tree, avl, red and black tree
+    - heap, line tree, trie（也可以用数组）, quickfind
+  - 图
+    - 邻接表，邻接矩阵
+- Real life examples
+  - Database
+    - tree: AVL, 红黑树，Treap, 伸展树，B 树
+    - hashtable
+  - 操作系统
+    - stack
+      - 系统栈，函数的循环调用
+    - heap
+      - 优先队列
+  - 文件压缩
+    - 哈弗曼树(比较简单的算法)
+  - 通讯录
+    - trie - 前缀树
+  - 游戏
+    - 寻路算法
+      - DFS 深度优先
+      - BFS 广度优先
 
 ### 学习的注意事项
 
@@ -261,3 +269,51 @@ class Node {
   - 对于任意一个节点，左子树和右子树的高度差不能超过 1
 
     ![avl tree](avl-tree.png)
+
+### 红黑树与 2-3 Tree
+
+- 2-3 Tree
+  - 2-3 Tree 是一棵绝对平衡的树
+- 红黑树
+  - 等价于 2-3 tree
+  - 红色一定是向左倾斜的
+    ![red-black-tree](red-black-tree.png)
+
+### Hash Table
+
+- 哈希表数据结构要解决
+  - 哈希函数的设计
+  - 哈希冲突
+  - “键” 通过哈希函数得到的 “索引” 分布越均匀越好
+    - 这个问题非常复杂，有专门的论文讨论不同领域的问题
+- 哈希函数的设计
+  - 整形
+    - 小范围的正整数直接使用
+    - 小范围负整数进行偏移
+    - 大整数
+      - 通常：取模
+        - 比如取身份证的后四位
+        - 如果去后六位，因为前两位是生日，1 - 31，其他的数字用不上，会造成分布不均匀
+  - 浮点型
+    - 浮点数传化成整形
+  - 字符串
+    - 转成整形处理
+      - 比如 26 个字母使用 26 进制的方式存, 比如 code (B 代表自定义的进制)
+        - hash(code) = (c*B^3 + o*B^2 + d*B^1 + e*B^0) % M
+        - 可以简化为：hash(code) = ((((c*B) + o)*B + d)*B + e) % M
+        - 可以简化为：hash(code) = ((((c % M)*B) + o) % M*B + d) % M*B + e) % M (每次都取模，避免整形益处)
+
+          ```java
+            // java 实现字母 hash 的示例
+            int hash = 0
+            for (int i = 0; i < s.length; i++)
+              hash = (hash * B + s.charAt(i)) % M
+          ```
+
+  - 尽可能摸一个素数可以降低冲突的概率
+- 原则
+  - 一致性，if a = b, hash(a) == hash(b)
+  - 高效性
+  - 均匀性
+
+## 总结
