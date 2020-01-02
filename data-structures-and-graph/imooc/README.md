@@ -315,5 +315,3 @@ class Node {
   - 一致性，if a = b, hash(a) == hash(b)
   - 高效性
   - 均匀性
-
-## 总结
