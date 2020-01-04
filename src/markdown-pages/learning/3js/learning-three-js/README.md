@@ -1,5 +1,5 @@
 ---
-path: "/learning/3js"
+path: "/learn/3js/index"
 date: "2019-05-04"
 title: "Learning"
 ---

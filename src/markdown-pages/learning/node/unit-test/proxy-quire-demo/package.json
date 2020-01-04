@@ -1,0 +1,16 @@
+{
+  "name": "proxy-quire-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "foo.js",
+  "scripts": {
+    "unit": "mocha --recursive test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "proxyquire": "^2.1.0"
+  }
+}

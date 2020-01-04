@@ -1,9 +1,0 @@
-{
-  "python.pythonPath": "/opt/anaconda3/envs/tf2/bin/python",
-  "python.linting.pylintEnabled": true,
-  "workbench.colorCustomizations": {
-    "activityBar.background": "#052a81",
-    "tab.activeBackground": "#052a81",
-  },
-  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace"
-}

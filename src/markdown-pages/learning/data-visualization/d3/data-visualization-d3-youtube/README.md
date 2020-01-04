@@ -1,6 +1,5 @@
 ---
-path: "/learning/d3"
-date: "2019-05-04"
+path: "/learn/data-visual/"
 title: "Learning"
 ---
 

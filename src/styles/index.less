@@ -1,4 +1,5 @@
 @import './normalize.less';
+@import './vars.less';
 
 // app global css
 @font-face {
@@ -14,6 +15,31 @@
   src: local('Product Sans Bold'), url(./fonts/ProductSansBold.ttf);
 }
 
+//
 body {
   font-family: "Roboto", "-apple-system", "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.flex { display: flex; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.full-vw { width: 100vw; }
+.full-vh { height: 100vh; }
+.px-lg { padding-left: @xl; padding-right: @xl; }
+.py-lg { padding-top: @xl; padding-bottom: @xl; }
+.pa-lg { .px-lg; .py-lg;  }
+
+//
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.main {
+  width: 100%;
+  padding: @xl;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 100%;
+  }
 }
