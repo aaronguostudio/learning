@@ -9,9 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import Sidebar from "./sidebar"
 import Content from "./content"
+import Sidebar from "./sidebar"
+import Navigation from "./navigation"
 import * as styles from './styles/Layout.module.less'
 
 
@@ -35,6 +35,7 @@ const Layout = ({ children }) => (
             {children}
           </Content>
         </div>
+        <Navigation />
       </div>
     )}
   />

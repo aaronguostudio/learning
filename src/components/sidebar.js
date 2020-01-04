@@ -37,6 +37,15 @@ const Sidebar = ({ siteTitle }) => {
             </Menu.Item>
           </SubMenu> */}
 
+          <SubMenu key="database" title="Database">
+            <Menu.Item key="mysql">
+              <Link to="/learn/database/mysql/">MySQL</Link>
+            </Menu.Item>
+            <Menu.Item key="mongodb">
+              <Link to="/learn/database/mongodb/">MongoDB</Link>
+            </Menu.Item>
+          </SubMenu>
+
           <Menu.Item key="data-struct">
             <Link to="/learn/data-struct/">Data Structure</Link>
           </Menu.Item>
