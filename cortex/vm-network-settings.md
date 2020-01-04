@@ -1,2 +1,0 @@
-- 1. Add 2nd Network Adapter - attached to Internal Network
-- 2. Change the ip to 192.168.0.2 and 192.168.0.3
