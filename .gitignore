@@ -2,6 +2,7 @@
 
 .cache
 node_modules
+public
 
 .idea
 *.iml
