@@ -13,6 +13,8 @@ import Header from "./header"
 import Sidebar from "./sidebar"
 import "./layout.css"
 
+
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`

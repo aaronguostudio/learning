@@ -23,7 +23,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-less',
+    {
+      resolve: 'gatsby-plugin-less',
+      options: {
+        javascriptEnabled: true,
+        modifyVars: {
+          'primary-color': '#5835EF',
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

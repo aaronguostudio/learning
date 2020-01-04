@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import 'antd/dist/antd.less'
 import '../styles/index.less'
 
 const IndexPage = () => (
