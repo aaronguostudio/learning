@@ -1,9 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import * as styles from './styles/Navigation.module.less'
 
-const Navigation = () => {
+import { utils } from '../utils'
+
+const Navigation = ({ location }) => {
+  const [root, path] = utils.parseUrl(location)
+  console.log('>path', path)
   return (
     <StaticQuery
       query={graphql`
@@ -25,7 +30,7 @@ const Navigation = () => {
       render={data => {
         const { allMarkdownRemark: { edges } } = data
         const groups = {}
-        const seletedCategory = 'node'
+        const seletedCategory = path
 
         edges.forEach(({ node }) => {
           if (node && node.frontmatter && node.frontmatter.category === seletedCategory) {
@@ -41,12 +46,10 @@ const Navigation = () => {
         })
 
         // const [curCat] = groups.filter(cat => cat.name === seletedCategory)
-
-        console.log('>groups', groups)
+        // console.log('>groups', groups)
 
         return (
           <div className={styles.nav}>
-            <h3>{seletedCategory.toUpperCase()}</h3>
             {
               Object.keys(groups).map(key => {
                 return (
@@ -68,6 +71,14 @@ const Navigation = () => {
       }}
     />
   )
+}
+
+Navigation.prototype = {
+  location: PropTypes.object.isRequired
+}
+
+Navigation.defaultProps = {
+  location: {}
 }
 
 export default Navigation

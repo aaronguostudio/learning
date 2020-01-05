@@ -1,5 +1,5 @@
 ---
-path: "/learn/database/mysql/imooc/alibaba-new-retail-database-design/04-new-retail-data-structures-design/"
+path: "/learn/mysql/imooc/alibaba-new-retail-database-design/04-new-retail-data-structures-design/"
 ---
 
 # 04 - New Retail Data Structures Design

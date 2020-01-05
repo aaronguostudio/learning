@@ -1,8 +1,8 @@
 ---
-path: "/learn/database/mysql/"
+path: "/learn/mysql/"
 ---
 
-# MySQL
+## MySQL Index Page
 
 ### Learn
 

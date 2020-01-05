@@ -1,16 +1,16 @@
 ---
-path: "/learn/database/mysql/imooc/alibaba-new-retail-database-design/"
+path: "/learn/mysql/imooc/alibaba-new-retail-database-design/"
 ---
 
-# Alibaba New Retail Database Design
+## Alibaba New Retail Database Design
 
 This course is the learning notes from imooc [阿里新零售数据库设计与实践](https://coding.imooc.com/learn/list/353.html). This course focuses on how to design a database for new retail system. The new retail is a buzz word in China means that combine online and offline business. Alibaba, Suning, JD, etc. many giant companies have been started their new retail strategy.
 
-## Contents
+### Contents
 
 - [04 - New Retail Data Structures Design](04-new-retail-data-structures-design/)
 
-## Environmnet Configuration
+### Environmnet Configuration
 
 Note: the following configuration is only for development, not for production.
 
@@ -39,11 +39,11 @@ Note: the following configuration is only for development, not for production.
   - If using navcat, must use new version because mysql 8.0 is using new password encode rule
   - Alternative: TablePlus
 
-## About ER Diagram (Entity Relationship Diagram)
+### About ER Diagram (Entity Relationship Diagram)
 
 - A basic ER diagram example, [Link](https://www.lucidchart.com/invitations/accept/5435fd7d-26a8-443e-93da-627e93becbc7)
 
-## About MySQL engine
+### About MySQL engine
 
 - MyISAM
   - Read is fast
@@ -55,7 +55,7 @@ Note: the following configuration is only for development, not for production.
 - TokuDB
   - The performance of transaction and compress are really good
 
-## Advance CRUD operation
+### Advance CRUD operation
 
 - Retrive the demo.sql file from [here](https://git.imooc.com/coding-353/document)
 
@@ -153,7 +153,7 @@ and d.name = 'SALES'
 
 ```
 
-## Transaction
+### Transaction
 
 - ACID transaction
   - Atomicity
@@ -164,6 +164,6 @@ and d.name = 'SALES'
 - Distributed transaction resource, [link](https://juejin.im/post/5b5a0bf9f265da0f6523913b)
 
 
-## DB cluster
+### DB cluster
 
 - Don't use auto increment id for database clusters, it will cause inconsistency id.
