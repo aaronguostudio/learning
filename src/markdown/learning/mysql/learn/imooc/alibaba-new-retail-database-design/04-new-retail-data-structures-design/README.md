@@ -28,7 +28,7 @@ path: "/learn/mysql/imooc/alibaba-new-retail-database-design/04-new-retail-data-
 
 ```sql
 
--- category table
+-- sku group table
 -- spg_id 商品编号，可以自定义区间代表不同的商品
 -- 唯一性索引本身自带索引功能，一般加了唯一性索引之后不需要再加索引了
 -- 这里重复加入索引是因为 MySQL 的索引分为 Hash and BTree,
@@ -56,6 +56,33 @@ create table t_spec_param (
   index idx_spg_id(spg_id),
   index idx_spp_id(spp_id)
 ) comment = '参数表';
+
+-- brand table
+create table t_brand (
+  id int unsigned primary key auto_increment comment '主键',
+  `name` varchar(200) not null comment '名称',
+  image varchar(500) comment '图片路径',
+  letter char(1) not null comment '品牌首字母',
+  unique unq_name(`name`),
+  index idx_letter(letter)
+) comment = '品牌表'
+
+-- category table
+create table t_category(
+  id int unsigned primary key auto_increment comment '主键',
+  `name` varchar(200) not null comment '分类名称',
+  parent_id int unsigned comment '上级分类 ID',
+  if_parent boolean not null comment '是否含有下级分类',
+  sort int unsigned not null comment '排名指数',
+  index idx_parent_id(parent_id),
+  index idx_sort(sort)
+) comment = '商品分类表'
+
+create table t_category_brand (
+  category_id int unsigned comment '分类 ID',
+  brand_id int unsigned comment '品牌 ID',
+  primary key(category_id, brand_id)
+) comment = '分类品牌关联表'
 ```
 
-<!-- https://coding.imooc.com/lesson/353.html#mid=26112 -->
+<!-- https://coding.imooc.com/lesson/353.html#mid=26113 -->
