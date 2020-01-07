@@ -62,11 +62,19 @@ public class Main {
         BSTMap<String, Integer> bstMap = new BSTMap<>();
         double time1 = testMap(bstMap, filename);
         System.out.println("BSTMap: " + time1);
+        System.out.println();
 
         LinkedListMap<String, Integer> linkedListMap = new LinkedListMap<>();
         double time2 = testMap(linkedListMap, filename);
-        System.out.println("BSTMap: " + time2);
+        System.out.println("Linked List: " + time2);
+        System.out.println();
 
+        AVLMap<String, Integer> avlMap = new AVLMap<>();
+        double time3 = testMap(avlMap, filename);
+        System.out.println("AVLMap: " + time3);
+        System.out.println();
+
+        System.out.println();
 
     }
 }

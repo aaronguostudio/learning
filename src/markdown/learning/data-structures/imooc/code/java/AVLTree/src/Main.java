@@ -51,6 +51,7 @@ public class Main {
             time = (endTime - startTime) / 1000000000.0;
             System.out.println("AVL: " + time + " s");
 
+            System.out.println();
         }
     }
 }
