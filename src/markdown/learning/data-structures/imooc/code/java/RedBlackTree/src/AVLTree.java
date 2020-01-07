@@ -12,7 +12,7 @@ public class AVLTree<K extends Comparable<K>, V> {
             this.value = value;
             left = null;
             right = null;
-            height = 1;   // 1 代表叶子节点的位置，每添加一个元素，一定是从根节点开始添加
+            height = 1;   // 1 代表叶子节点的位置，由此向上进行计算
         }
     }
 
@@ -51,93 +51,6 @@ public class AVLTree<K extends Comparable<K>, V> {
         return getHeight(node.left) - getHeight(node.right);
     }
 
-    // 检查当前的树是否是一个二分搜索树
-    // 每个节点的左小右大
-    public boolean isBST () {
-        return isBST(root);
-    }
-
-    private boolean isBST (Node node) {
-        ArrayList<K> keys = new ArrayList<>();
-
-        // 中序遍历
-        inOrder(root, keys);
-        for (int i = 1; i < keys.size(); i++)
-            if (keys.get(i - 1).compareTo(keys.get(i)) > 0)
-                return false;
-        return true;
-    }
-
-    // 判断该二叉树是否是一个平衡的二叉树
-    public boolean isBalanced () {
-        return isBalanced(root);
-    }
-
-    private boolean isBalanced (Node node) {
-        if (node == null)
-            return true;
-        int balanceFactor = getBalanceFactor(node);
-        if (Math.abs(balanceFactor) > 1)
-            return false;
-        return isBalanced(node.left) && isBalanced(node.right);
-    }
-
-    // 中序遍历返回从小到大的数组
-    private void inOrder (Node node, ArrayList<K> keys) {
-        if (node == null)
-            return;
-        inOrder(node.left, keys);
-        keys.add(node.key);
-        inOrder(node.right, keys);
-    }
-
-    // 对节点y进行向右旋转操作，返回旋转后新的根节点x
-    //        y                              x
-    //       / \                           /   \
-    //      x   T4     向右旋转 (y)        z     y
-    //     / \       - - - - - - - ->    / \   / \
-    //    z   T3                       T1  T2 T3 T4
-    //   / \
-    // T1   T2
-    private Node rightRotate (Node y) {
-        Node x = y.left;
-        Node T3 = x.right;
-
-        // 向右旋转过程
-        x.right = y;
-        y.left = T3;
-
-        // 更新 height
-        // 只有 x 和 y 的高度值发生了变化
-        y.height = Math.max(getHeight(y.left), getHeight(y.right)) + 1;
-        x.height = Math.max(getHeight(x.left), getHeight(x.right)) + 1;
-
-        return x;
-    }
-
-    // 对节点y进行向左旋转操作，返回旋转后新的根节点x
-    //    y                             x
-    //  /  \                          /   \
-    // T1   x      向左旋转 (y)       y     z
-    //     / \   - - - - - - - ->   / \   / \
-    //   T2  z                     T1 T2 T3 T4
-    //      / \
-    //     T3 T4
-    private Node leftRotate (Node y) {
-        Node x = y.right;
-        Node T3 = x.left;
-        x.left = y;
-        y.right = T3;
-
-        // 更新 height
-        // 只有 x 和 y 的高度值发生了变化
-        y.height = Math.max(getHeight(y.left), getHeight(y.right)) + 1;
-        x.height = Math.max(getHeight(x.left), getHeight(x.right)) + 1;
-
-        return x;
-    }
-
-
     // 向以node为根的二分搜索树中插入元素(key, value)，递归算法
     // 返回插入新节点后二分搜索树的根
     private Node add(Node node, K key, V value){
@@ -154,36 +67,14 @@ public class AVLTree<K extends Comparable<K>, V> {
         else // key.compareTo(node.key) == 0
             node.value = value;
 
-        // node 添加了新的节点，所以需要重新计算高度
         // 更新 height
         // 更新的原则是 1 + 左右子树中最大高度的那个
         node.height = 1 + Math.max(getHeight(node.left), getHeight(node.right));
 
         // 新的平衡因子
         int balanceFactor = getBalanceFactor(node);
-//        if (Math.abs(balanceFactor) > 1)
-//            System.out.println("Unbalanced: " + balanceFactor);
-
-        // 平衡维护
-        // LL 向左孩子的左侧添加
-        if (balanceFactor > 1 && getBalanceFactor(node.left) >= 0)
-            return rightRotate(node);
-
-        // RR 向右孩子的右侧添加
-        if (balanceFactor < -1 && getBalanceFactor(node.right) <= 0)
-            return leftRotate(node);
-
-        // LR 转换成 LL 再去处理
-        if (balanceFactor > 1 && getBalanceFactor(node.left) < 0) {
-            node.left = leftRotate(node.left);
-            return rightRotate(node);
-        }
-
-        // LR 转换成 LL 再去处理
-        if (balanceFactor < -1 && getBalanceFactor(node.right) > 0) {
-            node.right = rightRotate(node.right);
-            return leftRotate(node);
-        }
+        if (Math.abs(balanceFactor) > 1)
+            System.out.println("Unbalanced: " + balanceFactor);
 
         return node;
     }
@@ -307,7 +198,6 @@ public class AVLTree<K extends Comparable<K>, V> {
             System.out.println("Total words: " + words.size());
 
             AVLTree<String, Integer> map = new AVLTree<>();
-
             for (String word : words) {
                 if (map.contains(word))
                     map.set(word, map.get(word) + 1);
@@ -318,9 +208,6 @@ public class AVLTree<K extends Comparable<K>, V> {
             System.out.println("Total different words: " + map.getSize());
             System.out.println("Frequency of PRIDE: " + map.get("pride"));
             System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
-
-            System.out.println("is BST: " + map.isBST());
-            System.out.println("is Balanced: " + map.isBalanced());
         }
 
         System.out.println();
