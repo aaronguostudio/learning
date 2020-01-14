@@ -7,3 +7,6 @@ public
 .idea
 *.iml
 out
+
+# data
+data.csv
