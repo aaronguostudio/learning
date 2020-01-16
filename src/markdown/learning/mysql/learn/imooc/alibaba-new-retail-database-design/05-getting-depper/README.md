@@ -120,3 +120,5 @@ create table t_user_history like t_user;
       ```
   - 其他的解决办法
     - 业务上限定不可以查询很早的数据
+
+<!-- https://coding.imooc.com/lesson/353.html#mid=26132 -->

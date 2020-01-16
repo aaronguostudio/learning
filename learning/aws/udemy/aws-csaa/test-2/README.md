@@ -111,3 +111,9 @@
 
 ## Question 43
 
+- AWS STS (AWS Security Token Service)
+  - AWS Security Token Service (AWS STS) is the service that you can use to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
+
+## 44
+
+- It would be better to use Amazon Data Lifecycle Manager (Amazon DLM) instead as this provides you the fastest solution which enables you to automate the creation, retention, and deletion of the EBS snapshots without having to write custom shell scripts or creating scheduled jobs.
