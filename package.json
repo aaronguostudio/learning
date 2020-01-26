@@ -37,7 +37,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "npm run build && aws s3 sync ./public s3://ag-blog --profile=aaron",
+    "deploy": "now --prod",
+    "now-build": "gatsby build",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
