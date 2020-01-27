@@ -28,3 +28,8 @@
 - remote
   - BrowserWindow
   - shortcut for using APIs in main
+
+### S3
+
+- Grant public access
+  - https://aws.amazon.com/premiumsupport/knowledge-center/read-access-objects-s3-bucket/
