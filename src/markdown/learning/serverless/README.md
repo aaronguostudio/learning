@@ -8,3 +8,8 @@
 
 - deploy using profile
   - sls --aws-profile suku deploy
+
+## Tools
+
+- AWS X-Ray
+- [APEX](https://apex.run/)
