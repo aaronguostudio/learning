@@ -49,11 +49,15 @@ aws rds delete-db-instance --db-instance-identifier serverless-users --skip-fina
 
 ## API Gateway
 
-- aws apigateway get-rest-apis
-- aws apigateway get-resources --rest-api-id xxx
-  - this could find the root id
-- update api name
+```bash
+aws apigateway get-rest-apis
 
-  - aws apigateway update-rest-api --rest-api-id=fv3wud5wzl --patch-operations op=replace,value='dev-logan',path=/name
+# this could find the root id
+aws apigateway get-resources --rest-api-id xxx
 
-- aws apigateway delete-rest-api --rest-api-id x9uskjlp5c --profile=payload
+# update api name
+aws apigateway update-rest-api --rest-api-id=fv3wud5wzl --patch-operations op=replace,value='dev-logan',path=/name
+
+aws apigateway delete-rest-api --rest-api-id x9uskjlp5c --profile=payload
+aws apigateway  delete-resource --rest-api-id j245fmwsud --resource-id cdc47i
+```

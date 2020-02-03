@@ -6,6 +6,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Combinations",
+      "request": "launch",
+      "mainClass": "Combinations"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - WhileIteration",
       "request": "launch",
       "mainClass": "WhileIteration"
