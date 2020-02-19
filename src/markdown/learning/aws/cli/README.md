@@ -7,6 +7,10 @@
 - pip list -o
   - check outdated package
 
+## Get user info
+
+- aws sts get-caller-identity
+
 ## RDS
 
 - aws rds describe-db-instances --db-instance-identifier dbname
