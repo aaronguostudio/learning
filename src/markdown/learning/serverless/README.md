@@ -26,6 +26,7 @@
 - Serverless
   - [Serverless web app](https://aws.amazon.com/getting-started/projects/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/)
     - This is a very good course introduce Cognito, Lambda and API Gateway
+- [Get Started Projects](https://aws.amazon.com/getting-started/projects/)
 
 ## Tools
 
