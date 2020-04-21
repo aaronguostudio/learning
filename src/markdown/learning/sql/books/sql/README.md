@@ -30,13 +30,30 @@ select name from products where name like '% inch'
 select contact from customers where contact like '[JM]%'
 -- except starts with J or M
 select contact from customers where contact like '[^JM]%'
+
+-- concatenate
+-- PostgreSQL
+select name || '(' || email || ')' as clients  from companies
+-- MySQL / MariaDB / PostgreSQL
+select Concat(name, '(', email, ')') as clients from companies
+
+-- compute
+select id, quantity, price, quantity*price as total from order_items
 ```
 
-### Config
+### Features
 
 - 区分大小写和排序
   - A and a ? 取决于数据库的设置方式
 - 有多少 0, 3.49, 3.490, 3.4900 等
   - 往往是因为 DBMS 指定了所使用的数据类型以及默认行为
-- wildcard
+- Wildcard
   - more time to process, try to avoid when has alternative ways
+- Computing
+  - 数据库服务端实现会比客户端实现快很多
+  - forms
+    - concatenate strings
+    - calculation
+- Function
+
+<!-- start from Ch08 functions -->
