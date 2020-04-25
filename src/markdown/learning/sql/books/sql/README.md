@@ -55,5 +55,31 @@ select id, quantity, price, quantity*price as total from order_items
     - concatenate strings
     - calculation
 - Function
+  - soundex()
+    - select cust_name from customers where soundex(cust_contact) = soundex('Michael Green)
+    - 搜索发音相似的
+  - datepart()
+    -
+    - can also use
+    ```sql
+      -- this will use index
+      select * from events where created_at >= '2020-01-01' and created_at <= '2020-02-01'
+    ```
+- Aggregation function
+  - avg()
+  ```sql
+    -- if need avg on distinct values, add distint
+    -- avg(distinct total)
+    select round(avg(total), 2) as avg_total
+    from orders
+    where user_id = 1
+    and created_at >= '2019-01-01'
+    and created_at <= '2019-03-01'
+  ```
+
+  - count()
+  - max()
+  - min()
+  - sum()
 
 <!-- start from Ch08 functions -->
