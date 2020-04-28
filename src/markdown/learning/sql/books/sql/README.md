@@ -82,4 +82,22 @@ select id, quantity, price, quantity*price as total from order_items
   - min()
   - sum()
 
-<!-- start from Ch08 functions -->
+## 分组数据
+
+``` sql
+-- Tips
+-- 1. 大多数 SQL 不允许 groupy by for 长度可变的数据类型
+-- 2. null 会被作为一个分组被返回
+-- 3. where is for filter row
+-- 4. having is for filter group
+-- 5. where and having are very similar when no group by
+select count(id) as count_users, company_id from users group by company_id
+select count(*) as count_users, company_id from users group by company_id having count(*) >= 100
+
+-- combination for where and count
+select count(*) as count_users, company_id from users where created_at > '20180101' group by company_id having count(*) >= 100
+
+```
+
+
+<!-- start from Ch11 子查询 -->
