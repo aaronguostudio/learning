@@ -22,18 +22,23 @@ select name, price from products where (vend_id = 'a' or vend_id = 'b') and prod
 
 -- like and wildcard
 select name from products where name like 'F%y'
+
 -- can be any 1 character
 select name from products where name like '_ inch'
+
 -- can be any characters
 select name from products where name like '% inch'
+
 -- J... or M...
 select contact from customers where contact like '[JM]%'
+
 -- except starts with J or M
 select contact from customers where contact like '[^JM]%'
 
 -- concatenate
 -- PostgreSQL
 select name || '(' || email || ')' as clients  from companies
+
 -- MySQL / MariaDB / PostgreSQL
 select Concat(name, '(', email, ')') as clients from companies
 
@@ -96,8 +101,20 @@ select count(*) as count_users, company_id from users group by company_id having
 
 -- combination for where and count
 select count(*) as count_users, company_id from users where created_at > '20180101' group by company_id having count(*) >= 100
-
 ```
 
+## 子查询
 
-<!-- start from Ch11 子查询 -->
+```sql
+select * from companies where id in (
+  select company_id from users where id in (
+    select creator_id from events limit 10
+  )
+)
+
+select name, (select count(*) from users where users.company_id = companies.id) as users
+from companies
+```
+
+<!-- start from Ch12 -->
+
