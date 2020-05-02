@@ -87,7 +87,7 @@ select id, quantity, price, quantity*price as total from order_items
   - min()
   - sum()
 
-## 分组数据
+## 10 - 分组数据
 
 ``` sql
 -- Tips
@@ -103,7 +103,7 @@ select count(*) as count_users, company_id from users group by company_id having
 select count(*) as count_users, company_id from users where created_at > '20180101' group by company_id having count(*) >= 100
 ```
 
-## 子查询
+## 11 - 子查询
 
 ```sql
 select * from companies where id in (
@@ -114,6 +114,25 @@ select * from companies where id in (
 
 select name, (select count(*) from users where users.company_id = companies.id) as users
 from companies
+```
+
+## 12 - Join
+
+```sql
+-- where 子句非常重要，它限定了 join 的条件
+-- 如果没有 where，返回的结果将是 cartesian product (cross join)
+select companies.name, users.name from users, companies where users.company_id = companies.id
+
+-- inner join
+select companies.id, companies.name, users.name from users inner join companies on users.company_id = companies.id
+
+-- multiple tables
+-- join 的 table 越多，性能越差
+select companies.id as company_id, companies.name as company_name, users.name as user_name, orders.id as order_id
+from users, companies, orders
+where users.company_id = companies.id
+and orders.client_company_id = companies.id
+and orders.id = 16866
 ```
 
 <!-- start from Ch12 -->
