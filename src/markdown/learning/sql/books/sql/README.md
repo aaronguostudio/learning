@@ -116,11 +116,12 @@ select name, (select count(*) from users where users.company_id = companies.id) 
 from companies
 ```
 
-## 12 - Join
+## 12 and 13 - Join
 
 ```sql
+-- cross join
 -- where 子句非常重要，它限定了 join 的条件
--- 如果没有 where，返回的结果将是 cartesian product (cross join)
+-- 如果没有 where，返回的结果将是 cartesian product
 select companies.name, users.name from users, companies where users.company_id = companies.id
 
 -- inner join
@@ -133,7 +134,59 @@ from users, companies, orders
 where users.company_id = companies.id
 and orders.client_company_id = companies.id
 and orders.id = 16866
+
+-- outer join
+select companies.id, companies.name, users.name from users left outer join companies on users.company_id = companies.id
+
+-- inner join with aggregation function
+-- group by 出现在一个表中，另一个表的字段在 aggregation functino 中
+select companies.id, companies.name, count(users.name) as users_num
+from users inner join companies on users.company_id = companies.id
+group by companies.id order by id
+
+-- use alias
+select c.id, c.name, count(u.id) as user_count
+from companies as c
+inner join users as u
+on c.id = u.company_id
+group by c.id
 ```
 
-<!-- start from Ch12 -->
+## 14 Union
+
+```sql
+
+-- union
+select c.id, c.name from companies as c
+where c.name in ('a', 'b')
+union
+select c.id, c.name from companies as c
+where c.id in (1, 2)
+
+-- where
+select c.id, c.name from companies as c
+where c.name in ('a', 'b')
+or c.id in (1, 2)
+
+-- union all
+-- union all won't remove the duplicate rows
+select c.id, c.name from companies as c
+where c.name in ('a', 'b')
+union all
+select c.id, c.name from companies as c
+where c.id in (1, 2)
+
+
+-- order by
+-- order by 只能在最后一条 select 中
+select c.id, c.name from companies as c
+where c.name in ('a', 'b')
+union all
+select c.id, c.name from companies as c
+where c.id in (1, 2)
+order by c.id
+```
+
+
+<!-- start from Ch15 -->
 
